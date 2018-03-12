@@ -4,8 +4,9 @@
 using namespace std;
 class Board{
   // Largeur et Hauteur sont static et const pour pouvoir initialiser Grille
-  static const int Largeur=12;
-  static const int Hauteur=21;
+  static const int Largeur=10;
+  static const int Hauteur=20;
+  //Grille contient 1 si elle est remplie 0 si la case est vide
   int Grille[Largeur][Hauteur];
 
   public :
@@ -19,6 +20,7 @@ class Board{
 
   //Autres
   void init();
+  
 
   //Amis :
   friend ostream  &operator <<(ostream &out,  Board &);

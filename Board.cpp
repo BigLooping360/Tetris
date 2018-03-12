@@ -22,15 +22,11 @@ void Board::setGrille(int x, int y){
   Grille[x][y]=1;
 }
 
-//Initialise la grille en mettant des 1 sur les bordures
-// et des 0 sinon
+//Initialise la grille en mettant des 0 partout
 void Board::init(){
   for (int i = 0; i < Hauteur; i++) {
     for (int j = 0; j < Largeur; j++) {
-      if ((i==0) or (j==0) or (j==Largeur-1))
-        Grille[j][i]=1;
-      else
-        Grille[j][i]=0;
+      Grille[j][i]=0;
       }
     }
   }
@@ -39,12 +35,16 @@ void Board::init(){
 lorsque la grille comprend un 1, et affiche 0 sinon
 */
 ostream &operator<<(ostream &out, Board &b) { //ici
-  for (int i = b.getHauteur()-1; i>=0; i--) {
-    for (int j = 0; j < b.getLargeur(); j++) {
-      if (b.getGrille(j,i)==1)
+  for (int i = b.getHauteur(); i>=-1; i--) {
+    for (int j = -1; j <= b.getLargeur(); j++) {
+      if ( (i==b.getHauteur()) or (i==-1) or (j==-1) or (j==b.getLargeur()))
         cout<<"x";
-      else
-        cout<<" ";
+      else{
+        if (b.getGrille(j,i)==1)
+          cout<<"x";
+        else
+          cout<<" ";
+        }
       }
     std::cout <<'\n';
     }
