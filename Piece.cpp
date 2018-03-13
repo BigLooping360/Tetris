@@ -8,7 +8,7 @@ using namespace std;
 Piece::Piece():tab(5,Bloc(0,0)) {
 
   for (int i = 0; i < 4; i++) {
-    tab[i] = Bloc(4,20-i);
+    tab[i] = Bloc(4,19-i);
     cout<<tab[i].getPosx()<<endl;
     cout<<tab[i].getPosy()<<endl;
   }
@@ -33,7 +33,7 @@ void Piece::setPosx(int i,int j){
 }
 
 void Piece::setPosy(int i, int j){
-  tab[i].setPosy(j);
+  tab[i].setPosy(j);FILE *fp;
 }
 
 bool Piece::getbloque(){
@@ -43,9 +43,25 @@ bool Piece::getbloque(){
 
 
 //Regarde si il n'y a pas un bloc en-dessous duquel il y a un bloc;
-bool Piece::isMoveable(Board b){
+bool Piece::Down(Board b){
   for (int i = 0; i < 4; i++) {
-    if ((b.getGrille(getPosx(i), getPosy(i-1))==1) or (getPosy(i)==0))
+    if ((b.getGrille(getPosx(i), getPosy(i)-1)==1) or (getPosy(i)==0))
+      return false;
+    }
+  return true;
+}
+
+bool Piece::Left(Board b){
+  for (int i = 0; i < 4; i++) {
+    if ((b.getGrille(getPosx(i)-1, getPosy(i))==1) or (getPosx(i)==0))
+      return false;
+    }
+  return true;
+}
+
+bool Piece::Right(Board b){
+  for (int i = 0; i < 4; i++) {
+    if ((b.getGrille(getPosx(i)+1, getPosy(i))==1) or (getPosx(i)==9))
       return false;
     }
   return true;
@@ -57,8 +73,8 @@ bool Piece::isMoveable(Board b){
 void Piece::afficher(Board b){
   Board b2;
   b2.init();
-  for (int i = 0; i < 20; i++) {
-    for (int j = 0; j < 10; j++) {
+  for (int i = 0; i < b.getHauteur(); i++) {
+    for (int j = 0; j < b.getLargeur(); j++) {
       if (b2.getGrille(j,i)!=b.getGrille(j,i)) {
         b2.setGrille(j,i);
         }
@@ -74,15 +90,27 @@ void Piece::afficher(Board b){
 //Si la pièce peut descendre on la fait descendre, si elle se bloque
 //on change la valeur du booléen bloque
 
-void Piece::fall(Board b){
-  for (int i = 0; i < 4; i++) {
-    if ((b.getGrille(getPosx(i),getPosy(i)-1)==1) or (getPosy(i)==0))
-      bloque=true;
-    }
-  if (bloque ==false){
+void Piece::MoveDown(Board b){
+  //On check si une fois que l'on baisse la pièce elle se retrouve coincée
+  if (Down(b)==false)
+    bloque=true;
+  else
     for (int i = 0; i < 4; i++) {
       setPosy(i,tab[i].getPosy()-1);
     }
-  }
 
 }
+void Piece::MoveRight(Board b){
+    if (Right(b))
+      for (int i = 0; i < 4; i++) {
+        setPosx(i,tab[i].getPosx()+1);
+        }
+    }
+ void Piece::MoveLeft(Board b){
+        if (Left(b))
+          for (int i = 0; i < 4; i++) {
+            setPosx(i,tab[i].getPosx()-1);
+            }
+
+
+        }

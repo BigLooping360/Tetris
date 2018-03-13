@@ -17,12 +17,18 @@ class Piece{
   void setPosx(int i,int j);
   void setPosy(int i,int j);
   bool getbloque();
-  //Verificateurs
-  bool isMoveable(Board b);
+  //Verificateurs (peut-on bouger dans la direction ..)
+  bool Down(Board b);
+  bool Left(Board b);
+  bool Right(Board b);
   bool isRotateable();
 
+  //Mouvement Pièce
+  void MoveDown(Board b);
+  void MoveRight(Board b);
+  void MoveLeft(Board b);
+
   //autres
-  void fall(Board b);
   void afficher(Board b);
 
 

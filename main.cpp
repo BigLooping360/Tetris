@@ -9,10 +9,14 @@
 using namespace std;
 
 int main() {
-/*Test Proto 1*/
+  // int i;
+  // cout<<"Debut"<<endl;
+  // std::cin >> i;
+
+/*Test Proto 1
   Jeu j;
   j.init();
-  j.play();
+  j.play();*/
 
   /* Test timer
   clock_t temps=clock();
@@ -43,6 +47,14 @@ int main() {
   /*Test unit de Board
   Board b;
   b.init();
+  b.setGrille(4,19);
+  for (int i = 0; i < b.getHauteur(); i++) {
+    for (int j = 0; j < b.getLargeur(); j++) {
+      std::cout <<  b.getGrille(j,i);
+      }
+      std::cout << '\n';
+    }
+
   cout<<b;*/
 
 
