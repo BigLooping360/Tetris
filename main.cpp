@@ -5,18 +5,37 @@
 //#include "Bloc.cpp"
 #include <vector>
 #include <time.h>
-
+//#include <ncurses.h>
 using namespace std;
 
 int main() {
-  // int i;
-  // cout<<"Debut"<<endl;
-  // std::cin >> i;
+/*Ncurses :*/
 
-/*Test Proto 1
+//  initscr();
+  //  noecho();
+//  nodelay(stdscr, TRUE);
+
+  // printw("Hi guys\n");
+  // mvaddch(1,1,'1');
+  // mvaddch(2,0,'2');
+  // refresh();
+  // mvaddch(2,0,'3');
+  // while(1 ){
+  //int n=getch();
+  // //if ((char)n=='a')
+  //   //printw("n possède la valeur %d pour le caractère %c\n",n,(char)n);
+  // endwin();
+  // cout<<"bla"<<endl;
+
+
+
+
+
+
+/*Test Proto 1*/
   Jeu j;
   j.init();
-  j.play();*/
+  j.play();
 
   /* Test timer
   clock_t temps=clock();

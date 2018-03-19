@@ -17,7 +17,9 @@ class Jeu{
   // Met à jour la grille à chaque fois qu'une pièce est  posée
   void MaJ();
   //Envoie l'ordre de bouger la pièce
-  void Move(char c);
+  void move(char c);
+  //Affiche la grille et la board envoyé :
+  void afficher(Board b, Piece p);
 
 
 };
