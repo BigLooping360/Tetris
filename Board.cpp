@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Board.hpp"
+#include <iostream>
 #include <string>
 using namespace std;
 

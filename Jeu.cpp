@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Jeu.hpp"
+#include <iostream>
 #include <string>
 #include <time.h>
 #include <ncurses.h>
@@ -50,19 +50,22 @@ void Jeu::MaJ(){
   }
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
-void Jeu::move(char c){
-  if (c=='q')
+void Jeu::move(int c){
+  if (((char)c=='q') or (c==KEY_LEFT))
     PieceEnCours.MoveLeft(b);
-  if (c=='d')
+  if (((char)c=='d') or (c==KEY_RIGHT))
     PieceEnCours.MoveRight(b);
-  if (c=='s')
+  if (((char)c=='s') or (c==KEY_DOWN))
     PieceEnCours.MoveDown(b);
-  if (c==' ')
+  if (((char)c==' ') or (c==KEY_UP))
     while(!PieceEnCours.getbloque())
       PieceEnCours.MoveDown(b);
+  if ((char)c=='r')
+    PieceEnCours.Rotate(b);
 }
 
-void Jeu::afficher(Board b, Piece p){
+
+void Jeu::afficher(){
   clear();
   //On affiche le board
   for (int i = 0; i<b.getHauteur(); i++)
@@ -79,7 +82,7 @@ void Jeu::afficher(Board b, Piece p){
   }
   //On affiche la pièce
   for (int i = 0; i < 4; i++) {
-    mvaddch(b.getHauteur()-p.getPosy(i)-1,p.getPosx(i)+1,'x');
+    mvaddch(b.getHauteur()-PieceEnCours.getPosy(i)-1,PieceEnCours.getPosx(i)+1,'x');
   }
 
 }
@@ -100,6 +103,7 @@ void Jeu::play(){
   while (jeu) {
     initscr();
     noecho();
+    keypad(stdscr,TRUE);
     //cbreak();
     nodelay(stdscr, TRUE);
 
@@ -111,8 +115,8 @@ void Jeu::play(){
           }
         int n=getch();
         if (n!=-1)
-          move((char)n);
-        afficher(b, PieceEnCours);
+          move(n);
+        afficher();
         refresh();
         }
       MaJ();

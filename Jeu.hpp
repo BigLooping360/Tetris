@@ -1,8 +1,9 @@
 #ifndef __Jeu_HPP__
-#define __Jeu_HPP_
+#define __Jeu_HPP__
+
 #include <iostream>
-// #include "Board.cpp"
-#include "Piece.cpp"
+#include "Board.hpp"
+#include "Piece.hpp"
 using namespace std;
 class Jeu{
   // Largeur et Hauteur sont static et const pour pouvoir initialiser Grille
@@ -17,9 +18,9 @@ class Jeu{
   // Met à jour la grille à chaque fois qu'une pièce est  posée
   void MaJ();
   //Envoie l'ordre de bouger la pièce
-  void move(char c);
+  void move(int c);
   //Affiche la grille et la board envoyé :
-  void afficher(Board b, Piece p);
+  void afficher();
 
 
 };

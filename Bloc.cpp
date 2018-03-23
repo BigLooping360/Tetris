@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Bloc.hpp"
+#include <iostream>
 #include <string>
 using namespace std;
 

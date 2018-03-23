@@ -1,31 +1,33 @@
 #include <iostream>
-//#include "Board.cpp"
-//#include "Piece.cpp"
-#include "Jeu.cpp"
-//#include "Bloc.cpp"
+#include "Bloc.hpp"
+#include "Board.hpp"
+#include "Piece.hpp"
+#include "Jeu.hpp"
 #include <vector>
 #include <time.h>
 //#include <ncurses.h>
 using namespace std;
 
 int main() {
-/*Ncurses :*/
 
-//  initscr();
-  //  noecho();
-//  nodelay(stdscr, TRUE);
+/*Ncurses :
 
+    initscr();
+    noecho();
+    nodelay(stdscr, TRUE);
+    keypad(stdscr,TRUE);
   // printw("Hi guys\n");
   // mvaddch(1,1,'1');
   // mvaddch(2,0,'2');
   // refresh();
   // mvaddch(2,0,'3');
-  // while(1 ){
-  //int n=getch();
-  // //if ((char)n=='a')
-  //   //printw("n possède la valeur %d pour le caractère %c\n",n,(char)n);
-  // endwin();
-  // cout<<"bla"<<endl;
+  while(1 ){
+  int n=getch();
+  if (n==KEY_RIGHT)
+    printw("n possède la valeur %d pour le caractère %c\n",n,(char)n);
+  }
+  endwin();*/
+
 
 
 
@@ -58,8 +60,8 @@ int main() {
    // Cas 2 false car ne peux plus descendre :
 
    std::cout << p.isMoveable(b) << '\n';
-   p.afficher(b);
-   */
+   p.afficher(b);*/
+
 
 
 

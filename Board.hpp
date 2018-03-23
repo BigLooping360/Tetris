@@ -1,5 +1,5 @@
 #ifndef __Board_HPP__
-#define __Board_HPP_
+#define __Board_HPP__
 #include <iostream>
 using namespace std;
 class Board{
@@ -20,7 +20,7 @@ class Board{
 
   //Autres
   void init();
-  
+
 
   //Amis :
   friend ostream  &operator <<(ostream &out,  Board &);
