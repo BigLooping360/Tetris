@@ -4,11 +4,17 @@
 #include <iostream>
 #include "Board.hpp"
 #include "Piece_I.hpp"
+#include "Piece_O.hpp"
+#include "Piece_T.hpp"
 #include "Piece.hpp"
 using namespace std;
 class Jeu{
   // Largeur et Hauteur sont static et const pour pouvoir initialiser Grille
   bool jeu;
+  //Nombre de pièce pour le random
+  static const int a=1;
+  static const int NombreDePieces=4;
+  int nombre_aleatoire;
   Board b;
   Piece *PieceStocke, *PieceEnCours, *PieceSuivante;
   public :

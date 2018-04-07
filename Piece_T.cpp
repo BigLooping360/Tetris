@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Piece_T.hpp"
 Piece_T::Piece_T():Piece() {
+  color=3;
 
   tab[0] = Bloc(4,19);
   tab[1] = Bloc(5,19);

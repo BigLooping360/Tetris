@@ -6,8 +6,9 @@ OPT = -lncurses
 
 # executables
 # main
-main : Bloc.cpp Board.cpp Piece_I.cpp Piece.cpp Jeu.cpp main.cpp
-	$(FC) Bloc.cpp Board.cpp Piece_I.cpp Piece.cpp Jeu.cpp main.cpp $(OPT) -o Tetris
+main : Bloc.cpp Board.cpp Piece_T.cpp Piece_I.cpp Piece_O.cpp Piece.cpp Jeu.cpp main.cpp
+	$(FC) Bloc.cpp Board.cpp Piece_T.cpp Piece_I.cpp Piece_O.cpp Piece.cpp Jeu.cpp main.cpp $(OPT) -o Tetris
+	./Tetris
 
 
 #Classes

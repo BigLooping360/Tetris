@@ -25,6 +25,8 @@ class Piece{
   void setPosx(int i,int j);
   void setPosy(int i,int j);
   bool getbloque();
+  int getcolor();
+
   //Verificateurs (peut-on bouger dans la direction ..)
   bool Down(Board b);
   bool Left(Board b);

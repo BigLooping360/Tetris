@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Piece_O.hpp"
 Piece_O::Piece_O():Piece() {
+  color=2;
 
   tab[0] = Bloc(4,19);
   tab[1] = Bloc(4,18);

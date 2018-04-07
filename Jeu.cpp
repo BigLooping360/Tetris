@@ -3,20 +3,52 @@
 #include <string>
 #include <time.h>
 #include <ncurses.h>
+#include<stdlib.h>
 
 using namespace std;
 
 void Jeu::init(){
+
+  srand(time(NULL));
+  nombre_aleatoire=rand()%(NombreDePieces-a) +a;
   b.init() ;
   jeu=true;
   b.init();
-  PieceEnCours=new Piece_I();
-  PieceStocke= new Piece_I();
+  switch (nombre_aleatoire) {
+    case 1:
+      PieceEnCours= new Piece_I();
+      break;
+
+    case 2:
+      PieceEnCours= new Piece_T();
+      break;
+
+    case 3:
+      PieceEnCours= new Piece_O();
+      break;
+  }
+  nombre_aleatoire=rand()%(NombreDePieces-a) +a;
+
+  switch (nombre_aleatoire) {
+    case 1:
+      PieceSuivante= new Piece_I();
+      break;
+
+    case 2:
+      PieceSuivante= new Piece_T();
+      break;
+
+    case 3:
+      PieceSuivante= new Piece_O();
+      break;
+  }
+
   cout<<b<<endl;
 }
 
 
 void Jeu::MaJ(){
+
   //On intègre la pièce en cours bloqué dans le Board b
   for (int i = 0; i < 4; i++) {
     b.setGrille(PieceEnCours->getPosx(i), PieceEnCours->getPosy(i));
@@ -48,6 +80,37 @@ void Jeu::MaJ(){
       i--;
     }
 
+
+  }
+  // PieceCours prend la valeur de PieceStockee
+  switch (PieceSuivante->getcolor()) {
+    case 1:
+      PieceEnCours= new Piece_I();
+      break;
+
+    case 2:
+      PieceEnCours= new Piece_O();
+      break;
+
+    case 3:
+      PieceEnCours= new Piece_T();
+      break;
+  }
+  *PieceEnCours=*PieceSuivante;
+
+  nombre_aleatoire=rand()%(NombreDePieces-a) +a;
+  switch (nombre_aleatoire) {
+    case 1:
+      PieceSuivante= new Piece_I();
+      break;
+
+    case 2:
+      PieceSuivante= new Piece_T();
+      break;
+
+    case 3:
+      PieceSuivante= new Piece_O();
+      break;
   }
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
@@ -121,7 +184,6 @@ void Jeu::play(){
         refresh();
         }
       MaJ();
-      *PieceEnCours=*PieceStocke;
     }
     endwin();
 }

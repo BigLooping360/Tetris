@@ -6,7 +6,9 @@
 using namespace std;
 
 //Note : les getters et setters utilisent aussi ceux de bloc
-
+int Piece::getcolor(){
+  return color;
+}
 //Retourne la position x du bloc i
 int Piece::getPosx(int i)const{
     return tab[i].getPosx();

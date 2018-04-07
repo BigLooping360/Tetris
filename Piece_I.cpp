@@ -9,6 +9,7 @@ Piece_I::Piece_I():Piece() {
 
   for (int i = 0; i < 4; i++)
     tab[i] = Bloc(5,19-i);
+  color=1;
 }
 
 
