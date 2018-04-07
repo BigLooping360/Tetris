@@ -10,7 +10,7 @@ class Piece_T : public Piece{
   public :
   bool isRotateable(Board b);
   void Rotate(Board b);
-  Piece_O();
+  Piece_T();
 };
 
 #endif

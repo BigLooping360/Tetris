@@ -2,17 +2,17 @@
 #include<vector>
 #include <iostream>
 #include "Piece_I.hpp"
-Piece_I::Piece_I():tab(5,Bloc(0,0)) {
+
+//Piece_I::~Piece_I(){}
+
+Piece_I::Piece_I():Piece() {
 
   for (int i = 0; i < 4; i++)
     tab[i] = Bloc(5,19-i);
-
-  bloque=false;
-  //On pose 1 comme le premier état sur 4
-  etat=1;
 }
 
-bool Piece::isRotateable(Board b){
+
+bool Piece_I::isRotateable(Board b){
           switch (etat){
             case 1:
               if ( (getPosx(1)<b.getLargeur()-1) and (getPosx(1)>1) and (b.getGrille(getPosx(1)+1,getPosy(1))==0) and (b.getGrille(getPosx(1)-1,getPosy(1))==0) and (b.getGrille(getPosx(1)-2,getPosy(1))==0))
@@ -42,11 +42,10 @@ bool Piece::isRotateable(Board b){
                 return false;
               break;
 
-
           }
         }
 
-void Piece::Rotate(Board b){
+void Piece_I::Rotate(Board b){
           switch (etat){
             case 1:
               if (isRotateable(b)){

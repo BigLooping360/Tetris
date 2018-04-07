@@ -7,18 +7,19 @@
 using namespace std;
 
 void Jeu::init(){
-  b.init();
+  b.init() ;
   jeu=true;
   b.init();
-  PieceEnCours;
-  PieceStocke;
+  PieceEnCours=new Piece_I();
+  PieceStocke= new Piece_I();
   cout<<b<<endl;
 }
+
 
 void Jeu::MaJ(){
   //On intègre la pièce en cours bloqué dans le Board b
   for (int i = 0; i < 4; i++) {
-    b.setGrille(PieceEnCours.getPosx(i), PieceEnCours.getPosy(i));
+    b.setGrille(PieceEnCours->getPosx(i), PieceEnCours->getPosy(i));
   }
   //On vérifie pour toutes les lignes qu'il n'y a pas de ligne formé
   for (int i = 0; i < b.getHauteur(); i++) {
@@ -52,16 +53,16 @@ void Jeu::MaJ(){
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
 void Jeu::move(int c){
   if (((char)c=='q') or (c==KEY_LEFT))
-    PieceEnCours.MoveLeft(b);
+    PieceEnCours->MoveLeft(b);
   if (((char)c=='d') or (c==KEY_RIGHT))
-    PieceEnCours.MoveRight(b);
+    PieceEnCours->MoveRight(b);
   if (((char)c=='s') or (c==KEY_DOWN))
-    PieceEnCours.MoveDown(b);
+    PieceEnCours->MoveDown(b);
   if (((char)c==' ') or (c==KEY_UP))
-    while(!PieceEnCours.getbloque())
-      PieceEnCours.MoveDown(b);
+    while(!PieceEnCours->getbloque())
+      PieceEnCours->MoveDown(b);
   if ((char)c=='r')
-    PieceEnCours.Rotate(b);
+    PieceEnCours->Rotate(b);
 }
 
 
@@ -82,7 +83,7 @@ void Jeu::afficher(){
   }
   //On affiche la pièce
   for (int i = 0; i < 4; i++) {
-    mvaddch(b.getHauteur()-PieceEnCours.getPosy(i)-1,PieceEnCours.getPosx(i)+1,'x');
+    mvaddch(b.getHauteur()-PieceEnCours->getPosy(i)-1,PieceEnCours->getPosx(i)+1,'x');
   }
 
 }
@@ -108,9 +109,9 @@ void Jeu::play(){
     nodelay(stdscr, TRUE);
 
     clock_t temps=clock();
-    while (PieceEnCours.getbloque()==false) {
-        if (clock()-temps>(CLOCKS_PER_SEC/6)){
-            PieceEnCours.MoveDown(b);
+    while (PieceEnCours->getbloque()==false) {
+        if (clock()-temps>(CLOCKS_PER_SEC/2)){
+            PieceEnCours->MoveDown(b);
             temps=clock();
           }
         int n=getch();
@@ -120,7 +121,7 @@ void Jeu::play(){
         refresh();
         }
       MaJ();
-      PieceEnCours=PieceStocke;
+      *PieceEnCours=*PieceStocke;
     }
     endwin();
 }

@@ -18,7 +18,7 @@ class Board{
   //Mutateurs :
   void setGrille(int x, int y);
 
-  //Autres
+  //Le changer en constructeur
   void init();
 
 

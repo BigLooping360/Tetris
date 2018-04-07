@@ -8,9 +8,10 @@ using namespace std;
 
 class Piece_I : public Piece{
   public :
-  bool isRotateable(Board b);
-  void Rotate(Board b);
+  virtual bool isRotateable(Board b);
+  virtual void Rotate(Board b);
   Piece_I();
+  //~Piece_I();
 };
 
 #endif

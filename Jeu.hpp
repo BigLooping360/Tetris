@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include "Board.hpp"
+#include "Piece_I.hpp"
 #include "Piece.hpp"
 using namespace std;
 class Jeu{
   // Largeur et Hauteur sont static et const pour pouvoir initialiser Grille
   bool jeu;
   Board b;
-  Piece PieceStocke, PieceEnCours, PieceSuivante;
+  Piece *PieceStocke, *PieceEnCours, *PieceSuivante;
   public :
   //initialise le jeu
   void init();

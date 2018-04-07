@@ -2,17 +2,12 @@
 #include<vector>
 #include <iostream>
 #include "Piece_T.hpp"
-Piece_T::Piece_T():tab(5,Bloc(0,0)) {
+Piece_T::Piece_T():Piece() {
 
   tab[0] = Bloc(4,19);
   tab[1] = Bloc(5,19);
   tab[2] = Bloc(6,19);
   tab[3] = Bloc(5,18);
-
-
-  bloque=false;
-  //On pose 1 comme le premier état sur 4
-  etat=1;
 }
 
 bool Piece_T::isRotateable(Board b){
