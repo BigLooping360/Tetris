@@ -7,10 +7,14 @@
 #include "Piece_O.hpp"
 #include "Piece_T.hpp"
 #include "Piece.hpp"
+#include "IHM.hpp"
+
 using namespace std;
 class Jeu{
   // Largeur et Hauteur sont static et const pour pouvoir initialiser Grille
   bool jeu;
+  bool pause;
+  int Score;
   //Nombre de pièce pour le random
   static const int a=1;
   static const int NombreDePieces=4;
@@ -26,8 +30,6 @@ class Jeu{
   void MaJ();
   //Envoie l'ordre de bouger la pièce
   void move(int c);
-  //Affiche la grille et la board envoyé :
-  void afficher();
 
 
 };
