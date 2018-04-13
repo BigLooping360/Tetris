@@ -27,11 +27,8 @@ using namespace std;
 class Jeu {
   /*! /var jeu est le booléen qui vaut true tant que la partie peut continuer, false quand le joueur est bloqué*/
   bool jeu;
-  bool pause;
   int Score;
-  //Nombre de pièce pour le random
   /*! /var a est le nombre de pièce pour le random*/
-
   static const int a=1;
   /*! /var NombreDePieces est le nombre max de Tetriminos utilisés en même temps*/
   static const int NombreDePieces=4;
