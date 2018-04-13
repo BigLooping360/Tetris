@@ -29,7 +29,9 @@ class Jeu{
   // Met à jour la grille à chaque fois qu'une pièce est  posée
   void MaJ();
   //Envoie l'ordre de bouger la pièce
-  void move(int c);
+  void interaction(int c);
+  //Permet de mettre le jeu en pause
+  void pause();
 
 
 };

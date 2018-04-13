@@ -114,7 +114,7 @@ void Jeu::MaJ(){
   }
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
-void Jeu::move(int c){
+void Jeu::interaction(int c){
   if (((char)c=='q') or (c==KEY_LEFT))
     PieceEnCours->MoveLeft(b);
   if (((char)c=='d') or (c==KEY_RIGHT))
@@ -153,9 +153,7 @@ void Jeu::play(){
             PieceEnCours->MoveDown(b);
             temps=clock();
           }
-        input=IHM::getinput();
-        if (input!=-1)
-          move(input);
+        interaction(IHM::getinput());
         IHM::afficher(b, PieceEnCours, PieceStocke, PieceSuivante, Score, pause);
         refresh();
         }
