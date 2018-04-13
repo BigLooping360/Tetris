@@ -27,11 +27,13 @@ using namespace std;
 class Jeu {
   /*! /var jeu est le booléen qui vaut true tant que la partie peut continuer, false quand le joueur est bloqué*/
   bool jeu;
+<<<<<<< HEAD
   bool pause;
   int Score;
   //Nombre de pièce pour le random
+=======
   /*! /var a est le nombre de pièce pour le random*/
-
+>>>>>>> 6a0047124f325c31b1c7a882fa0778db4bf722e3
   static const int a=1;
   /*! /var NombreDePieces est le nombre max de Tetriminos utilisés en même temps*/
   static const int NombreDePieces=4;
@@ -55,17 +57,20 @@ class Jeu {
   * \brief Met à jour la grille à chaque fois qu'une pièce est posée
   */
   void MaJ();
-
+<<<<<<< HEAD
   //Envoie l'ordre de bouger la pièce
   void interaction(int c);
   //Permet de mettre le jeu en pause
   void pause();
-
+=======
   /* \fn void move(int c)
   * \brief Envoie l'ordre de bouger la pièce
   * \param c est l'entier qui, une fois convertit en char, donnera la touche sur laquelle a appuyé le joueur
   */
-
+  void move(int c);
+  //brief Affiche la grille et la board envoyé :
+  void afficher();
+>>>>>>> 6a0047124f325c31b1c7a882fa0778db4bf722e3
 
 };
 
