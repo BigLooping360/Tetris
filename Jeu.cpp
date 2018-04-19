@@ -27,6 +27,11 @@ void Jeu::init(){
     case 3:
       PieceEnCours= new Piece_O();
       break;
+
+    case 4:
+      PieceEnCours= new Piece_L();
+      break;
+
   }
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
 
@@ -42,6 +47,12 @@ void Jeu::init(){
     case 3:
       PieceSuivante= new Piece_O();
       break;
+
+    case 4:
+      PieceSuivante= new Piece_L();
+      break;
+
+
   }
 
   cout<<b<<endl;
@@ -96,6 +107,10 @@ void Jeu::MaJ(){
     case 3:
       PieceEnCours= new Piece_T();
       break;
+
+    case 4:
+      PieceEnCours= new Piece_L();
+      break;
   }
   *PieceEnCours=*PieceSuivante;
 
@@ -111,6 +126,10 @@ void Jeu::MaJ(){
 
     case 3:
       PieceSuivante= new Piece_O();
+      break;
+
+    case 4:
+      PieceSuivante= new Piece_L();
       break;
   }
 }
@@ -155,7 +174,7 @@ void Jeu::play(){
             temps=clock();
           }
         interaction(IHM::getinput());
-        IHM::afficher(b, PieceEnCours, PieceStocke, PieceSuivante, Score, pause);
+        IHM::afficher(b, PieceEnCours, PieceStocke, PieceSuivante, Score, true/*pause*/);
         refresh();
         }
       MaJ();

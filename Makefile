@@ -6,8 +6,8 @@ OPT = -lncurses
 
 # executables
 # main
-main : Bloc.cpp Board.cpp Piece_T.cpp Piece_I.cpp Piece_O.cpp Board.cpp Piece.cpp Jeu.cpp main.cpp
-	$(FC) Bloc.cpp Board.cpp IHM.cpp Piece_T.cpp Piece_I.cpp Piece_O.cpp Piece.cpp Jeu.cpp main.cpp $(OPT) -o Tetris
+main : Bloc.cpp Board.cpp Piece_T.cpp Piece_I.cpp Piece_O.cpp Piece_L.cpp Board.cpp Piece.cpp Jeu.cpp main.cpp
+	$(FC) Bloc.cpp Board.cpp IHM.cpp Piece_T.cpp Piece_I.cpp Piece_O.cpp Piece_L.cpp Piece.cpp Jeu.cpp main.cpp $(OPT) -o Tetris
 	./Tetris
 
 
@@ -28,5 +28,7 @@ Piece_O: Piece_O.cpp
 	$(FC) Piece_O.cpp
 Piece_T: Piece_T.cpp
 	$(FC) Piece_T.cpp
+Piece_L: Piece_L.cpp
+		$(FC) Piece_L.cpp
 clean:
 	rm *.hpp.gch Tetris
