@@ -86,6 +86,7 @@ class Piece {
   * \param b est la grille de notre Tetris
   */
   virtual void Rotate(Board b)=0;
+
   Piece();
 
 

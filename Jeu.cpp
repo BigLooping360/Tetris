@@ -32,6 +32,9 @@ void Jeu::init(){
       PieceEnCours= new Piece_L();
       break;
 
+    case 5:
+      PieceEnCours= new Piece_J();
+      break;
   }
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
 
@@ -50,6 +53,10 @@ void Jeu::init(){
 
     case 4:
       PieceSuivante= new Piece_L();
+      break;
+
+    case 5:
+      PieceSuivante= new Piece_J();
       break;
 
 
@@ -111,6 +118,11 @@ void Jeu::MaJ(){
     case 4:
       PieceEnCours= new Piece_L();
       break;
+
+    case 5:
+      PieceEnCours= new Piece_J();
+      break;
+
   }
   *PieceEnCours=*PieceSuivante;
 
@@ -130,6 +142,10 @@ void Jeu::MaJ(){
 
     case 4:
       PieceSuivante= new Piece_L();
+      break;
+
+    case 5:
+      PieceSuivante= new Piece_J();
       break;
   }
 }
