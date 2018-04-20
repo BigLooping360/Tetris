@@ -32,8 +32,6 @@ bool Piece::getbloque(){
   return bloque;
 }
 
-
-
 //Regarde si il n'y a pas un bloc en-dessous duquel il y a un bloc;
 bool Piece::Down(Board b){
   for (int i = 0; i < 4; i++) {
