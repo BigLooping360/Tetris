@@ -8,8 +8,7 @@ using namespace std;
 
 /*! \class Piece_T
  * \brief Représentation d'un Tétrimino en forme de T. Hérite de Pièce.
- * \author Léa Lefrançois
- * \author Laura Couret
+ * \author Victor Le Maistre
  * \version 1.0
  * \date avril 2018
  * \bug Rien à signaler

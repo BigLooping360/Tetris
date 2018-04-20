@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['init',['init',['../class_jeu.html#af8832b6cdb31f97f5dec8ed4e38a5200',1,'Jeu']]]
+  ['bloc',['Bloc',['../classBloc.html',1,'']]],
+  ['bloque',['bloque',['../classPiece.html#a99b4e2bbf91e0e609fc5141135a2e0ad',1,'Piece']]],
+  ['board',['Board',['../classBoard.html',1,'']]],
+  ['bug_20list',['Bug List',['../bug.html',1,'']]]
 ];

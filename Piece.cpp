@@ -9,17 +9,15 @@ using namespace std;
 int Piece::getcolor(){
   return color;
 }
-//Retourne la position x du bloc i
+
 int Piece::getPosx(int i)const{
     return tab[i].getPosx();
   }
 
-//Retourne la position y du bloc i
 int Piece::getPosy(int i)const{
   return tab[i].getPosy();
 }
 
-// //Prend la ième pièce et modifie sa position x ou y en j
 void Piece::setPosx(int i,int j){
   tab[i].setPosx(j);
 }

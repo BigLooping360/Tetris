@@ -1,0 +1,111 @@
+\hypertarget{classPiece__T}{}\section{Piece\+\_\+T Class Reference}
+\label{classPiece__T}\index{Piece\+\_\+T@{Piece\+\_\+T}}
+
+
+Représentation d\textquotesingle{}un Tétrimino en forme de T. Hérite de Pièce.  
+
+
+
+
+{\ttfamily \#include $<$Piece\+\_\+\+T.\+hpp$>$}
+
+
+
+Inheritance diagram for Piece\+\_\+T\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{classPiece__T__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Piece\+\_\+T\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{classPiece__T__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPiece__T_a64088f0140b870d178169e36460cd4de}{is\+Rotateable} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut tourner le Tétrimino en forme de T d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+void \hyperlink{classPiece__T_affedcbe550aebd2a9e8ec169d1fe0a9f}{Rotate} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Permet la rotation d\textquotesingle{}un Tétrimino en forme de T dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPiece__T_aa83bf987b663f99cc412f59ec08a94a1}\label{classPiece__T_aa83bf987b663f99cc412f59ec08a94a1}} 
+\hyperlink{classPiece__T_aa83bf987b663f99cc412f59ec08a94a1}{Piece\+\_\+T} ()
+\begin{DoxyCompactList}\small\item\em constructeur qui permet la création d\textquotesingle{}un Tétrimino en forme de T, composé de 4 cases \+: une ligne de 3 cases, et une case en dessous de la case du milieu de cette ligne. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Représentation d\textquotesingle{}un Tétrimino en forme de T. Hérite de Pièce. 
+
+\begin{DoxyAuthor}{Author}
+Victor Le Maistre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2018 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000014}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Rien à signaler
+\end{DoxyWarning}
+Ce module permet la représentation physique d\textquotesingle{}un Tétrimino en forme de T. Cette classe hérite de Pièce, elle hérite donc de ses paramètres (couleur, etat, position, etc) et gardera ses méthodes de déplacement. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPiece__T_a64088f0140b870d178169e36460cd4de}\label{classPiece__T_a64088f0140b870d178169e36460cd4de}} 
+\index{Piece\+\_\+T@{Piece\+\_\+T}!is\+Rotateable@{is\+Rotateable}}
+\index{is\+Rotateable@{is\+Rotateable}!Piece\+\_\+T@{Piece\+\_\+T}}
+\subsubsection{\texorpdfstring{is\+Rotateable()}{isRotateable()}}
+{\footnotesize\ttfamily bool Piece\+\_\+\+T\+::is\+Rotateable (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vérifie si on peut tourner le Tétrimino en forme de T d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+renvoie vrai si c\textquotesingle{}est possible, non sinon 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPiece_a56cdf7f4234fe848a3e203b693b7a862}{Piece}.
+
+\mbox{\Hypertarget{classPiece__T_affedcbe550aebd2a9e8ec169d1fe0a9f}\label{classPiece__T_affedcbe550aebd2a9e8ec169d1fe0a9f}} 
+\index{Piece\+\_\+T@{Piece\+\_\+T}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Piece\+\_\+T@{Piece\+\_\+T}}
+\subsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Piece\+\_\+\+T\+::\+Rotate (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Permet la rotation d\textquotesingle{}un Tétrimino en forme de T dans le sens horaire par rapport à la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classPiece_a078f3cc6281cb8f60af3ae2266c651ba}{Piece}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Piece\+\_\+\+T.\+hpp\item 
+Piece\+\_\+\+T.\+cpp\end{DoxyCompactItemize}

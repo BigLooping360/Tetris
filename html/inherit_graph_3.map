@@ -1,6 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_piece.html" title="Piece" alt="" coords="5,56,60,83"/>
-<area shape="rect" id="node2" href="$class_piece___i.html" title="Piece_I" alt="" coords="111,5,177,32"/>
-<area shape="rect" id="node3" href="$class_piece___o.html" title="Piece_O" alt="" coords="108,56,180,83"/>
-<area shape="rect" id="node4" href="$class_piece___t.html" title="Piece_T" alt="" coords="109,107,179,133"/>
+<area shape="rect" id="node1" href="$classJeu.html" title="Gestion du déroulement d&#39;une partie. " alt="" coords="5,31,48,57"/>
+<area shape="rect" id="node2" href="$classJeuClassique.html" title="JeuClassique" alt="" coords="101,5,202,32"/>
+<area shape="rect" id="node3" href="$classJeuMontagnard.html" title="JeuMontagnard" alt="" coords="96,56,207,83"/>
 </map>

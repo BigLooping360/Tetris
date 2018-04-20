@@ -1,0 +1,9 @@
+<map id="Piece" name="Piece">
+<area shape="rect" id="node2" href="$classPiece__I.html" title="Représentation d&#39;un Tétrimino en forme de I. Hérite de Pièce. " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node3" href="$classPiece__J.html" title="Représentation d&#39;un Tétrimino en forme de J. Hérite de Pièce. " alt="" coords="96,80,165,107"/>
+<area shape="rect" id="node4" href="$classPiece__L.html" title="Piece_L" alt="" coords="189,80,259,107"/>
+<area shape="rect" id="node5" href="$classPiece__O.html" title="Représentation d&#39;un Tétrimino en forme de L. Hérite de Pièce. " alt="" coords="283,80,355,107"/>
+<area shape="rect" id="node6" href="$classPiece__S.html" title="Représentation d&#39;un Tétrimino en forme de S. Hérite de Pièce. " alt="" coords="379,80,450,107"/>
+<area shape="rect" id="node7" href="$classPiece__T.html" title="Représentation d&#39;un Tétrimino en forme de T. Hérite de Pièce. " alt="" coords="474,80,545,107"/>
+<area shape="rect" id="node8" href="$classPiece__Z.html" title="Représentation d&#39;un Tétrimino en forme de J. Hérite de Pièce. " alt="" coords="569,80,639,107"/>
+</map>

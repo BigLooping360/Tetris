@@ -1,0 +1,179 @@
+\hypertarget{classIHM}{}\section{I\+HM Class Reference}
+\label{classIHM}\index{I\+HM@{I\+HM}}
+
+
+Gère les interactions entre les actions du joueur et le jeu à proprement parler.  
+
+
+
+
+{\ttfamily \#include $<$I\+H\+M.\+hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classIHM_a87654cde450f04cacddaf7a781f5300c}{getinput} ()
+\begin{DoxyCompactList}\small\item\em Récupère les données saisies par l\textquotesingle{}utilisateur sur le clavier. \end{DoxyCompactList}\item 
+static void \hyperlink{classIHM_a48abb3aee5c33a71f6fc2c3528f99afb}{afficher} (\hyperlink{classBoard}{Board} b, \hyperlink{classPiece}{Piece} $\ast$Piece\+En\+Cours, \hyperlink{classPiece}{Piece} $\ast$Piece\+Stockee, \hyperlink{classPiece}{Piece} $\ast$Piece\+Suivante, int \hyperlink{classScore}{Score}, bool pause)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}interface graphique du Tetris Classique en fonction de l\textquotesingle{}état courant du jeu. \end{DoxyCompactList}\item 
+static void \hyperlink{classIHM_afe38f71bf414ddd7e934174657c175e3}{afficher} (\hyperlink{classBoard}{Board} b, \hyperlink{classPiece}{Piece} $\ast$Piece\+En\+Cours, \hyperlink{classPiece}{Piece} $\ast$Piece\+Stockee, \hyperlink{classPiece}{Piece} $\ast$Piece\+Suivante, int \hyperlink{classScore}{Score}, bool pause, \hyperlink{classPersonnage}{Personnage} p)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}interface graphique du Tetris Montagnard en fonction de l\textquotesingle{}état courant du jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIHM_a05f1daa32a6db641f74c5d6083c33743}\label{classIHM_a05f1daa32a6db641f74c5d6083c33743}} 
+static void \hyperlink{classIHM_a05f1daa32a6db641f74c5d6083c33743}{menu} ()
+\begin{DoxyCompactList}\small\item\em Affiche le menu d\textquotesingle{}accueil de notre application. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIHM_a79d4bc8301e8a664c9bfea8d0b2ca916}\label{classIHM_a79d4bc8301e8a664c9bfea8d0b2ca916}} 
+static void \hyperlink{classIHM_a79d4bc8301e8a664c9bfea8d0b2ca916}{score} ()
+\begin{DoxyCompactList}\small\item\em Affiche tous les meilleurs scores (\hyperlink{classJeu}{Jeu} Classique et \hyperlink{classJeu}{Jeu} Montagnard) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIHM_a41f84c5e14ce96d0dc25a42fe214bf3f}\label{classIHM_a41f84c5e14ce96d0dc25a42fe214bf3f}} 
+static void \hyperlink{classIHM_a41f84c5e14ce96d0dc25a42fe214bf3f}{reglesdu\+Jeu} ()
+\begin{DoxyCompactList}\small\item\em Affiche les règles du jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIHM_ac2e668b4fa5ff1491bc15ae0a2d59d1d}\label{classIHM_ac2e668b4fa5ff1491bc15ae0a2d59d1d}} 
+static void \hyperlink{classIHM_ac2e668b4fa5ff1491bc15ae0a2d59d1d}{Score\+Classique} ()
+\begin{DoxyCompactList}\small\item\em Affiche les meilleurs scores des parties classiques. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIHM_a8f4dce1d816518f673fcafca08fd0ce5}\label{classIHM_a8f4dce1d816518f673fcafca08fd0ce5}} 
+static void \hyperlink{classIHM_a8f4dce1d816518f673fcafca08fd0ce5}{Score\+Montagnard} ()
+\begin{DoxyCompactList}\small\item\em Affiche les meilleurs scores des parties montagnardes. \end{DoxyCompactList}\item 
+static int \hyperlink{classIHM_a4218e5b720799dd8bada264c7bc0d690}{Meilleur\+Score\+Classique} (int)
+\begin{DoxyCompactList}\small\item\em Récupère le sième meilleure score des parties classiques. \end{DoxyCompactList}\item 
+static int \hyperlink{classIHM_a068cc2350e9f4fc005ad4378f02d62fa}{Meilleur\+Score\+Montagnard} (int s)
+\begin{DoxyCompactList}\small\item\em Récupère le sième meilleure score des parties montagnardes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gère les interactions entre les actions du joueur et le jeu à proprement parler. 
+
+\begin{DoxyAuthor}{Author}
+Léa Lefrançois 
+
+Laura Couret 
+
+Victor Le Maistre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2018 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000003}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Rien à signaler
+\end{DoxyWarning}
+Ce module va permettre de \+:
+\begin{DoxyItemize}
+\item récupérer les saisies clavier de l\textquotesingle{}utilisateur
+\item afficher le menu
+\item afficher une interface graphique du jeu
+\item afficher les scores et les règles du jeu
+\item consulter et ajouter des meilleurs scores autant pour le jeu Classique que le Montagnard 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classIHM_a48abb3aee5c33a71f6fc2c3528f99afb}\label{classIHM_a48abb3aee5c33a71f6fc2c3528f99afb}} 
+\index{I\+HM@{I\+HM}!afficher@{afficher}}
+\index{afficher@{afficher}!I\+HM@{I\+HM}}
+\subsubsection{\texorpdfstring{afficher()}{afficher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void I\+H\+M\+::afficher (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b,  }\item[{\hyperlink{classPiece}{Piece} $\ast$}]{Piece\+En\+Cours,  }\item[{\hyperlink{classPiece}{Piece} $\ast$}]{Piece\+Stockee,  }\item[{\hyperlink{classPiece}{Piece} $\ast$}]{Piece\+Suivante,  }\item[{int}]{Score,  }\item[{bool}]{Pause }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Affiche l\textquotesingle{}interface graphique du Tetris Classique en fonction de l\textquotesingle{}état courant du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de jeu \\
+\hline
+{\em $\ast$\+Piece\+En\+Cours} & est le pointeur sur la Pièce actuellement en train de descendre le long de la grille de jeu \\
+\hline
+{\em $\ast$\+Piece\+Stockee} & est le pointeur sur la Pièce actuellement stockée par le joueur \\
+\hline
+{\em $\ast$\+Piece\+Suivante} & est le pointeur sur la prochaine Pièce à descendre le long de la grille de jeu \\
+\hline
+{\em \hyperlink{classScore}{Score}} & est le score actuel du joueur en points \\
+\hline
+{\em bool} & est le booleen qui permet de savoir si on affiche le jeu, ou si on affiche un message de pause \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIHM_afe38f71bf414ddd7e934174657c175e3}\label{classIHM_afe38f71bf414ddd7e934174657c175e3}} 
+\index{I\+HM@{I\+HM}!afficher@{afficher}}
+\index{afficher@{afficher}!I\+HM@{I\+HM}}
+\subsubsection{\texorpdfstring{afficher()}{afficher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void I\+H\+M\+::afficher (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b,  }\item[{\hyperlink{classPiece}{Piece} $\ast$}]{Piece\+En\+Cours,  }\item[{\hyperlink{classPiece}{Piece} $\ast$}]{Piece\+Stockee,  }\item[{\hyperlink{classPiece}{Piece} $\ast$}]{Piece\+Suivante,  }\item[{int}]{Score,  }\item[{bool}]{pause,  }\item[{\hyperlink{classPersonnage}{Personnage}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Affiche l\textquotesingle{}interface graphique du Tetris Montagnard en fonction de l\textquotesingle{}état courant du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de jeu \\
+\hline
+{\em $\ast$\+Piece\+En\+Cours} & est le pointeur sur la Pièce actuellement en train de descendre le long de la grille de jeu \\
+\hline
+{\em $\ast$\+Piece\+Stockee} & est le pointeur sur la Pièce actuellement stockée par le joueur \\
+\hline
+{\em $\ast$\+Piece\+Suivante} & est le pointeur sur la prochaine Pièce à descendre le long de la grille de jeu \\
+\hline
+{\em \hyperlink{classScore}{Score}} & est le score actuel du joueur en millisecondes \\
+\hline
+{\em bool} & est le booleen qui permet de savoir si on affiche le jeu, ou si on affiche un message de pause \\
+\hline
+{\em p} & est le \hyperlink{classPersonnage}{Personnage} du Tetris Montagnard \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIHM_a87654cde450f04cacddaf7a781f5300c}\label{classIHM_a87654cde450f04cacddaf7a781f5300c}} 
+\index{I\+HM@{I\+HM}!getinput@{getinput}}
+\index{getinput@{getinput}!I\+HM@{I\+HM}}
+\subsubsection{\texorpdfstring{getinput()}{getinput()}}
+{\footnotesize\ttfamily static int I\+H\+M\+::getinput (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Récupère les données saisies par l\textquotesingle{}utilisateur sur le clavier. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}entier correspondant au caractère tapé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIHM_a4218e5b720799dd8bada264c7bc0d690}\label{classIHM_a4218e5b720799dd8bada264c7bc0d690}} 
+\index{I\+HM@{I\+HM}!Meilleur\+Score\+Classique@{Meilleur\+Score\+Classique}}
+\index{Meilleur\+Score\+Classique@{Meilleur\+Score\+Classique}!I\+HM@{I\+HM}}
+\subsubsection{\texorpdfstring{Meilleur\+Score\+Classique()}{MeilleurScoreClassique()}}
+{\footnotesize\ttfamily static int I\+H\+M\+::\+Meilleur\+Score\+Classique (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Récupère le sième meilleure score des parties classiques. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & le numéro du score que l\textquotesingle{}on veut afficher, doit être compris entre 1 et 5 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne le sième meilleure score des parties classiques 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIHM_a068cc2350e9f4fc005ad4378f02d62fa}\label{classIHM_a068cc2350e9f4fc005ad4378f02d62fa}} 
+\index{I\+HM@{I\+HM}!Meilleur\+Score\+Montagnard@{Meilleur\+Score\+Montagnard}}
+\index{Meilleur\+Score\+Montagnard@{Meilleur\+Score\+Montagnard}!I\+HM@{I\+HM}}
+\subsubsection{\texorpdfstring{Meilleur\+Score\+Montagnard()}{MeilleurScoreMontagnard()}}
+{\footnotesize\ttfamily static int I\+H\+M\+::\+Meilleur\+Score\+Montagnard (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Récupère le sième meilleure score des parties montagnardes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & le numéro du score que l\textquotesingle{}on veut afficher, doit être compris entre 1 et 5 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne le sième meilleure score des parties montagnardes 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+H\+M.\+hpp\item 
+I\+H\+M.\+cpp\end{DoxyCompactItemize}
