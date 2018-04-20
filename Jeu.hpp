@@ -32,7 +32,7 @@ class Jeu {
   //Nombre de pièce pour le random
   /*! /var a est le nombre de pièce pour le random*/
 
-  static const int a=1;
+  static const int   a=1;
   /*! /var NombreDePieces est le nombre max de Tetriminos utilisés en même temps*/
   static const int NombreDePieces=4;
   /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
