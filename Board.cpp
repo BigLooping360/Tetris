@@ -1,6 +1,7 @@
 #include "Board.hpp"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int Board::getHauteur()const{

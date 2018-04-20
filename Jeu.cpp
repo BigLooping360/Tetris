@@ -8,7 +8,7 @@
 using namespace std;
 
 
-void Jeu::init(){
+Jeu::Jeu(){
 
   srand(time(NULL));
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
@@ -62,7 +62,6 @@ void Jeu::init(){
 
   }
 
-  cout<<b<<endl;
 }
 
 
@@ -164,36 +163,10 @@ void Jeu::interaction(int c){
     PieceEnCours->Rotate(b);
 }
 
+bool Jeu::getjeu()const{
+  return jeu;
+}
 
-void Jeu::play(){
-  int input;
-  /*Test LigneCompletee
-  for (int i = 0; i < b.getLargeur(); i++) {
-    if (i!=4)
-      b.setGrille(i,0);
-  }
-  for (int i = 0; i < b.getLargeur(); i++) {
-    if (i!=4)
-      b.setGrille(i,3);
-  }*/
-  while (jeu) {
-    initscr();
-    noecho();
-    keypad(stdscr,TRUE);
-    //cbreak();
-    nodelay(stdscr, TRUE);
-
-    clock_t temps=clock();
-    while (PieceEnCours->getbloque()==false) {
-        if (clock()-temps>(CLOCKS_PER_SEC/2)){
-            PieceEnCours->MoveDown(b);
-            temps=clock();
-          }
-        interaction(IHM::getinput());
-        IHM::afficher(b, PieceEnCours, PieceStocke, PieceSuivante, Score, true/*pause*/);
-        refresh();
-        }
-      MaJ();
-    }
-    endwin();
+bool Jeu::getstatut(){
+  return PieceEnCours->getbloque();
 }

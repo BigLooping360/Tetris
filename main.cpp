@@ -2,6 +2,7 @@
 #include "Bloc.hpp"
 #include "Board.hpp"
 #include "Piece.hpp"
+#include "Menu.hpp"
 #include "Jeu.hpp"
 #include <vector>
 #include <time.h>
@@ -29,15 +30,17 @@ int main() {
   endwin();*/
 
 
+/*Test proto 2*/
+
+Menu m;
+m.jouerClassique();
 
 
 
 
-
-/*Test Proto 1*/
-  Jeu j;
-  j.init();
-  j.play();
+/*Test Proto 1
+  Jeu j=Jeu();
+  j.play();*/
 
   /* Test timer
   clock_t temps=clock();
