@@ -39,6 +39,6 @@ class Bloc {
   * \brief modifie la position en ordonnée d'un bloc
   */
   void setPosy(int y);
-  
+
 };
 #endif

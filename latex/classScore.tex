@@ -1,0 +1,98 @@
+\hypertarget{classScore}{}\section{Score Class Reference}
+\label{classScore}\index{Score@{Score}}
+
+
+Gestion des meilleurs scores des joueurs.  
+
+
+
+
+{\ttfamily \#include $<$Score.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScore_a93772a8d3e8c9f71cd3e4a0bf74d9e78}{Score} (string ch)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un \hyperlink{classScore}{Score}. \end{DoxyCompactList}\item 
+void \hyperlink{classScore_a6575097aed9e43ec2b8c5926e00134c1}{addscore} (int s)
+\begin{DoxyCompactList}\small\item\em Ajoute un nouveau score au fichier des meilleurs scores. \end{DoxyCompactList}\item 
+bool \hyperlink{classScore_aed385c5969860d59ca1477e2699c2f54}{meilleurescore} (int s)
+\begin{DoxyCompactList}\small\item\em Vérifie si un joueur peut rentrer dans le palmares des 5 meilleurs scores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gestion des meilleurs scores des joueurs. 
+
+\begin{DoxyAuthor}{Author}
+Laura Couret 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2018 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000016}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Rien à signaler
+\end{DoxyWarning}
+Ce module permet la gestion des meilleurs scores. Plus particulièrmeent, on pourra consulter les meilleurs scores déjà réalisés, et en ajouter un nouveau si nécessaire. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScore_a93772a8d3e8c9f71cd3e4a0bf74d9e78}\label{classScore_a93772a8d3e8c9f71cd3e4a0bf74d9e78}} 
+\index{Score@{Score}!Score@{Score}}
+\index{Score@{Score}!Score@{Score}}
+\subsubsection{\texorpdfstring{Score()}{Score()}}
+{\footnotesize\ttfamily Score\+::\+Score (\begin{DoxyParamCaption}\item[{string}]{ch }\end{DoxyParamCaption})}
+
+
+
+Constructeur d\textquotesingle{}un \hyperlink{classScore}{Score}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & est le nom du fichier de score à créer (un pour la version classiquen, un pour la version montagnarde) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classScore_a6575097aed9e43ec2b8c5926e00134c1}\label{classScore_a6575097aed9e43ec2b8c5926e00134c1}} 
+\index{Score@{Score}!addscore@{addscore}}
+\index{addscore@{addscore}!Score@{Score}}
+\subsubsection{\texorpdfstring{addscore()}{addscore()}}
+{\footnotesize\ttfamily Score\+::addscore (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+Ajoute un nouveau score au fichier des meilleurs scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & est le score réalisé à ajouter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScore_aed385c5969860d59ca1477e2699c2f54}\label{classScore_aed385c5969860d59ca1477e2699c2f54}} 
+\index{Score@{Score}!meilleurescore@{meilleurescore}}
+\index{meilleurescore@{meilleurescore}!Score@{Score}}
+\subsubsection{\texorpdfstring{meilleurescore()}{meilleurescore()}}
+{\footnotesize\ttfamily bool Score\+::meilleurescore (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+Vérifie si un joueur peut rentrer dans le palmares des 5 meilleurs scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & est le score réalisé à comparer avec ceux déjà réalisé \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true s\textquotesingle{}il s\textquotesingle{}agit d\textquotesingle{}un nouveau meilleur score, false sinon 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Score.\+hpp\end{DoxyCompactItemize}

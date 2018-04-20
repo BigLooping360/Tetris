@@ -1,0 +1,362 @@
+\hypertarget{classPiece}{}\section{Piece Class Reference}
+\label{classPiece}\index{Piece@{Piece}}
+
+
+Représentation d\textquotesingle{}une pièce de jeu.  
+
+
+
+
+{\ttfamily \#include $<$Piece.\+hpp$>$}
+
+
+
+Inheritance diagram for Piece\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPiece_a0af5276d26a4bb2a6a42a3dab8b4783f}{get\+Posx} (int i) const
+\begin{DoxyCompactList}\small\item\em Accesseur de la position en x d\textquotesingle{}un bloc. \end{DoxyCompactList}\item 
+int \hyperlink{classPiece_a24ca14604d394b821bf89d690c6de477}{get\+Posy} (int i) const
+\begin{DoxyCompactList}\small\item\em Accesseur de la position en y d\textquotesingle{}un bloc. \end{DoxyCompactList}\item 
+void \hyperlink{classPiece_a2c6f76d78f5c448ba42b11f0b2af12f8}{set\+Posx} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Mutateur de la position en x d\textquotesingle{}un bloc. \end{DoxyCompactList}\item 
+void \hyperlink{classPiece_a53af32e68bb73e5ed23f3ac96a9d1516}{set\+Posy} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Mutateur de la position en y d\textquotesingle{}un bloc. \end{DoxyCompactList}\item 
+bool \hyperlink{classPiece_aa5f13b2ce17fdf29dca28b0455f7b73a}{getbloque} ()
+\begin{DoxyCompactList}\small\item\em Accesseur du booléen bloqué d\textquotesingle{}une pièce. \end{DoxyCompactList}\item 
+int \hyperlink{classPiece_a2160d48bd04821ebbab32e14728360ad}{getcolor} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de la couleur d\textquotesingle{}une pièce. \end{DoxyCompactList}\item 
+bool \hyperlink{classPiece_ad48708c0bbee0b0a583f00e56808b1d2}{Down} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut descendre la pièce dans la grille de jeu. \end{DoxyCompactList}\item 
+bool \hyperlink{classPiece_aaef48eb5277927bcacace16aaf2d9636}{Left} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut déplacer la pièce vers la gauche dans la grille de jeu. \end{DoxyCompactList}\item 
+bool \hyperlink{classPiece_a44d684a99ea99db740b5bfa73f37ab15}{Right} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut déplacer la pièce vers la droite dans la grille de jeu. \end{DoxyCompactList}\item 
+void \hyperlink{classPiece_a44530e200e9506f7bb4668e82dd91d54}{Move\+Down} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Descend la pièce d\textquotesingle{}un cran vers le bas dans la grille de jeu. \end{DoxyCompactList}\item 
+void \hyperlink{classPiece_a938328bd15662dbf8d4bd66145e20e1a}{Move\+Right} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Décale la pièce d\textquotesingle{}un cran vers la droite dans la grille de jeu. \end{DoxyCompactList}\item 
+void \hyperlink{classPiece_a08f2bd761965092bd4f8f97c81aa6af8}{Move\+Left} (\hyperlink{classBoard}{Board} b)
+\begin{DoxyCompactList}\small\item\em Décale la pièce d\textquotesingle{}un cran vers le gauche dans la grille de jeu. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classPiece_a56cdf7f4234fe848a3e203b693b7a862}{is\+Rotateable} (\hyperlink{classBoard}{Board} b)=0
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut tourner une pièce d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPiece_a078f3cc6281cb8f60af3ae2266c651ba}{Rotate} (\hyperlink{classBoard}{Board} b)=0
+\begin{DoxyCompactList}\small\item\em Permet la rotation d\textquotesingle{}une pièce dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPiece_ac57de5803bbad829b143bc7268267dc1}\label{classPiece_ac57de5803bbad829b143bc7268267dc1}} 
+\hyperlink{classPiece_ac57de5803bbad829b143bc7268267dc1}{Piece} ()
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une piece de jeu général. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classBloc}{Bloc} $>$ \hyperlink{classPiece_a9ea65e906b9ef0c30594f4f5aa5ed444}{tab}
+\item 
+int \hyperlink{classPiece_a9632e25aa0e79f8161451a937ccfc7ad}{etat}
+\item 
+bool \hyperlink{classPiece_a99b4e2bbf91e0e609fc5141135a2e0ad}{bloque}
+\item 
+int \hyperlink{classPiece_a4268f3b047e1ad284882708b85332ef1}{color}
+\item 
+bool \hyperlink{classPiece_af0c815c20f2000c02b6d7ce5b6703651}{stocke}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Représentation d\textquotesingle{}une pièce de jeu. 
+
+\begin{DoxyAuthor}{Author}
+Léa Lefrançois 
+
+Laura Couret 
+
+Victor Le Maistre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2018 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000008}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Rien à signaler
+\end{DoxyWarning}
+Ce module permet la représentation physique d\textquotesingle{}une pièce par sa position, son état et sa couleur. Plus particulièrement, on pourra changer les paramètres caractéristiques de la pièce, vérifier si on peut la déplacer ou la tourner, la déplacer dans les 3 sens (gauche, droite, bas), et la tourner dans le sens horaire ou dans le sens trigonométrique. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPiece_ad48708c0bbee0b0a583f00e56808b1d2}\label{classPiece_ad48708c0bbee0b0a583f00e56808b1d2}} 
+\index{Piece@{Piece}!Down@{Down}}
+\index{Down@{Down}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Down()}{Down()}}
+{\footnotesize\ttfamily bool Piece\+::\+Down (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})}
+
+
+
+Vérifie si on peut descendre la pièce dans la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si on peut descendre la pièce d\textquotesingle{}un cran, false sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_aa5f13b2ce17fdf29dca28b0455f7b73a}\label{classPiece_aa5f13b2ce17fdf29dca28b0455f7b73a}} 
+\index{Piece@{Piece}!getbloque@{getbloque}}
+\index{getbloque@{getbloque}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{getbloque()}{getbloque()}}
+{\footnotesize\ttfamily bool Piece\+::getbloque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accesseur du booléen bloqué d\textquotesingle{}une pièce. 
+
+\begin{DoxyReturn}{Returns}
+Retourne le booléen bloque 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_a2160d48bd04821ebbab32e14728360ad}\label{classPiece_a2160d48bd04821ebbab32e14728360ad}} 
+\index{Piece@{Piece}!getcolor@{getcolor}}
+\index{getcolor@{getcolor}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{getcolor()}{getcolor()}}
+{\footnotesize\ttfamily int Piece\+::getcolor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la couleur d\textquotesingle{}une pièce. 
+
+\begin{DoxyReturn}{Returns}
+Retourne l\textquotesingle{}entier correspondant à la couleur de la pièce 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_a0af5276d26a4bb2a6a42a3dab8b4783f}\label{classPiece_a0af5276d26a4bb2a6a42a3dab8b4783f}} 
+\index{Piece@{Piece}!get\+Posx@{get\+Posx}}
+\index{get\+Posx@{get\+Posx}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{get\+Posx()}{getPosx()}}
+{\footnotesize\ttfamily int Piece\+::get\+Posx (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de la position en x d\textquotesingle{}un bloc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & est le numéro du bloc dont on veut obtenir les informations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la position en x du bloc numero i de la pièce en question 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_a24ca14604d394b821bf89d690c6de477}\label{classPiece_a24ca14604d394b821bf89d690c6de477}} 
+\index{Piece@{Piece}!get\+Posy@{get\+Posy}}
+\index{get\+Posy@{get\+Posy}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{get\+Posy()}{getPosy()}}
+{\footnotesize\ttfamily int Piece\+::get\+Posy (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de la position en y d\textquotesingle{}un bloc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & est le numéro du bloc dont on veut obtenir les informations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la position en y du bloc numero i de la pièce en question 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_a56cdf7f4234fe848a3e203b693b7a862}\label{classPiece_a56cdf7f4234fe848a3e203b693b7a862}} 
+\index{Piece@{Piece}!is\+Rotateable@{is\+Rotateable}}
+\index{is\+Rotateable@{is\+Rotateable}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{is\+Rotateable()}{isRotateable()}}
+{\footnotesize\ttfamily bool Piece\+::is\+Rotateable (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Vérifie si on peut tourner une pièce d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classPiece__O_af82900ecec4e7bd058d43825293d8bff}{Piece\+\_\+O}, \hyperlink{classPiece__I_aec103ce64d2702bf3dc5dbcdb8b450eb}{Piece\+\_\+I}, \hyperlink{classPiece__T_a64088f0140b870d178169e36460cd4de}{Piece\+\_\+T}, \hyperlink{classPiece__J_aee0abd6254be3a50a86ff5464bb459f8}{Piece\+\_\+J}, \hyperlink{classPiece__L_a34954ce32a27bdadb4d56ca7f3d82cba}{Piece\+\_\+L}, \hyperlink{classPiece__S_a725b9e7b154628e035bcc7ebd2a3ec9f}{Piece\+\_\+S}, and \hyperlink{classPiece__Z_aa70256d6f49dacad685a15c5ae8df06d}{Piece\+\_\+Z}.
+
+\mbox{\Hypertarget{classPiece_aaef48eb5277927bcacace16aaf2d9636}\label{classPiece_aaef48eb5277927bcacace16aaf2d9636}} 
+\index{Piece@{Piece}!Left@{Left}}
+\index{Left@{Left}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Left()}{Left()}}
+{\footnotesize\ttfamily bool Piece\+::\+Left (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})}
+
+
+
+Vérifie si on peut déplacer la pièce vers la gauche dans la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si on peut déplacer la pièce d\textquotesingle{}un cran vers la gauche, false sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_a44530e200e9506f7bb4668e82dd91d54}\label{classPiece_a44530e200e9506f7bb4668e82dd91d54}} 
+\index{Piece@{Piece}!Move\+Down@{Move\+Down}}
+\index{Move\+Down@{Move\+Down}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Move\+Down()}{MoveDown()}}
+{\footnotesize\ttfamily void Piece\+::\+Move\+Down (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})}
+
+
+
+Descend la pièce d\textquotesingle{}un cran vers le bas dans la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPiece_a08f2bd761965092bd4f8f97c81aa6af8}\label{classPiece_a08f2bd761965092bd4f8f97c81aa6af8}} 
+\index{Piece@{Piece}!Move\+Left@{Move\+Left}}
+\index{Move\+Left@{Move\+Left}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Move\+Left()}{MoveLeft()}}
+{\footnotesize\ttfamily void Piece\+::\+Move\+Left (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})}
+
+
+
+Décale la pièce d\textquotesingle{}un cran vers le gauche dans la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPiece_a938328bd15662dbf8d4bd66145e20e1a}\label{classPiece_a938328bd15662dbf8d4bd66145e20e1a}} 
+\index{Piece@{Piece}!Move\+Right@{Move\+Right}}
+\index{Move\+Right@{Move\+Right}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Move\+Right()}{MoveRight()}}
+{\footnotesize\ttfamily void Piece\+::\+Move\+Right (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})}
+
+
+
+Décale la pièce d\textquotesingle{}un cran vers la droite dans la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPiece_a44d684a99ea99db740b5bfa73f37ab15}\label{classPiece_a44d684a99ea99db740b5bfa73f37ab15}} 
+\index{Piece@{Piece}!Right@{Right}}
+\index{Right@{Right}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Right()}{Right()}}
+{\footnotesize\ttfamily bool Piece\+::\+Right (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})}
+
+
+
+Vérifie si on peut déplacer la pièce vers la droite dans la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si on peut déplacer la pièce d\textquotesingle{}un cran vers la droite, false sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPiece_a078f3cc6281cb8f60af3ae2266c651ba}\label{classPiece_a078f3cc6281cb8f60af3ae2266c651ba}} 
+\index{Piece@{Piece}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Piece\+::\+Rotate (\begin{DoxyParamCaption}\item[{\hyperlink{classBoard}{Board}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Permet la rotation d\textquotesingle{}une pièce dans le sens horaire par rapport à la grille de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & est la grille de notre Tetris \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classPiece__O_a69812f938582f176cd4cca997cbb87c1}{Piece\+\_\+O}, \hyperlink{classPiece__I_ab7983a575f6d5d41cbf846b6240a9b43}{Piece\+\_\+I}, \hyperlink{classPiece__T_affedcbe550aebd2a9e8ec169d1fe0a9f}{Piece\+\_\+T}, \hyperlink{classPiece__J_a05b85a353b6d5cefb0055206d4a39014}{Piece\+\_\+J}, \hyperlink{classPiece__L_aa865e9d2c6c468ac2921d6adb88f4d1b}{Piece\+\_\+L}, \hyperlink{classPiece__S_aefb2837f39f6b05bc678a3fdadc192b0}{Piece\+\_\+S}, and \hyperlink{classPiece__Z_a50d6c34030c7641b4827353b9b82a68e}{Piece\+\_\+Z}.
+
+\mbox{\Hypertarget{classPiece_a2c6f76d78f5c448ba42b11f0b2af12f8}\label{classPiece_a2c6f76d78f5c448ba42b11f0b2af12f8}} 
+\index{Piece@{Piece}!set\+Posx@{set\+Posx}}
+\index{set\+Posx@{set\+Posx}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{set\+Posx()}{setPosx()}}
+{\footnotesize\ttfamily int Piece\+::set\+Posx (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Mutateur de la position en x d\textquotesingle{}un bloc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & est le numéro du bloc dont on veut modifier la position en x par j \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPiece_a53af32e68bb73e5ed23f3ac96a9d1516}\label{classPiece_a53af32e68bb73e5ed23f3ac96a9d1516}} 
+\index{Piece@{Piece}!set\+Posy@{set\+Posy}}
+\index{set\+Posy@{set\+Posy}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{set\+Posy()}{setPosy()}}
+{\footnotesize\ttfamily int Piece\+::set\+Posy (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Mutateur de la position en y d\textquotesingle{}un bloc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & est le numéro du bloc dont on veut modifier la position en y par j \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPiece_a99b4e2bbf91e0e609fc5141135a2e0ad}\label{classPiece_a99b4e2bbf91e0e609fc5141135a2e0ad}} 
+\index{Piece@{Piece}!bloque@{bloque}}
+\index{bloque@{bloque}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{bloque}{bloque}}
+{\footnotesize\ttfamily bool Piece\+::bloque\hspace{0.3cm}{\ttfamily [protected]}}
+
+/var bloque est un booleen qui permet de savoir si une pièce a atteint sa position finale dans la grille de jeu ou si elle peut encore descendre \mbox{\Hypertarget{classPiece_a4268f3b047e1ad284882708b85332ef1}\label{classPiece_a4268f3b047e1ad284882708b85332ef1}} 
+\index{Piece@{Piece}!color@{color}}
+\index{color@{color}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily int Piece\+::color\hspace{0.3cm}{\ttfamily [protected]}}
+
+/var color définit la couleur de la piece \mbox{\Hypertarget{classPiece_a9632e25aa0e79f8161451a937ccfc7ad}\label{classPiece_a9632e25aa0e79f8161451a937ccfc7ad}} 
+\index{Piece@{Piece}!etat@{etat}}
+\index{etat@{etat}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{etat}{etat}}
+{\footnotesize\ttfamily int Piece\+::etat\hspace{0.3cm}{\ttfamily [protected]}}
+
+/var etat correspond à dans quel état de rotation se situe la pièce \mbox{\Hypertarget{classPiece_af0c815c20f2000c02b6d7ce5b6703651}\label{classPiece_af0c815c20f2000c02b6d7ce5b6703651}} 
+\index{Piece@{Piece}!stocke@{stocke}}
+\index{stocke@{stocke}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{stocke}{stocke}}
+{\footnotesize\ttfamily bool Piece\+::stocke\hspace{0.3cm}{\ttfamily [protected]}}
+
+/var stocke permet de savoir si une pièce peut être stocké. Attention, une pièce ne peut être stockée qu\textquotesingle{}une fois. \mbox{\Hypertarget{classPiece_a9ea65e906b9ef0c30594f4f5aa5ed444}\label{classPiece_a9ea65e906b9ef0c30594f4f5aa5ed444}} 
+\index{Piece@{Piece}!tab@{tab}}
+\index{tab@{tab}!Piece@{Piece}}
+\subsubsection{\texorpdfstring{tab}{tab}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classBloc}{Bloc}$>$ Piece\+::tab\hspace{0.3cm}{\ttfamily [protected]}}
+
+/var tab un vecteur de \hyperlink{classBloc}{Bloc}, c\textquotesingle{}est-\/à-\/dire un vecteur où chaque case a pour attribut la position en x et la position en y 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Piece.\+hpp\item 
+Piece.\+cpp\end{DoxyCompactItemize}

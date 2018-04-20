@@ -11,6 +11,7 @@ using namespace std;
  * \brief Représentation d'une pièce de jeu
  * \author Léa Lefrançois
  * \author Laura Couret
+  * \author Victor Le Maistre
  * \version 1.0
  * \date avril 2018
  * \bug Rien à signaler
@@ -36,13 +37,38 @@ class Piece {
   /*! /var stocke permet de savoir si une pièce peut être stocké. Attention, une pièce ne peut être stockée qu'une fois. */
   bool stocke;
   public:
+  /*! \fn int getPosx(int i)const
+  * \brief Accesseur de la position en x d'un bloc
+  * \param i est le numéro du bloc dont on veut obtenir les informations
+  * \return Retourne la position en x du bloc numero i de la pièce en question
+  */
   int getPosx(int i)const;
+  /*! \fn int getPosy(int i)const
+  * \brief Accesseur de la position en y d'un bloc
+  * \param i est le numéro du bloc dont on veut obtenir les informations
+  * \return Retourne la position en y du bloc numero i de la pièce en question
+  */
   int getPosy(int i)const;
+  /*! \fn int setPosx(int i,int j)
+  * \brief Mutateur de la position en x d'un bloc
+  * \param i est le numéro du bloc dont on veut modifier la position en x par j
+  */
   void setPosx(int i,int j);
+  /*! \fn int setPosy(int i,int j)
+  * \brief Mutateur de la position en y d'un bloc
+  * \param i est le numéro du bloc dont on veut modifier la position en y par j
+  */
   void setPosy(int i,int j);
+  /*! \fn bool getbloque()
+  * \brief Accesseur du booléen bloqué d'une pièce
+  * \return Retourne le booléen bloque
+  */
   bool getbloque();
+  /*! \fn int getcolor()
+  * \brief Accesseur de la couleur d'une pièce
+  * \return Retourne l'entier correspondant à la couleur de la pièce
+  */
   int getcolor();
-
   /*! \fn bool Down(Board b)
   * \brief Vérifie si on peut descendre la pièce dans la grille de jeu
   * \param b est la grille de notre Tetris
@@ -86,7 +112,9 @@ class Piece {
   * \param b est la grille de notre Tetris
   */
   virtual void Rotate(Board b)=0;
-
+  /*! \fn Piece()
+  * \brief Constructeur d'une piece de jeu général
+  */
   Piece();
 
 
