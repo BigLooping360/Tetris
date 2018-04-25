@@ -48,6 +48,8 @@ class Board {
   * \brief initialise une grille en début de Jeu en la remplissant de 0
   */
   void init();
+
+  Board();
   /*! \fn friend ostream  &operator <<(ostream &out,  Board &)
   * \brief Cette classe ami permet d'afficher la grille sur un terminal, affiche un x lorsque la grille comprend un 1, et affiche 0 sinon.
   */

@@ -4,6 +4,15 @@
 
 using namespace std;
 
+Board::Board(){
+  for (int i = 0; i < Hauteur; i++) {
+    for (int j = 0; j < Largeur; j++) {
+      Grille[j][i]=0;
+      }
+    }
+
+}
+
 int Board::getHauteur()const{
   return Hauteur;
 }
@@ -23,14 +32,7 @@ void Board::setGrille(int x, int y){
   Grille[x][y]=1;
 }
 
-//Initialise la grille en mettant des 0 partout
-void Board::init(){
-  for (int i = 0; i < Hauteur; i++) {
-    for (int j = 0; j < Largeur; j++) {
-      Grille[j][i]=0;
-      }
-    }
-  }
+
 
 /* Permet d'afficher la grille sur un terminal, affiche un x
 lorsque la grille comprend un 1, et affiche 0 sinon

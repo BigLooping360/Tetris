@@ -12,9 +12,8 @@ Jeu::Jeu(){
 
   srand(time(NULL));
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
-  b.init() ;
+  b=Board();
   jeu=true;
-  b.init();
   switch (nombre_aleatoire) {
     case 1:
       PieceEnCours= new Piece_I();
@@ -175,7 +174,7 @@ void Jeu::MaJ(){
 
     case 7:
       PieceSuivante= new Piece_Z();
-      break;     
+      break;
   }
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
