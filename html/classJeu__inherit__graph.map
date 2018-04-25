@@ -1,4 +1,4 @@
 <map id="Jeu" name="Jeu">
-<area shape="rect" id="node2" href="$classJeuClassique.html" title="JeuClassique" alt="" coords="5,80,107,107"/>
-<area shape="rect" id="node3" href="$classJeuMontagnard.html" title="JeuMontagnard" alt="" coords="131,80,242,107"/>
+<area shape="rect" id="node2" href="$classJeuClassique.html" title="Gestion du déroulement d&#39;un Jeu Classique. " alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$classJeuMontagnard.html" title="Gestion du déroulement d&#39;un Jeu Montagnard. " alt="" coords="131,80,242,107"/>
 </map>

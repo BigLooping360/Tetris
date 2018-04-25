@@ -2,6 +2,15 @@
 \label{classJeuClassique}\index{Jeu\+Classique@{Jeu\+Classique}}
 
 
+Gestion du déroulement d\textquotesingle{}un \hyperlink{classJeu}{Jeu} Classique.  
+
+
+
+
+{\ttfamily \#include $<$Jeu\+Classique.\+hpp$>$}
+
+
+
 Inheritance diagram for Jeu\+Classique\+:
 \nopagebreak
 \begin{figure}[H]
@@ -30,14 +39,27 @@ int \hyperlink{classJeuClassique_ab6429ffc180431b667e891e329c91cb4}{getpoints} (
 \begin{DoxyCompactList}\small\item\em Accesseur du nombre de points pour un Tetris Classique. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classJeuClassique_ad61cdc881a8f6532a9bc59e91e64affb}\label{classJeuClassique_ad61cdc881a8f6532a9bc59e91e64affb}} 
 void \hyperlink{classJeuClassique_ad61cdc881a8f6532a9bc59e91e64affb}{MaJ} ()
-\begin{DoxyCompactList}\small\item\em Met à jour la grille après chaque action du joueur. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classJeuClassique_ab8546f30212be75a66c5735ed7fb9de4}\label{classJeuClassique_ab8546f30212be75a66c5735ed7fb9de4}} 
-void \hyperlink{classJeuClassique_ab8546f30212be75a66c5735ed7fb9de4}{init} ()
-\begin{DoxyCompactList}\small\item\em Initialise le jeu en début de partie. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classJeuClassique_a0d8df25a0df26319718f0c7e83b5670d}\label{classJeuClassique_a0d8df25a0df26319718f0c7e83b5670d}} 
-void \hyperlink{classJeuClassique_a0d8df25a0df26319718f0c7e83b5670d}{play} ()
-\begin{DoxyCompactList}\small\item\em Permet au joueur de jouer et réagit en fonction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Met à jour le \hyperlink{classBoard}{Board} après chaque action du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Gestion du déroulement d\textquotesingle{}un \hyperlink{classJeu}{Jeu} Classique. 
+
+\begin{DoxyAuthor}{Author}
+Léa Lefrançois 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2018 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000007}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Rien à signaler
+\end{DoxyWarning}
+Ce module permet l\textquotesingle{}initialisation du début d\textquotesingle{}une partie de Tetris classique, la mise à jour des différents paramètres suite aux actions d\textquotesingle{}un joueur, et actionne le déplacement d\textquotesingle{}une \hyperlink{classPiece}{Piece}. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classJeuClassique_ab6429ffc180431b667e891e329c91cb4}\label{classJeuClassique_ab6429ffc180431b667e891e329c91cb4}} 

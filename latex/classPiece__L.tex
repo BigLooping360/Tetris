@@ -2,6 +2,15 @@
 \label{classPiece__L}\index{Piece\+\_\+L@{Piece\+\_\+L}}
 
 
+Représentation d\textquotesingle{}un Tétrimino en forme de L. Hérite de \hyperlink{classPiece}{Piece}.  
+
+
+
+
+{\ttfamily \#include $<$Piece\+\_\+\+L.\+hpp$>$}
+
+
+
 Inheritance diagram for Piece\+\_\+L\+:
 \nopagebreak
 \begin{figure}[H]
@@ -24,14 +33,33 @@ Collaboration diagram for Piece\+\_\+L\+:
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{classPiece__L_a34954ce32a27bdadb4d56ca7f3d82cba}{is\+Rotateable} (\hyperlink{classBoard}{Board} b)
-\begin{DoxyCompactList}\small\item\em Vérifie si on peut tourner le Tétrimino en forme de L d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut tourner le Tétrimino en forme de L d\textquotesingle{}un cran dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. \end{DoxyCompactList}\item 
 void \hyperlink{classPiece__L_aa865e9d2c6c468ac2921d6adb88f4d1b}{Rotate} (\hyperlink{classBoard}{Board} b)
-\begin{DoxyCompactList}\small\item\em Permet la rotation d\textquotesingle{}un Tétrimino en forme de L dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Permet la rotation d\textquotesingle{}un Tétrimino en forme de L dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPiece__L_a2cd2017561857128dfc8838fc90e3e0b}\label{classPiece__L_a2cd2017561857128dfc8838fc90e3e0b}} 
 \hyperlink{classPiece__L_a2cd2017561857128dfc8838fc90e3e0b}{Piece\+\_\+L} ()
 \begin{DoxyCompactList}\small\item\em constructeur qui permet la création d\textquotesingle{}un Tétrimino en forme de L, composé de 4 cases. A son initilisation, il est en position \+: 3 cases en ligne et une case sous le côté gauche. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Représentation d\textquotesingle{}un Tétrimino en forme de L. Hérite de \hyperlink{classPiece}{Piece}. 
+
+\begin{DoxyAuthor}{Author}
+Laura Couret 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2018 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000013}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Rien à signaler
+\end{DoxyWarning}
+Ce module permet la représentation physique d\textquotesingle{}un Tétrimino en forme de L. Cette classe hérite de \hyperlink{classPiece}{Piece}, elle hérite donc de ses paramètres (couleur, etat, position, etc) et gardera ses méthodes de déplacement. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classPiece__L_a34954ce32a27bdadb4d56ca7f3d82cba}\label{classPiece__L_a34954ce32a27bdadb4d56ca7f3d82cba}} 
@@ -42,11 +70,11 @@ void \hyperlink{classPiece__L_aa865e9d2c6c468ac2921d6adb88f4d1b}{Rotate} (\hyper
 
 
 
-Vérifie si on peut tourner le Tétrimino en forme de L d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. 
+Vérifie si on peut tourner le Tétrimino en forme de L d\textquotesingle{}un cran dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & est la grille de notre Tetris \\
+{\em b} & est le \hyperlink{classBoard}{Board} de notre Tetris \\
 \hline
 \end{DoxyParams}
 
@@ -61,11 +89,11 @@ Implements \hyperlink{classPiece_a56cdf7f4234fe848a3e203b693b7a862}{Piece}.
 
 
 
-Permet la rotation d\textquotesingle{}un Tétrimino en forme de L dans le sens horaire par rapport à la grille de jeu. 
+Permet la rotation d\textquotesingle{}un Tétrimino en forme de L dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & est la grille de notre Tetris \\
+{\em b} & est le \hyperlink{classBoard}{Board} de notre Tetris \\
 \hline
 \end{DoxyParams}
 

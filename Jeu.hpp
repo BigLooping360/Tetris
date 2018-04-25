@@ -8,6 +8,8 @@
 #include "Piece_T.hpp"
 #include "Piece_L.hpp"
 #include "Piece_J.hpp"
+#include "Piece_S.hpp"
+#include "Piece_Z.hpp"
 #include "Piece.hpp"
 
 
@@ -20,10 +22,9 @@ using namespace std;
  * \date avril 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
- *
  *Ce module permet l'initialisation du début d'une partie,
  *la mise à jour des différents paramètres suite aux actions d'un joueur,
- *et actionne le déplacement d'une pièce.
+ *et actionne le déplacement d'une Piece.
 */
 
 class Jeu {
@@ -43,14 +44,6 @@ class Jeu {
   Piece *PieceStocke, *PieceEnCours, *PieceSuivante;
   public :
 
-  /*! \fn void init()
-  * \brief Initialise le jeu en début de partie
-  */
-  void init();
-  /*! \fn void play()
-  * \brief Contient la boucle principale qui fait tourner le Jeu
-  */
-  void play();
   /*! \fn void MaJ()
   * \brief Met à jour la grille à chaque fois qu'une pièce est posée
   */
@@ -65,10 +58,6 @@ class Jeu {
   //Permet de mettre le jeu en pause
   //void pause();
 
-  /* \fn void move(int c)
-  * \brief Envoie l'ordre de bouger la pièce
-  * \param c est l'entier qui, une fois convertit en char, donnera la touche sur laquelle a appuyé le joueur
-  */
   Jeu();
   friend class IHM;
 
