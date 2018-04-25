@@ -2,10 +2,23 @@
 #define __JeuClassique_HPP__
 #include "Jeu.hpp"
 
+/*! \class JeuClassique
+ * \brief Gestion du déroulement d'un Jeu Classique
+ * \author Léa Lefrançois
+ * \version 1.0
+ * \date avril 2018
+ * \bug Rien à signaler
+ * \warning Rien à signaler
+ *
+ *Ce module permet l'initialisation du début d'une partie de Tetris classique,
+ *la mise à jour des différents paramètres suite aux actions d'un joueur,
+ *et actionne le déplacement d'une Piece.
+*/
+
 class JeuClassique : public Jeu {
 
   private:
-    /*! /var points est le nombre de point gagné par le joueur dans une partie de Tetris Classique*/
+    /*! /var points est le nombre de point gagné par le joueur dans une partie de JeuClassique*/
     int points;
 
   public:
@@ -14,22 +27,14 @@ class JeuClassique : public Jeu {
     */
     JeuClassique();
     /*! \fn getpoints()
-    * \brief Accesseur du nombre de points pour un Tetris Classique
+    * \brief Accesseur du nombre de points pour un JeuClassique
     * \return le score du joueur
     */
     int getpoints();
     /*! \fn void MaJ()
-    * \brief Met à jour la grille après chaque action du joueur
+    * \brief Met à jour le Board après chaque action du joueur
     */
     void MaJ();
-    /*! \fn void init()
-    * \brief Initialise le jeu en début de partie
-    */
-    void init();
-    /*! \fn void play()
-    * \brief Permet au joueur de jouer et réagit en fonction
-    */
-    void play();
 
 };
 

@@ -2,12 +2,12 @@
 \label{classPiece__O}\index{Piece\+\_\+O@{Piece\+\_\+O}}
 
 
-Représentation d\textquotesingle{}un Tétrimino en forme de L. Hérite de Pièce.  
+Représentation d\textquotesingle{}un Tétrimino en forme de carré. Hérite de \hyperlink{classPiece}{Piece}.  
 
 
 
 
-{\ttfamily \#include $<$Piece\+\_\+\+L.\+hpp$>$}
+{\ttfamily \#include $<$Piece\+\_\+\+O.\+hpp$>$}
 
 
 
@@ -33,9 +33,9 @@ Collaboration diagram for Piece\+\_\+O\+:
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{classPiece__O_af82900ecec4e7bd058d43825293d8bff}{is\+Rotateable} (\hyperlink{classBoard}{Board} b)
-\begin{DoxyCompactList}\small\item\em Vérifie si on peut tourner le Tétrimino en forme de carré d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Vérifie si on peut tourner le Tétrimino en forme de carré d\textquotesingle{}un cran dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. \end{DoxyCompactList}\item 
 void \hyperlink{classPiece__O_a69812f938582f176cd4cca997cbb87c1}{Rotate} (\hyperlink{classBoard}{Board} b)
-\begin{DoxyCompactList}\small\item\em Permet la rotation d\textquotesingle{}un Tétrimino en forme de carré dans le sens horaire par rapport à la grille de jeu. Ne change rien en vu de la forme du Tétrimino. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Permet la rotation d\textquotesingle{}un Tétrimino en forme de carré dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. Ne change rien en vu de la forme du Tétrimino. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPiece__O_aa6abd4c92e4ca830993585f99b7d6a2a}\label{classPiece__O_aa6abd4c92e4ca830993585f99b7d6a2a}} 
 \hyperlink{classPiece__O_aa6abd4c92e4ca830993585f99b7d6a2a}{Piece\+\_\+O} ()
 \begin{DoxyCompactList}\small\item\em constructeur qui permet la création d\textquotesingle{}un Tétrimino en forme de carré, composé de 4 cases. A son initilisation, il est en position verticale. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -43,25 +43,7 @@ void \hyperlink{classPiece__O_a69812f938582f176cd4cca997cbb87c1}{Rotate} (\hyper
 
 
 \subsection{Detailed Description}
-Représentation d\textquotesingle{}un Tétrimino en forme de L. Hérite de Pièce. 
-
-Représentation d\textquotesingle{}un Tétrimino en forme de carré. Hérite de Pièce.
-
-\begin{DoxyAuthor}{Author}
-Laura Couret 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-1.\+0 
-\end{DoxyVersion}
-\begin{DoxyDate}{Date}
-avril 2018 
-\end{DoxyDate}
-\begin{DoxyRefDesc}{Bug}
-\item[\hyperlink{bug__bug000011}{Bug}]Rien à signaler \end{DoxyRefDesc}
-\begin{DoxyWarning}{Warning}
-Rien à signaler
-\end{DoxyWarning}
-Ce module permet la représentation physique d\textquotesingle{}un Tétrimino en forme de L. Cette classe hérite de Pièce, elle hérite donc de ses paramètres (couleur, etat, position, etc) et gardera ses méthodes de déplacement.
+Représentation d\textquotesingle{}un Tétrimino en forme de carré. Hérite de \hyperlink{classPiece}{Piece}. 
 
 \begin{DoxyAuthor}{Author}
 Léa Lefrançois 
@@ -75,11 +57,11 @@ Laura Couret
 avril 2018 
 \end{DoxyDate}
 \begin{DoxyRefDesc}{Bug}
-\item[\hyperlink{bug__bug000012}{Bug}]Rien à signaler \end{DoxyRefDesc}
+\item[\hyperlink{bug__bug000014}{Bug}]Rien à signaler \end{DoxyRefDesc}
 \begin{DoxyWarning}{Warning}
 Rien à signaler
 \end{DoxyWarning}
-Ce module permet la représentation physique d\textquotesingle{}un Tétrimino en forme de carré. Cette classe hérite de Pièce, elle hérite donc de ses paramètres (couleur, etat, position, etc) et gardera ses méthodes de déplacement. 
+Ce module permet la représentation physique d\textquotesingle{}un Tétrimino en forme de carré. Cette classe hérite de \hyperlink{classPiece}{Piece}, elle hérite donc de ses paramètres (couleur, etat, position, etc) et gardera ses méthodes de déplacement. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classPiece__O_af82900ecec4e7bd058d43825293d8bff}\label{classPiece__O_af82900ecec4e7bd058d43825293d8bff}} 
@@ -90,11 +72,11 @@ Ce module permet la représentation physique d\textquotesingle{}un Tétrimino en
 
 
 
-Vérifie si on peut tourner le Tétrimino en forme de carré d\textquotesingle{}un cran dans le sens horaire par rapport à la grille de jeu. 
+Vérifie si on peut tourner le Tétrimino en forme de carré d\textquotesingle{}un cran dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & est la grille de notre Tetris \\
+{\em b} & est le \hyperlink{classBoard}{Board} de notre Tetris \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -112,11 +94,11 @@ Implements \hyperlink{classPiece_a56cdf7f4234fe848a3e203b693b7a862}{Piece}.
 
 
 
-Permet la rotation d\textquotesingle{}un Tétrimino en forme de carré dans le sens horaire par rapport à la grille de jeu. Ne change rien en vu de la forme du Tétrimino. 
+Permet la rotation d\textquotesingle{}un Tétrimino en forme de carré dans le sens horaire par rapport au \hyperlink{classBoard}{Board}. Ne change rien en vu de la forme du Tétrimino. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & est la grille de notre Tetris \\
+{\em b} & est le \hyperlink{classBoard}{Board} de notre Tetris \\
 \hline
 \end{DoxyParams}
 

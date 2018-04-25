@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['score',['Score',['../classScore.html',1,'Score'],['../classScore.html#a93772a8d3e8c9f71cd3e4a0bf74d9e78',1,'Score::Score()'],['../classIHM.html#a79d4bc8301e8a664c9bfea8d0b2ca916',1,'IHM::score()']]],
+  ['score',['Score',['../classScore.html',1,'Score'],['../classIHM.html#a79d4bc8301e8a664c9bfea8d0b2ca916',1,'IHM::score()'],['../classScore.html#a93772a8d3e8c9f71cd3e4a0bf74d9e78',1,'Score::Score()']]],
   ['scoreclassique',['ScoreClassique',['../classIHM.html#ac2e668b4fa5ff1491bc15ae0a2d59d1d',1,'IHM']]],
   ['scoremontagnard',['ScoreMontagnard',['../classIHM.html#a8f4dce1d816518f673fcafca08fd0ce5',1,'IHM']]],
   ['setgrille',['setGrille',['../classBoard.html#a7c06f0c081a6a037fa65204a7a9badd2',1,'Board']]],

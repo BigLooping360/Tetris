@@ -20,23 +20,26 @@ class Bloc {
   /*! /var Posy est un entier qui représente la position en ordonnée*/
   int Posy;
   public :
+  /*! \fn Bloc(int x,int y)
+  * \brief Constructeur d'un Bloc
+  */
   Bloc(int x, int y);
   /*! \fn int getPosx()
-  * \return renvoie la position en abscisse d'un bloc
+  * \return renvoie la position en abscisse d'un Bloc
   */
   int getPosx() const;
   /*! \fn int getPosy()
-  * \return renvoie la position en ordonnée d'un bloc
+  * \return renvoie la position en ordonnée d'un Bloc
   */
   int getPosy() const;
   /*! \fn void setPosx(int x)
   * \param x correspond à la position que l'on veut en abscisse en sortie de cette fonction
-  * \brief modifie la position en abscisse d'un bloc
+  * \brief modifie la position en abscisse d'un Bloc
   */
   void setPosx(int x);
   /*! \fn void setPosy(int y)
   * \param y correspond à la position que l'on veut en ordonnée en sortie de cette fonction
-  * \brief modifie la position en ordonnée d'un bloc
+  * \brief modifie la position en ordonnée d'un Bloc
   */
   void setPosy(int y);
 

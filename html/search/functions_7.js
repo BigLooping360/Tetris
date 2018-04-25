@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['piece',['Piece',['../classPiece.html#ac57de5803bbad829b143bc7268267dc1',1,'Piece']]],
-  ['piece_5fi',['Piece_I',['../classPiece__I.html#a02fe6ccd07ebfbf22ce8ee6edcdd118e',1,'Piece_I']]],
-  ['piece_5fj',['Piece_J',['../classPiece__J.html#ac7299340d86be483ba59e3befce76327',1,'Piece_J']]],
-  ['piece_5fl',['Piece_L',['../classPiece__L.html#a2cd2017561857128dfc8838fc90e3e0b',1,'Piece_L']]],
-  ['piece_5fo',['Piece_O',['../classPiece__O.html#aa6abd4c92e4ca830993585f99b7d6a2a',1,'Piece_O']]],
-  ['piece_5fs',['Piece_S',['../classPiece__S.html#aa39b8ee3dd219a03af2c6e0b3d05be5c',1,'Piece_S']]],
-  ['piece_5ft',['Piece_T',['../classPiece__T.html#aa83bf987b663f99cc412f59ec08a94a1',1,'Piece_T']]],
-  ['piece_5fz',['Piece_Z',['../classPiece__Z.html#aecae5333fb48fae61d1b572b3282fc09',1,'Piece_Z']]],
-  ['play',['play',['../classJeu.html#ad339f827f08dabcb27a90844822b268e',1,'Jeu::play()'],['../classJeuClassique.html#a0d8df25a0df26319718f0c7e83b5670d',1,'JeuClassique::play()'],['../classJeuMontagnard.html#a53262c982e4169ce371b8b49262ca7c8',1,'JeuMontagnard::play()']]]
+  ['maj',['MaJ',['../classJeu.html#a16a1b627ca2c860ab3e6ed90111619d0',1,'Jeu::MaJ()'],['../classJeuClassique.html#ad61cdc881a8f6532a9bc59e91e64affb',1,'JeuClassique::MaJ()'],['../classJeuMontagnard.html#a92ee3efc9d01dcf1ab224db9f88ff907',1,'JeuMontagnard::MaJ()']]],
+  ['meilleurescore',['meilleurescore',['../classScore.html#aed385c5969860d59ca1477e2699c2f54',1,'Score']]],
+  ['meilleurscoreclassique',['MeilleurScoreClassique',['../classIHM.html#a4218e5b720799dd8bada264c7bc0d690',1,'IHM']]],
+  ['meilleurscoremontagnard',['MeilleurScoreMontagnard',['../classIHM.html#a068cc2350e9f4fc005ad4378f02d62fa',1,'IHM']]],
+  ['menu',['menu',['../classIHM.html#a05f1daa32a6db641f74c5d6083c33743',1,'IHM']]],
+  ['movedown',['MoveDown',['../classPiece.html#a44530e200e9506f7bb4668e82dd91d54',1,'Piece']]],
+  ['moveleft',['MoveLeft',['../classPiece.html#a08f2bd761965092bd4f8f97c81aa6af8',1,'Piece']]],
+  ['moveright',['MoveRight',['../classPiece.html#a938328bd15662dbf8d4bd66145e20e1a',1,'Piece']]]
 ];

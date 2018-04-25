@@ -9,5 +9,5 @@ var searchData=
   ['piece_5fs',['Piece_S',['../classPiece__S.html',1,'Piece_S'],['../classPiece__S.html#aa39b8ee3dd219a03af2c6e0b3d05be5c',1,'Piece_S::Piece_S()']]],
   ['piece_5ft',['Piece_T',['../classPiece__T.html',1,'Piece_T'],['../classPiece__T.html#aa83bf987b663f99cc412f59ec08a94a1',1,'Piece_T::Piece_T()']]],
   ['piece_5fz',['Piece_Z',['../classPiece__Z.html',1,'Piece_Z'],['../classPiece__Z.html#aecae5333fb48fae61d1b572b3282fc09',1,'Piece_Z::Piece_Z()']]],
-  ['play',['play',['../classJeu.html#ad339f827f08dabcb27a90844822b268e',1,'Jeu::play()'],['../classJeuClassique.html#a0d8df25a0df26319718f0c7e83b5670d',1,'JeuClassique::play()'],['../classJeuMontagnard.html#a53262c982e4169ce371b8b49262ca7c8',1,'JeuMontagnard::play()']]]
+  ['play',['play',['../classJeu.html#ad339f827f08dabcb27a90844822b268e',1,'Jeu']]]
 ];

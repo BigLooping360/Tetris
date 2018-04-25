@@ -20,10 +20,10 @@ using namespace std;
  *
  *Ce module va permettre de :
  *- récupérer les saisies clavier de l'utilisateur
- *- afficher le menu
+ *- afficher le Menu
  *- afficher une interface graphique du jeu
- *- afficher les scores et les règles du jeu
- *- consulter et ajouter des meilleurs scores autant pour le jeu Classique que le Montagnard
+ *- afficher les Score et les règles du jeu
+ *- consulter et ajouter des meilleurs Score autant pour le JeuClassique que le JeuMontagnard
 */
 
 class IHM {
@@ -34,16 +34,16 @@ class IHM {
   * \return l'entier correspondant au caractère tapé
   */
   static int getinput();
-
-  static void afficher(Jeu j);
-
-    /*! \fn static void menu();
-  * \brief Affiche le menu d'accueil de notre application
+  /*! \fn static void afficher(Jeu j)
+  * \brief Affiche l'état courant du Jeu
   */
-
+  static void afficher(Jeu j);
+    /*! \fn static void menu();
+  * \brief Affiche le Menu d'accueil de notre application
+  */
   static void menu();
   /*! \fn static void score();
-  * \brief Affiche tous les meilleurs scores (Jeu Classique et Jeu Montagnard)
+  * \brief Affiche tous les meilleurs Score (JeuClassique et JeuMontagnard)
   */
   static void score();
   /*! \fn static void reglesduJeu();
@@ -51,25 +51,25 @@ class IHM {
   */
   static void reglesduJeu();
   /*! \fn static void ScoreClassique();
-  * \brief Affiche les meilleurs scores des parties classiques
+  * \brief Affiche les meilleurs Score de JeuClassique
   */
   static void ScoreClassique();
   /*! \fn static void ScoreMontagnard();
-  * \brief Affiche les meilleurs scores des parties montagnardes
+  * \brief Affiche les meilleurs Score de JeuMontagnard
   */
   static void ScoreMontagnard();
   /*! \fn static int MeilleurScoreClassique(int s)
-  * \brief Récupère le sième meilleure score des parties classiques
-  * \param s le numéro du score que l'on veut afficher, doit être compris entre 1 et 5
-  * \return Retourne le sième meilleure score des parties classiques
+  * \brief Récupère le sième meilleure Score des JeuClassique
+  * \param s le numéro du Score que l'on veut afficher, doit être compris entre 1 et 5
+  * \return Retourne le sième meilleure Score des JeuClassique
   */
   static int MeilleurScoreClassique(int);
   /*! \fn static int MeilleurScoreMontagnard(int s)
-  * \brief Récupère le sième meilleure score des parties montagnardes
-  * \param s le numéro du score que l'on veut afficher, doit être compris entre 1 et 5
-  * \return Retourne le sième meilleure score des parties montagnardes
+  * \brief Récupère le sième meilleure Score des JeuMontagnard
+  * \param s le numéro du Score que l'on veut afficher, doit être compris entre 1 et 5
+  * \return Retourne le sième meilleure Score des JeuMontagnard
   */
-  static int MeilleurScoreMontagnard(int s);
+  static float MeilleurScoreMontagnard(int s);
 
 
 

@@ -18,7 +18,7 @@ using namespace std;
 */
 class Board {
 
-  // Largeur et Hauteur sont static et const pour pouvoir initialiser Grille
+  // Largeur et Hauteur sont static et const pour pouvoir initialiser  la grille
   /*! /var Largeur représente le nombre de colonnes de la grille. Par défaut, elle est fixée à 10.*/
   static const int Largeur=10;
   /*! /var Hauteur représente le nombre de lignes de la grille. Par défaut, elle est fixée à 20.*/
@@ -45,7 +45,7 @@ class Board {
   void setGrille(int x, int y);
   //Le changer en constructeur
   /*! \fn void init()
-  * \brief initialise une grille en début de jeu en la remplissant de 0
+  * \brief initialise une grille en début de Jeu en la remplissant de 0
   */
   void init();
   /*! \fn friend ostream  &operator <<(ostream &out,  Board &)
