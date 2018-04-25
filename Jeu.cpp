@@ -35,6 +35,14 @@ Jeu::Jeu(){
     case 5:
       PieceEnCours= new Piece_J();
       break;
+
+    case 6:
+      PieceEnCours= new Piece_S();
+      break;
+
+    case 7:
+      PieceEnCours= new Piece_Z();
+      break;
   }
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
 
@@ -59,7 +67,13 @@ Jeu::Jeu(){
       PieceSuivante= new Piece_J();
       break;
 
+    case 6:
+      PieceSuivante= new Piece_S();
+      break;
 
+    case 7:
+      PieceSuivante= new Piece_Z();
+      break;
   }
 
 }
@@ -122,6 +136,14 @@ void Jeu::MaJ(){
       PieceEnCours= new Piece_J();
       break;
 
+    case 6:
+      PieceEnCours= new Piece_S();
+      break;
+
+    case 7:
+      PieceEnCours= new Piece_Z();
+      break;
+
   }
   *PieceEnCours=*PieceSuivante;
 
@@ -146,6 +168,14 @@ void Jeu::MaJ(){
     case 5:
       PieceSuivante= new Piece_J();
       break;
+
+    case 6:
+      PieceSuivante= new Piece_S();
+      break;
+
+    case 7:
+      PieceSuivante= new Piece_Z();
+      break;     
   }
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé

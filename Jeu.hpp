@@ -35,7 +35,7 @@ class Jeu {
 
   static const int a=1;
   /*! /var NombreDePieces est le nombre max de Tetriminos*/
-  static const int NombreDePieces=6;
+  static const int NombreDePieces=8;
     /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
   int nombre_aleatoire;
   /*! /var b correspondra à notre grille de jeu */
