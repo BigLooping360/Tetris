@@ -1,7 +1,7 @@
 #ifndef __IHM_HPP__
 #define __IHM_HPP__
 #include <iostream>
-<<<<<<< HEAD
+
 #include "Jeu.hpp"
 
 
