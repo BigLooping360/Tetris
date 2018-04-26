@@ -15,6 +15,15 @@ main : IHM.o 	Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o P
 main1 : Board.cpp TestPiece.cpp Piece.cpp Bloc.cpp Piece_I.cpp
 		$(FC) Board.cpp TestPiece.cpp Piece.cpp Bloc.cpp Piece_I.cpp $(OPT2) -o TestPiece
 		./TestPiece
+
+main2 : Board.cpp TestPiece_J.cpp Piece.cpp Bloc.cpp Piece_J.cpp
+		$(FC) Board.cpp TestPiece_J.cpp Piece.cpp Bloc.cpp Piece_J.cpp $(OPT2) -o TestPiece_J
+		./TestPiece_J
+
+main3 : Board.cpp TestPiece_L.cpp Piece.cpp Bloc.cpp Piece_L.cpp
+		$(FC) Board.cpp TestPiece_L.cpp Piece.cpp Bloc.cpp Piece_L.cpp $(OPT2) -o TestPiece_L
+		./TestPiece_L
+
 TestPiece.o:TestPiece.cpp
 		$(FC) -c TestPiece.cpp
 
