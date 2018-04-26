@@ -13,7 +13,7 @@ void Menu::jouerClassique(){
     clock_t temps=clock();
     while (Jeu1.getstatut()==false) {
         int inter;
-        if (clock()-temps>(CLOCKS_PER_SEC/2)){
+        if (clock()-temps>(CLOCKS_PER_SEC*2)){
             Jeu1.interaction((int)'s');
             temps=clock();
           }

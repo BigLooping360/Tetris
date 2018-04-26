@@ -64,11 +64,25 @@ class Piece {
   * \return Retourne le booléen bloque
   */
   bool getbloque();
+
   /*! \fn int getcolor()
   * \brief Accesseur de la couleur d'une Piece
   * \return Retourne l'entier correspondant à la couleur de la Piece
   */
   int getcolor();
+
+  /*! \fn void setetat(int i)
+  * \brief Mutateur d'état d'une pièce ATTENTION UTILE SEULEMENT POUR LES TESTS UNITAIRES A NE PAS UTILISER
+  * \param i est l'entier qui correspond à l'état que l'on veut donner à la pièce
+  */
+  void setetat(int i);
+
+  /*! \fn int getetat()
+  * \brief Accesseur d'état d'une pièce
+  * \return i est l'entier qui correspond à l'état de la pièce
+  */
+  int getetat();
+
   /*! \fn bool Down(Board b)
   * \brief Vérifie si on peut descendre la Piece dans le Board
   * \param b est le Board de notre Tetris
@@ -115,6 +129,7 @@ class Piece {
   /*! \fn Piece()
   * \brief Constructeur d'une Piece de Jeu général
   */
+
   Piece();
 
 

@@ -12,17 +12,19 @@
 #include <cppunit/XmlOutputter.h>
 #include "Piece.hpp"
 #include "Piece_I.hpp"
+#include "Board.hpp"
 
-class TestCellule : public CppUnit::TestFixture
+using namespace CppUnit;
+using namespace std;
+
+
+class TestPiece : public CppUnit::TestFixture
 {
-    CPPUNIT_TEST_SUITE(TestCellule);
-    CPPUNIT_TEST(testGetPosition());
-    CPPUNIT_TEST(testGetNaissance());
-    CPPUNIT_TEST(testGetColonie());
-    CPPUNIT_TEST(testGetDoitMourir());
-    CPPUNIT_TEST(testGetDoitNaitre());
-    CPPUNIT_TEST(testDoitMourir());
-    CPPUNIT_TEST(testNaitre());
+    CPPUNIT_TEST_SUITE(TestPiece);
+    CPPUNIT_TEST(testLeft);
+    CPPUNIT_TEST(isRotateable_Piece_I);
+    CPPUNIT_TEST(Rotate_Piece_I);
+    CPPUNIT_TEST(isRotateable_Piece)
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -30,11 +32,11 @@ public:
     void tearDown(void);
 
 protected:
-    void testMoveLeft(void);
+    void testLeft(void);
+    void isRotateable_Piece_I(void);
+    void Rotate_Piece_I(void);
   private:
     Piece *PieceTest1;
-    Piece *PieceTest;
+    Piece *PieceTest2;
     Board *BoardTest;
-
-
 };

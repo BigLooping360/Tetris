@@ -23,7 +23,7 @@ bool Piece_I::isRotateable(Board b){
               break;
 
             case 2:
-              if ( (getPosy(1)>0) and (getPosy(1)<b.getHauteur()-2) and (b.getGrille(getPosx(1),getPosy(1)-1)==0) and (b.getGrille(getPosx(1),getPosy(1)+1)==0) and (b.getGrille(getPosx(1),getPosy(1)+2)==0)  )
+              if ( (getPosy(1)>1) and (getPosy(1)<b.getHauteur()-1) and (b.getGrille(getPosx(1),getPosy(1)-1)==0) and (b.getGrille(getPosx(1),getPosy(1)+1)==0) and (b.getGrille(getPosx(1),getPosy(1)+2)==0)  )
                 return true;
               else
                 return false;
@@ -37,7 +37,7 @@ bool Piece_I::isRotateable(Board b){
               break;
 
             case 4 :
-              if ( (getPosy(1)>1) and (getPosy(1)<b.getHauteur()-1) and (b.getGrille(getPosx(1),getPosy(1)-1)==0) and (b.getGrille(getPosx(1),getPosy(1)+1)==0) and (b.getGrille(getPosx(1),getPosy(1)-2)==0)  )
+              if ( (getPosy(1)>0) and (getPosy(1)<b.getHauteur()-2) and (b.getGrille(getPosx(1),getPosy(1)-1)==0) and (b.getGrille(getPosx(1),getPosy(1)+1)==0) and (b.getGrille(getPosx(1),getPosy(1)-2)==0)  )
                 return true;
               else
                 return false;
@@ -65,13 +65,13 @@ void Piece_I::Rotate(Board b){
             case 2:
             if (isRotateable(b)){
               setPosx(0,getPosx(1));
-              setPosy(0,getPosy(1)-1);
+              setPosy(0,getPosy(1)+1);
 
               setPosx(2,getPosx(1));
-              setPosy(2,getPosy(1)+1);
+              setPosy(2,getPosy(1)-1);
 
               setPosx(3,getPosx(1));
-              setPosy(3,getPosy(1)+2);
+              setPosy(3,getPosy(1)-2);
               etat++;
               }
               break;
@@ -93,13 +93,13 @@ void Piece_I::Rotate(Board b){
             case 4 :
             if (isRotateable(b)){
               setPosx(0,getPosx(1));
-              setPosy(0,getPosy(1)+1);
+              setPosy(0,getPosy(1)-1);
 
               setPosx(2,getPosx(1));
-              setPosy(2,getPosy(1)-1);
+              setPosy(2,getPosy(1)+1);
 
               setPosx(3,getPosx(1));
-              setPosy(3,getPosy(1)-2);
+              setPosy(3,getPosy(1)+2);
               etat=1;
               }
               break;

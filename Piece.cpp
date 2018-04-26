@@ -5,7 +5,14 @@
 
 using namespace std;
 
-//Note : les getters et setters utilisent aussi ceux de bloc
+void Piece::setetat(int i){
+  etat =i;
+}
+
+int Piece::getetat(){
+  return etat;
+}
+
 int Piece::getcolor(){
   return color;
 }
@@ -55,28 +62,7 @@ bool Piece::Right(Board b){
   return true;
 }
 
-//Affiche la grille avec la piève en question, à remplacer. Notamment à
-//cause du 20 et 10 qui représentent respectivement la hauteur et la
-//largeur qui sont privés.. Résoudre le problème des références
-// void Piece::afficher(Board b){
-//   Board b2;
-//   b2.init();
-//   for (int i = 0; i < b.getHauteur(); i++) {
-//     for (int j = 0; j < b.getLargeur(); j++) {
-//       if (b2.getGrille(j,i)!=b.getGrille(j,i)) {
-//         b2.setGrille(j,i);
-//         }
-//       }
-//     }
-//   for (int i = 0; i < 4; i++) {
-//     b2.setGrille(getPosx(i), getPosy(i));
-//   }
-//   cout<<b2<<endl;
-//   }
 
-
-//Si la pièce peut descendre on la fait descendre, si elle se bloque
-//on change la valeur du booléen bloque
 
 void Piece::MoveDown(Board b){
   //On check si une fois que l'on baisse la pièce elle se retrouve coincée
