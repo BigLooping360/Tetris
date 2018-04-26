@@ -27,6 +27,8 @@ class TestPiece : public CppUnit::TestFixture
     CPPUNIT_TEST(testMoveRight);
     CPPUNIT_TEST(isRotateable_Piece_I);
     CPPUNIT_TEST(Rotate_Piece_I);
+    CPPUNIT_TEST(testDown);
+    CPPUNIT_TEST(testMoveDown);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -39,8 +41,13 @@ protected:
     void testMoveRight(void);
     void isRotateable_Piece_I(void);
     void Rotate_Piece_I(void);
+    void testMoveDown(void);
+    void testDown(void);
+
+
   private:
     Piece *PieceTest1;
     Piece *PieceTest2;
+    Piece *PieceTest3;
     Board *BoardTest;
 };
