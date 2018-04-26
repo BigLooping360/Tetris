@@ -371,19 +371,91 @@ void TestPiece::Rotate_Piece_I(){
   CPPUNIT_ASSERT(PieceTest1->getPosy(3)==13);
 }
 
+void TestPiece::testDown(void)
+{ for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,9);
+		PieceTest1->setPosx(i,4+i);
+		}
 
+	CPPUNIT_ASSERT(true == PieceTest1->Down(*BoardTest));
 
+	for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,0);
+		PieceTest1->setPosx(i,i);
+		}
+
+	CPPUNIT_ASSERT(false ==PieceTest1->Down(*BoardTest));
+
+	for (int i=0;i<4;i++){
+		 PieceTest1->setPosy(i,1);
+		 PieceTest1->setPosx(i,i+4);
+		 PieceTest2->setPosy(i,0);
+		 PieceTest2->setPosx(i,i+5);}
+	CPPUNIT_ASSERT(false ==PieceTest1->Down(*BoardTest));
+
+}
+
+void TestPiece::testMoveDown(void)
+{
+  int i;
+
+  for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,9);
+		PieceTest1->setPosx(i,4+i);
+		PieceTest2->setPosy(i,8);
+		PieceTest2->setPosx(i,4+i);}
+
+  PieceTest1->MoveDown(*BoardTest);
+
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+	for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,0);
+		PieceTest1->setPosx(i,i);
+		PieceTest2->setPosy(i,0);
+		PieceTest2->setPosx(i,i);
+		}
+
+    PieceTest1->MoveDown(*BoardTest);
+
+    for (i=0;i<4;i++) {
+      CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+      CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+    }
+
+	for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,1);
+		PieceTest1->setPosx(i,i);
+		PieceTest2->setPosy(i,1);
+		PieceTest2->setPosx(i,i);
+		PieceTest3->setPosy(i,0);
+		PieceTest3->setPosx(i,i);
+		}
+
+    PieceTest1->MoveDown(*BoardTest);
+
+    for (i=0;i<4;i++) {
+      CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+      CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+    }
+
+}
 
 void TestPiece::setUp(void)
 {
 	PieceTest1 = new Piece_I();
   PieceTest2 = new Piece_I();
+  PieceTest3 = new Piece_I();
   BoardTest = new Board();
 }
 void TestPiece::tearDown(void)
 {
 	delete PieceTest1;
   delete PieceTest2;
+  delete PieceTest3;
   delete BoardTest;
 
 }
