@@ -11,6 +11,15 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
+#include "Piece.hpp"
+#include "Piece_I.hpp"
+#include "Board.hpp"
+#include "Bloc.hpp"
+
+
+using namespace CppUnit;
+using namespace std;
+
 void TestPiece::testLeft(void){
   //Cas limite
   PieceTest1->setPosx(0,0);
@@ -66,6 +75,78 @@ void TestPiece::testLeft(void){
       PieceTest1->setPosy(3,j);
       CPPUNIT_ASSERT(!PieceTest1->Left(*BoardTest));
     }
+  }
+
+}
+
+void TestPiece::testRight(void) {
+
+	int i;
+
+	//cas normal : la pièce est au milieu de la grille, rien ne l'empêche de bouger
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,4);
+		PieceTest1->setPosy(i,9+i);
+	}
+	CPPUNIT_ASSERT(true == PieceTest1->Right(*BoardTest));
+
+	//cas semi extrême : la pièce est collée à la paroi gauche du Board, elle peut se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,0);
+	}
+	CPPUNIT_ASSERT(true == PieceTest1->Right(*BoardTest));
+
+	//cas extreme : la pièce est collée à la paroi droite du Board, elle ne peut pas se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,BoardTest->getLargeur()-1);
+	}
+	CPPUNIT_ASSERT(false == PieceTest1->Right(*BoardTest));
+
+}
+
+void TestPiece::testMoveRight(void) {
+
+
+	int i;
+
+	//cas normal : la pièce est au milieu de la grille, rien ne l'empêche de bouger
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,4);
+		PieceTest2->setPosx(i,5);
+		PieceTest1->setPosy(i,9+i);
+		PieceTest2->setPosy(i,9+i);
+	}
+	PieceTest1->MoveRight(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+
+	//cas semi extrême : la pièce est collée à la paroi gauche du Board, elle peut se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,0);
+		PieceTest2->setPosx(i,1);
+		PieceTest1->setPosy(i,9+i);
+		PieceTest2->setPosy(i,9+i);
+	}
+	PieceTest1->MoveRight(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT(PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+	//cas extreme : la pièce est collée à la paroi droite du Board, elle ne peut pas se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,BoardTest->getLargeur()-1);
+		PieceTest2->setPosx(i,BoardTest->getLargeur()-1);
+		PieceTest1->setPosy(i,9+i);
+		PieceTest2->setPosy(i,9+i);
+	}
+	PieceTest1->MoveRight(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT(PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
   }
 
 }

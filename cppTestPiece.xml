@@ -6,14 +6,20 @@
       <Name>TestPiece::testLeft</Name>
     </Test>
     <Test id="2">
-      <Name>TestPiece::isRotateable_Piece_I</Name>
+      <Name>TestPiece::testRight</Name>
     </Test>
     <Test id="3">
+      <Name>TestPiece::testMoveRight</Name>
+    </Test>
+    <Test id="4">
+      <Name>TestPiece::isRotateable_Piece_I</Name>
+    </Test>
+    <Test id="5">
       <Name>TestPiece::Rotate_Piece_I</Name>
     </Test>
   </SuccessfulTests>
   <Statistics>
-    <Tests>3</Tests>
+    <Tests>5</Tests>
     <FailuresTotal>0</FailuresTotal>
     <Errors>0</Errors>
     <Failures>0</Failures>

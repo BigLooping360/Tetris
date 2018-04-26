@@ -11,7 +11,7 @@
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
- *Ce module permet l'initialisation du début d'une partie de Tetris Montagnard,
+ *Ce module permet l'initialisation du début d'une partie de JeuMontagnard,
  *la mise à jour des différents paramètres suite aux actions d'un joueur,
  *et actionne le déplacement d'une Piece et du Personnage en cas de besoin.
 */

@@ -13,6 +13,7 @@
 #include "Piece.hpp"
 #include "Piece_I.hpp"
 #include "Board.hpp"
+#include "Bloc.hpp"
 
 using namespace CppUnit;
 using namespace std;
@@ -22,9 +23,10 @@ class TestPiece : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(TestPiece);
     CPPUNIT_TEST(testLeft);
+    CPPUNIT_TEST(testRight);
+    CPPUNIT_TEST(testMoveRight);
     CPPUNIT_TEST(isRotateable_Piece_I);
     CPPUNIT_TEST(Rotate_Piece_I);
-    CPPUNIT_TEST(isRotateable_Piece)
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -33,6 +35,8 @@ public:
 
 protected:
     void testLeft(void);
+    void testRight(void);
+    void testMoveRight(void);
     void isRotateable_Piece_I(void);
     void Rotate_Piece_I(void);
   private:

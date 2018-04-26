@@ -15,7 +15,7 @@ main : IHM.o 	Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o P
 main1 : Board.cpp TestPiece.cpp Piece.cpp Bloc.cpp Piece_I.cpp
 		$(FC) Board.cpp TestPiece.cpp Piece.cpp Bloc.cpp Piece_I.cpp $(OPT2) -o TestPiece
 		./TestPiece
-TestBasicMath.o:TestPiece.cpp
+TestPiece.o:TestPiece.cpp
 		$(FC) -c TestPiece.cpp
 
 #Classes
