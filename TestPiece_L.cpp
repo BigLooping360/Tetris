@@ -21,25 +21,90 @@ using namespace CppUnit;
 using namespace std;
 
 void TestPiece_L::setUp() {
-  	mTestPiece = new Piece_L();
-    mTestPiece2 = new Piece_L(); //mTestPiece2 est la pièce test utilisee pour la comparaison
-    mTestBoard = new Board();
+  	PieceTest1 = new Piece_L();
+    PieceTest2 = new Piece_L(); //mTestPiece2 est la pièce test utilisee pour la comparaison
+    BoardTest = new Board();
 }
 
 void TestPiece_L::tearDown() {
-    delete mTestPiece;
-    delete mTestPiece2;
-    delete mTestBoard;
+    delete PieceTest1;
+    delete PieceTest2;
+    delete BoardTest;
 }
 
 void TestPiece_L::testisRotateable() {
 
+  //cas normal : la pice est au milieu d'une grille vide, rien ne l'empêche de tourner d'un cran vers la gauche
+  int i;
+  PieceTest1->setPosx(0,4);
+  PieceTest1->setPosy(0,8);
+  for (i=1;i<4;i++) {
+    PieceTest1->setPosx(i,3+i);
+    PieceTest1->setPosy(i,9);
+  }
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == true);
 
+  BoardTest->setGrille(4,10);
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == true);
+
+  //cas où une case pleine de la grille empêche la pièce de tourner
+  BoardTest->setGrille(3,9);
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == false);
+
+  BoardTest->setGrille(3,9);
+  BoardTest->setGrille(4,7);
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == false);
+
+  //cas où le bord de la grille empêche la rotation
+  PieceTest1->setPosx(0,0);
+  PieceTest1->setPosy(0,8);
+  for (i=1;i<4;i++) {
+    PieceTest1->setPosx(i,i-1);
+    PieceTest1->setPosy(i,9);
+  }
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == false);
 
 }
 
 void TestPiece_L::testRotate() {
 
+  int i;
+
+  //cas normal : la pièce est au milieu d'une grille vide, rien ne l'empêche de tourner d'un cran vers la gauche
+  PieceTest1->setPosx(0,4);
+  PieceTest1->setPosy(0,8);
+  PieceTest2->setPosx(0,3);
+  PieceTest2->setPosy(0,9);
+  for (i=1;i<4;i++) {
+    PieceTest1->setPosx(i,3+i);
+    PieceTest1->setPosy(i,9);
+    PieceTest2->setPosx(i,4);
+    PieceTest2->setPosy(i,10-i);
+  }
+  PieceTest1->Rotate(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT(PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT(PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+  //2e cas, on tourne notre pièce 4 fois et on veut qu'elle revienne à la même position
+  PieceTest1->setPosx(0,4);
+  PieceTest1->setPosy(0,8);
+  PieceTest2->setPosx(0,4);
+  PieceTest2->setPosy(0,8);
+  for (i=1;i<4;i++) {
+    PieceTest1->setPosx(i,3+i);
+    PieceTest1->setPosy(i,9);
+    PieceTest2->setPosx(i,3+i);
+    PieceTest2->setPosy(i,9);
+  }
+  for (i=0;i<4;i++) {
+    PieceTest1->Rotate(*BoardTest);
+  }
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT(PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT(PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
 
 }
 

@@ -37,8 +37,8 @@ protected:
     void testRotate();
 
 private:
-    Piece *mTestPiece;
-    Piece *mTestPiece2;
-    Board *mTestBoard;
+    Piece *PieceTest1;
+    Piece *PieceTest2;
+    Board *BoardTest;
 
 };
