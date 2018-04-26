@@ -292,6 +292,7 @@ void TestPiece::Rotate_Piece_I(){
 
 
 
+
 void TestPiece::setUp(void)
 {
 	PieceTest1 = new Piece_I();
