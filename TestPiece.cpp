@@ -11,6 +11,15 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
+#include "Piece.hpp"
+#include "Piece_I.hpp"
+#include "Board.hpp"
+#include "Bloc.hpp"
+
+
+using namespace CppUnit;
+using namespace std;
+
 void TestPiece::testLeft(void){
   //Cas limite
   PieceTest1->setPosx(0,0);
@@ -70,6 +79,78 @@ void TestPiece::testLeft(void){
 
 }
 
+void TestPiece::testRight(void) {
+
+	int i;
+
+	//cas normal : la pièce est au milieu de la grille, rien ne l'empêche de bouger
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,4);
+		PieceTest1->setPosy(i,9+i);
+	}
+	CPPUNIT_ASSERT(true == PieceTest1->Right(*BoardTest));
+
+	//cas semi extrême : la pièce est collée à la paroi gauche du Board, elle peut se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,0);
+	}
+	CPPUNIT_ASSERT(true == PieceTest1->Right(*BoardTest));
+
+	//cas extreme : la pièce est collée à la paroi droite du Board, elle ne peut pas se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,BoardTest->getLargeur()-1);
+	}
+	CPPUNIT_ASSERT(false == PieceTest1->Right(*BoardTest));
+
+}
+
+void TestPiece::testMoveRight(void) {
+
+
+	int i;
+
+	//cas normal : la pièce est au milieu de la grille, rien ne l'empêche de bouger
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,4);
+		PieceTest2->setPosx(i,5);
+		PieceTest1->setPosy(i,9+i);
+		PieceTest2->setPosy(i,9+i);
+	}
+	PieceTest1->MoveRight(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+
+	//cas semi extrême : la pièce est collée à la paroi gauche du Board, elle peut se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,0);
+		PieceTest2->setPosx(i,1);
+		PieceTest1->setPosy(i,9+i);
+		PieceTest2->setPosy(i,9+i);
+	}
+	PieceTest1->MoveRight(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT(PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+	//cas extreme : la pièce est collée à la paroi droite du Board, elle ne peut pas se déplacer vers la droite
+	for (i=0;i<4;i++) {
+		PieceTest1->setPosx(i,BoardTest->getLargeur()-1);
+		PieceTest2->setPosx(i,BoardTest->getLargeur()-1);
+		PieceTest1->setPosy(i,9+i);
+		PieceTest2->setPosy(i,9+i);
+	}
+	PieceTest1->MoveRight(*BoardTest);
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT(PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+}
+
 
 void TestPiece::testMoveLeft(void){
   PieceTest1 = new Piece_I();
@@ -97,16 +178,96 @@ void TestPiece::testMoveLeft(void){
 
 }
 
+
+void TestPiece::testDown(void)
+{
+   int i;
+  for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,9);
+		PieceTest1->setPosx(i,4+i);
+		}
+// La pièce est au milieu elle peut descendre
+	CPPUNIT_ASSERT(true == PieceTest1->Down(*BoardTest));
+
+	for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,0);
+		PieceTest1->setPosx(i,i);
+		}
+// La pièce est déjà tout en bas elle ne peut pas plus descendre
+	CPPUNIT_ASSERT(false ==PieceTest1->Down(*BoardTest));
+
+	for (int i=0;i<4;i++){
+		 PieceTest1->setPosy(i,1);
+		 PieceTest1->setPosx(i,i+4);
+		 PieceTest2->setPosy(i,0);
+		 PieceTest2->setPosx(i,i+5);}
+
+// La pièce est bloquée par une autre elle ne peut pas descendre
+	CPPUNIT_ASSERT(false ==PieceTest1->Down(*BoardTest));
+
+}
+
+void TestPiece::testMoveDown(void)
+{
+  int i;
+
+  for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,9);
+		PieceTest1->setPosx(i,4+i);
+		PieceTest2->setPosy(i,8);
+		PieceTest2->setPosx(i,4+i);}
+// La pièce est au milieu elle peut descendre
+  PieceTest1->MoveDown(*BoardTest);
+
+  for (i=0;i<4;i++) {
+    CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+    CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+  }
+
+	for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,0);
+		PieceTest1->setPosx(i,i);
+		PieceTest2->setPosy(i,0);
+		PieceTest2->setPosx(i,i);
+		}
+
+    PieceTest1->MoveDown(*BoardTest);
+// La pièce est déjà tout en bas elle ne peut pas plus descendre
+    for (i=0;i<4;i++) {
+      CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+      CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+    }
+
+	for (int i=0;i<4;i++){
+		PieceTest1->setPosy(i,1);
+		PieceTest1->setPosx(i,i);
+		PieceTest2->setPosy(i,1);
+		PieceTest2->setPosx(i,i);
+		PieceTest3->setPosy(i,0);
+		PieceTest3->setPosx(i,i);
+		}
+
+    PieceTest1->MoveDown(*BoardTest);
+// La pièce est bloquée par une autre elle ne peut pas descendre
+    for (i=0;i<4;i++) {
+      CPPUNIT_ASSERT( PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
+      CPPUNIT_ASSERT( PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
+    }
+
+}
+
 void TestPiece::setUp(void)
 {
 	PieceTest1 = new Piece_I();
   PieceTest2 = new Piece_I();
+  PieceTest3 = new Piece_I();
   BoardTest = new Board();
 }
 void TestPiece::tearDown(void)
 {
 	delete PieceTest1;
   delete PieceTest2;
+  delete PieceTest3;
   delete BoardTest;
 
 }

@@ -10,42 +10,35 @@
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
+#include <netinet/in.h>
 #include "Piece.hpp"
-#include "Piece_I.hpp"
+#include "Piece_L.hpp"
 #include "Board.hpp"
-#include "Bloc.hpp"
 
 using namespace CppUnit;
 using namespace std;
 
 
-class TestPiece : public CppUnit::TestFixture
-{
-    CPPUNIT_TEST_SUITE(TestPiece);
-    CPPUNIT_TEST(testLeft);
-    CPPUNIT_TEST(testMoveLeft);
-    CPPUNIT_TEST(testRight);
-    CPPUNIT_TEST(testMoveRight);
-    CPPUNIT_TEST(testDown);
-    CPPUNIT_TEST(testMoveDown);
-    CPPUNIT_TEST_SUITE_END();
+//-----------------------------------------------------------------------------
+
+class TestPiece_L : public CppUnit::TestFixture {
+
+  CPPUNIT_TEST_SUITE(TestPiece_L);
+  CPPUNIT_TEST(testisRotateable);
+  CPPUNIT_TEST(testRotate);
+  CPPUNIT_TEST_SUITE_END();
 
 public:
-    void setUp(void);
-    void tearDown(void);
+    void setUp();
+    void tearDown();
 
 protected:
-    void testLeft(void);
-    void testMoveLeft(void);
-    void testRight(void);
-    void testMoveRight(void);
-    void testMoveDown(void);
-    void testDown(void);
+    void testisRotateable();
+    void testRotate();
 
-
-  private:
+private:
     Piece *PieceTest1;
     Piece *PieceTest2;
-    Piece *PieceTest3;
     Board *BoardTest;
+
 };

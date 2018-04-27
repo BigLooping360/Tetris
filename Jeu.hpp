@@ -28,37 +28,48 @@ using namespace std;
 */
 
 class Jeu {
-  /*! /var partie est le booléen qui vaut true tant que la partie peut continuer, false quand le joueur est bloqué*/
+  /*! /var jeu est le booléen qui permet de déterminer si la partie est finie ou non */
   bool jeu;
-  int Score;
-  /*! /var a est le nombre de pièce pour le random*/
-
   static const int a=1;
-  /*! /var NombreDePieces est le nombre max de Tetriminos*/
+  /*! /var NombreDePieces est le nombre max de Tetriminos disponibles dans notre Jeu*/
   static const int NombreDePieces=8;
-    /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
+  /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
   int nombre_aleatoire;
   /*! /var b correspondra à notre grille de jeu */
   Board b;
-  /*! /var Ces pointeurs sur pièce permettront de modifier, au cours de la partie, la pièce en cours, la pièce suivante et la pièce stockée */
-  Piece *PieceStocke, *PieceEnCours, *PieceSuivante;
-  public :
+  /*! /var PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
+  Piece *PieceStocke;
+  /*! /var PieceEnCours est le pointeur sur la Piece en cours, c'est-à-dire celle en train de descendre le long du Board */
+  Piece *PieceEnCours;
+  /*! /var PieceSuivante est le pointeur sur la Piece suivante, c'est-à-dire celle suivant la Piece en cours*/
+  Piece *PieceSuivante;
 
+  public:
+
+  /*! \fn bool getjeu()const
+  * \brief Accesseur du booleen jeu
+  * \return le booléen jeu
+  */
+  bool getjeu()const;
   /*! \fn void MaJ()
-  * \brief Met à jour la grille à chaque fois qu'une pièce est posée
+  * \brief Met à jour la grille à chaque fois qu'une Piece est posée
   */
   void MaJ();
-
-  bool getjeu()const;
-
+  /*! \fn bool getstatut()
+  * \brief Détermine si le jeu peut continuer ou non
+  * \return vrai si la Piece en cours est bloqué, faux sinon
+  */
   bool getstatut();
-
-  //Envoie l'ordre de bouger la pièce
+  /*! \fn void interaction(int c)
+  * \brief Réagit face aux actions du joueur : envoie l'ordre de bouger une Piece, de la tourner, etc.
+  * \param c est l'entier qui correspond à la touche tapée par l'utilisateur
+  */
   void interaction(int c);
-  //Permet de mettre le jeu en pause
-  //void pause();
-
+  /*! \fn Jeu()
+  * \brief Constructeur de Jeu, initialise un début de partie
+  */
   Jeu();
+
   friend class IHM;
 
 

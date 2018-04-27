@@ -23,6 +23,16 @@ Test_Piece : Board.o Piece.o Bloc.o Piece_I.o  TestPiece.o
 		./TestPiece
 
 
+main2 : Board.cpp TestPiece_J.cpp Piece.cpp Bloc.cpp Piece_J.cpp
+		$(FC) Board.cpp TestPiece_J.cpp Piece.cpp Bloc.cpp Piece_J.cpp $(OPT2) -o TestPiece_J
+		./TestPiece_J
+
+main3 : Board.cpp TestPiece_L.cpp Piece.cpp Bloc.cpp Piece_L.cpp
+		$(FC) Board.cpp TestPiece_L.cpp Piece.cpp Bloc.cpp Piece_L.cpp $(OPT2) -o TestPiece_L
+		./TestPiece_L
+
+
+
 #Classes
 TestPiece_I.o: TestPiece_I.cpp
 	$(FC) -c 	TestPiece_I.cpp
@@ -58,4 +68,4 @@ Piece_Z.o: Piece_Z.cpp
 Menu.o : Menu.cpp
 	$(FC) -c Menu.cpp
 clean:
-	rm *.hpp.gch Tetris *.o
+	rm *.hpp.gch Tetris *.o *.xml TestPiece_L TestPiece_I TestPiece_T TestPiece_L TestPiece TestPiece_J TestPiece_S TestPiece_Z
