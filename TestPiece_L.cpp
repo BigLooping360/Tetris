@@ -82,12 +82,43 @@ void TestPiece_L::testRotate() {
     PieceTest2->setPosy(i,10-i);
   }
   PieceTest1->Rotate(*BoardTest);
+  CPPUNIT_ASSERT(PieceTest1->getetat() == 2);
   for (i=0;i<4;i++) {
     CPPUNIT_ASSERT(PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
     CPPUNIT_ASSERT(PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
   }
 
-  //2e cas, on tourne notre pièce 4 fois et on veut qu'elle revienne à la même position
+  //On effectue un 2e rotation et on vérifie que les positions sont bonnes et que l'état a augmenté
+  PieceTest2->setPosx(0,3);
+  PieceTest2->setPosy(0,9);
+  for (i=1;i<4;i++) {
+    PieceTest2->setPosx(i,4);
+    PieceTest2->setPosy(i,10-i);
+  }
+  PieceTest1->Rotate(*BoardTest);
+  CPPUNIT_ASSERT(PieceTest1->getetat() == 3);
+
+  //On effectue une 3e rotation et on vérifie que les positions sont bonnes et que l'état a augmenté
+  PieceTest2->setPosx(0,4);
+  PieceTest2->setPosy(0,10);
+  for (i=1;i<4;i++) {
+    PieceTest2->setPosx(i,5-i);
+    PieceTest2->setPosy(i,9);
+  }
+  PieceTest1->Rotate(*BoardTest);
+  CPPUNIT_ASSERT(PieceTest1->getetat() == 4);
+
+  //On effectue une 4e rotation et on vérifie que les positions sont bonnes et que l'état est revenu à 1
+  PieceTest2->setPosx(0,5);
+  PieceTest2->setPosy(0,9);
+  for (i=1;i<4;i++) {
+    PieceTest2->setPosx(i,4);
+    PieceTest2->setPosy(i,8+i);
+  }
+  PieceTest1->Rotate(*BoardTest);
+  CPPUNIT_ASSERT(PieceTest1->getetat() == 1);
+
+  //On tourne notre pièce 4 fois et on veut qu'elle revienne à la même position
   PieceTest1->setPosx(0,4);
   PieceTest1->setPosy(0,8);
   PieceTest2->setPosx(0,4);
@@ -101,6 +132,7 @@ void TestPiece_L::testRotate() {
   for (i=0;i<4;i++) {
     PieceTest1->Rotate(*BoardTest);
   }
+  CPPUNIT_ASSERT(PieceTest1->getetat() == 1);
   for (i=0;i<4;i++) {
     CPPUNIT_ASSERT(PieceTest2->getPosx(i) == PieceTest1->getPosx(i));
     CPPUNIT_ASSERT(PieceTest2->getPosy(i) == PieceTest1->getPosy(i));
