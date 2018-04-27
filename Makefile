@@ -10,16 +10,25 @@ main : IHM.o 	Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o P
 	$(FC) Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Piece.o Jeu.o IHM.o main.o Menu.o $(OPT1) -o Tetris
 	./Tetris
 
+Test_Piece_T : Board.o Piece.o Bloc.o Piece_T.o  TestPiece_T.o
+			$(FC) Board.o  Piece.o Bloc.o Piece_T.o TestPiece_T.o $(OPT2) -o TestPiece_T
+			./TestPiece_T
 
+Test_Piece_I : Board.o Piece.o Bloc.o Piece_I.o  TestPiece_I.o
+		$(FC) Board.o  Piece.o Bloc.o Piece_I.o TestPiece_I.o $(OPT2) -o TestPiece_I
+		./TestPiece_I
 
-main1 : Board.cpp TestPiece.cpp Piece.cpp Bloc.cpp Piece_I.cpp
-		$(FC) Board.cpp TestPiece.cpp Piece.cpp Bloc.cpp Piece_I.cpp $(OPT2) -o TestPiece
+Test_Piece : Board.o Piece.o Bloc.o Piece_I.o  TestPiece.o
+		$(FC) Board.o  Piece.o Bloc.o Piece_I.o TestPiece.o $(OPT2) -o TestPiece
 		./TestPiece
-TestBasicMath.o:TestPiece.cpp
-		$(FC) -c TestPiece.cpp
+
 
 #Classes
+TestPiece_I.o: TestPiece_I.cpp
+	$(FC) -c 	TestPiece_I.cpp
 
+TestPiece.o: TestPiece.cpp
+	$(FC) -c 	TestPiece.cpp
 main.o: main.cpp
 	$(FC) -c main.cpp
 IHM.o: IHM.cpp

@@ -18,11 +18,11 @@ using namespace CppUnit;
 using namespace std;
 
 
-class TestPiece : public CppUnit::TestFixture
+class TestPiece_I : public CppUnit::TestFixture
 {
-    CPPUNIT_TEST_SUITE(TestPiece);
-    CPPUNIT_TEST(testLeft);
-    CPPUNIT_TEST(testMoveLeft);
+    CPPUNIT_TEST_SUITE(TestPiece_I);
+    CPPUNIT_TEST(isRotateable_Piece_I);
+    CPPUNIT_TEST(Rotate_Piece_I);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -30,11 +30,9 @@ public:
     void tearDown(void);
 
 protected:
-    void testLeft(void);
-    void testMoveLeft(void);
-
+    void isRotateable_Piece_I(void);
+    void Rotate_Piece_I(void);
   private:
     Piece *PieceTest1;
-    Piece *PieceTest2;
     Board *BoardTest;
 };

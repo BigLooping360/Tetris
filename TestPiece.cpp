@@ -71,227 +71,31 @@ void TestPiece::testLeft(void){
 }
 
 
-void TestPiece::isRotateable_Piece_I(){
+void TestPiece::testMoveLeft(void){
   PieceTest1 = new Piece_I();
-  //Cas banal dans les 4 positions
-  PieceTest1->setPosx(0,5);
+  PieceTest1->setPosx(0,4);
   PieceTest1->setPosx(1,5);
-  PieceTest1->setPosx(2,5);
-  PieceTest1->setPosx(3,5);
-
-  PieceTest1->setPosy(0,10);
-  PieceTest1->setPosy(1,11);
-  PieceTest1->setPosy(2,12);
-  PieceTest1->setPosy(3,13);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
-
-  PieceTest1->setetat(2);
-  PieceTest1->setPosx(0,3);
-  PieceTest1->setPosx(1,4);
-  PieceTest1->setPosx(2,5);
-  PieceTest1->setPosx(3,6);
+  PieceTest1->setPosx(2,6);
+  PieceTest1->setPosx(3,7);
 
   PieceTest1->setPosy(0,10);
   PieceTest1->setPosy(1,10);
   PieceTest1->setPosy(2,10);
   PieceTest1->setPosy(3,10);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
+  PieceTest1->MoveLeft(*BoardTest);
 
-  PieceTest1->setetat(3);
-  PieceTest1->setPosx(0,5);
-  PieceTest1->setPosx(1,5);
-  PieceTest1->setPosx(2,5);
-  PieceTest1->setPosx(3,5);
+  CPPUNIT_ASSERT(PieceTest1->getPosx(0)==3);
+  CPPUNIT_ASSERT(PieceTest1->getPosx(1)==4);
+  CPPUNIT_ASSERT(PieceTest1->getPosx(2)==5);
+  CPPUNIT_ASSERT(PieceTest1->getPosx(3)==6);
 
-  PieceTest1->setPosy(0,10);
-  PieceTest1->setPosy(1,11);
-  PieceTest1->setPosy(2,12);
-  PieceTest1->setPosy(3,13);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
-
-  PieceTest1->setetat(4);
-  PieceTest1->setPosx(0,3);
-  PieceTest1->setPosx(1,4);
-  PieceTest1->setPosx(2,5);
-  PieceTest1->setPosx(3,6);
-
-  PieceTest1->setPosy(0,10);
-  PieceTest1->setPosy(1,10);
-  PieceTest1->setPosy(2,10);
-  PieceTest1->setPosy(3,10);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
-
-  //Cas limite
-
-  PieceTest1->setetat(1);
-  for (size_t i = 0; i < 2; i++) {
-    PieceTest1->setPosx(0,i);
-    PieceTest1->setPosx(1,i);
-    PieceTest1->setPosx(2,i);
-    PieceTest1->setPosx(3,i);
-    for (size_t j = 0; j < 16; j++) {
-      PieceTest1->setPosy(0,j);
-      PieceTest1->setPosy(1,j+1);
-      PieceTest1->setPosy(2,j+2);
-      PieceTest1->setPosy(3,j+3);
-      CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-    }
-  }
-  PieceTest1->setPosx(0,9);
-  PieceTest1->setPosx(1,9);
-  PieceTest1->setPosx(2,9);
-  PieceTest1->setPosx(3,9);
-  for (size_t j = 0; j < 16; j++) {
-    PieceTest1->setPosy(0,j);
-    PieceTest1->setPosy(1,j+1);
-    PieceTest1->setPosy(2,j+2);
-    PieceTest1->setPosy(3,j+3);
-    CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-  }
-
-
-
-
-  PieceTest1->setetat(2);
-  for (size_t i = 0; i < 2; i++) {
-    PieceTest1->setPosy(0,i);
-    PieceTest1->setPosy(1,i);
-    PieceTest1->setPosy(2,i);
-    PieceTest1->setPosy(3,i);
-    for (size_t j = 0; j < 16; j++) {
-      PieceTest1->setPosx(0,j);
-      PieceTest1->setPosx(1,j+1);
-      PieceTest1->setPosx(2,j+2);
-      PieceTest1->setPosx(3,j+3);
-      CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-    }
-  }
-  PieceTest1->setPosy(0,19);
-  PieceTest1->setPosy(1,19);
-  PieceTest1->setPosy(2,19);
-  PieceTest1->setPosy(3,19);
-  for (size_t j = 0; j < 10; j++) {
-    PieceTest1->setPosx(0,j);
-    PieceTest1->setPosx(1,j+1);
-    PieceTest1->setPosx(2,j+2);
-    PieceTest1->setPosx(3,j+3);
-    CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-  }
-
-
-  PieceTest1->setetat(3);
-  for (size_t i = 8; i < 10; i++) {
-    PieceTest1->setPosx(0,i);
-    PieceTest1->setPosx(1,i);
-    PieceTest1->setPosx(2,i);
-    PieceTest1->setPosx(3,i);
-    for (size_t j = 0; j < 16; j++) {
-      PieceTest1->setPosy(0,j);
-      PieceTest1->setPosy(1,j+1);
-      PieceTest1->setPosy(2,j+2);
-      PieceTest1->setPosy(3,j+3);
-      CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-    }
-  }
-  PieceTest1->setPosx(0,0);
-  PieceTest1->setPosx(1,0);
-  PieceTest1->setPosx(2,0);
-  PieceTest1->setPosx(3,0);
-  for (size_t j = 0; j < 16; j++) {
-    PieceTest1->setPosy(0,j);
-    PieceTest1->setPosy(1,j+1);
-    PieceTest1->setPosy(2,j+2);
-    PieceTest1->setPosy(3,j+3);
-    CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-  }
-
-  PieceTest1->setetat(4);
-  for (size_t i = 18; i < 20; i++) {
-    PieceTest1->setPosy(0,i);
-    PieceTest1->setPosy(1,i);
-    PieceTest1->setPosy(2,i);
-    PieceTest1->setPosy(3,i);
-    for (size_t j = 0; j < 16; j++) {
-      PieceTest1->setPosx(0,j);
-      PieceTest1->setPosx(1,j+1);
-      PieceTest1->setPosx(2,j+2);
-      PieceTest1->setPosx(3,j+3);
-      CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-    }
-  }
-  PieceTest1->setPosy(0,0);
-  PieceTest1->setPosy(1,0);
-  PieceTest1->setPosy(2,0);
-  PieceTest1->setPosy(3,0);
-  for (size_t j = 0; j < 10; j++) {
-    PieceTest1->setPosx(0,j);
-    PieceTest1->setPosx(1,j+1);
-    PieceTest1->setPosx(2,j+2);
-    PieceTest1->setPosx(3,j+3);
-    CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
-  }
-
-
-}
-
-
-void TestPiece::Rotate_Piece_I(){
-  PieceTest1 = new Piece_I;
-
-  PieceTest1->setPosx(0,5);
-  PieceTest1->setPosx(1,5);
-  PieceTest1->setPosx(2,5);
-  PieceTest1->setPosx(3,5);
-
-  PieceTest1->setPosy(0,10);
-  PieceTest1->setPosy(1,11);
-  PieceTest1->setPosy(2,12);
-  PieceTest1->setPosy(3,13);
-
-  PieceTest1->Rotate(*BoardTest);
-  CPPUNIT_ASSERT(PieceTest1->getetat()==2);
-  for (size_t i = 0; i < 4; i++) {
-    CPPUNIT_ASSERT(PieceTest1->getPosy(i)==11);
-  }
-  CPPUNIT_ASSERT(PieceTest1->getPosx(0)==6);
-  CPPUNIT_ASSERT(PieceTest1->getPosx(1)==5);
-  CPPUNIT_ASSERT(PieceTest1->getPosx(2)==4);
-  CPPUNIT_ASSERT(PieceTest1->getPosx(3)==3);
-
-
-  PieceTest1->Rotate(*BoardTest);
-  CPPUNIT_ASSERT(PieceTest1->getetat()==3);
-  for (size_t i = 0; i < 4; i++) {
-    CPPUNIT_ASSERT(PieceTest1->getPosx(i)==5);
-  }
-  CPPUNIT_ASSERT(PieceTest1->getPosy(0)==12);
-  CPPUNIT_ASSERT(PieceTest1->getPosy(1)==11);
-  CPPUNIT_ASSERT(PieceTest1->getPosy(2)==10);
-  CPPUNIT_ASSERT(PieceTest1->getPosy(3)==9);
-
-  PieceTest1->Rotate(*BoardTest);
-  CPPUNIT_ASSERT(PieceTest1->getetat()==4);
-  for (size_t i = 0; i < 4; i++) {
-    CPPUNIT_ASSERT(PieceTest1->getPosy(i)==11);
-  }
-  CPPUNIT_ASSERT(PieceTest1->getPosx(0)==4);
-  CPPUNIT_ASSERT(PieceTest1->getPosx(1)==5);
-  CPPUNIT_ASSERT(PieceTest1->getPosx(2)==6);
-  CPPUNIT_ASSERT(PieceTest1->getPosx(3)==7);
-
-  PieceTest1->Rotate(*BoardTest);
-  CPPUNIT_ASSERT(PieceTest1->getetat()==1);
-  for (size_t i = 0; i < 4; i++) {
-    CPPUNIT_ASSERT(PieceTest1->getPosx(i)==5);
-  }
   CPPUNIT_ASSERT(PieceTest1->getPosy(0)==10);
-  CPPUNIT_ASSERT(PieceTest1->getPosy(1)==11);
-  CPPUNIT_ASSERT(PieceTest1->getPosy(2)==12);
-  CPPUNIT_ASSERT(PieceTest1->getPosy(3)==13);
+  CPPUNIT_ASSERT(PieceTest1->getPosy(1)==10);
+  CPPUNIT_ASSERT(PieceTest1->getPosy(2)==10);
+  CPPUNIT_ASSERT(PieceTest1->getPosy(3)==10);
+
+
 }
-
-
-
 
 void TestPiece::setUp(void)
 {

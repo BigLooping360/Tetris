@@ -14,7 +14,7 @@ Piece_T::Piece_T():Piece() {
 bool Piece_T::isRotateable(Board b){
   switch (etat){
     case 1:
-      if ( (getPosy(1)!=b.getHauteur()-1) and (b.getGrille(getPosx(1),getPosy(1)+1)==0))
+      if ( (getPosy(1)!=0) and (b.getGrille(getPosx(1),getPosy(1)+1)==0))
            return true;
       else
         return false;
@@ -27,7 +27,7 @@ bool Piece_T::isRotateable(Board b){
         return false;
       break;
     case 3:
-      if ( (getPosy(1)!=0) and (b.getGrille(getPosx(1),getPosy(1)-1)==0))
+      if ( (getPosy(1)!=b.getHauteur()-1) and (b.getGrille(getPosx(1),getPosy(1)-1)==0))
            return true;
       else
         return false;
@@ -49,10 +49,10 @@ switch (etat){
   case 1:
     if (isRotateable(b)){
       setPosx(0,getPosx(1));
-      setPosy(0,getPosy(1)+1);
+      setPosy(0,getPosy(1)-1);
 
       setPosx(2,getPosx(1));
-      setPosy(2,getPosy(1)-1);
+      setPosy(2,getPosy(1)+1);
 
       setPosx(3,getPosx(1)-1);
       setPosy(3,getPosy(1));
@@ -69,7 +69,7 @@ switch (etat){
     setPosy(2,getPosy(1));
 
     setPosx(3,getPosx(1));
-    setPosy(3,getPosy(1)+1);
+    setPosy(3,getPosy(1)-1);
     etat++;
     }
     break;
@@ -77,10 +77,10 @@ switch (etat){
   case 3:
   if (isRotateable(b)){
     setPosx(0,getPosx(1));
-    setPosy(0,getPosy(1)-1);
+    setPosy(0,getPosy(1)+1);
 
     setPosx(2,getPosx(1));
-    setPosy(2,getPosy(1)+1);
+    setPosy(2,getPosy(1)-1);
 
     setPosx(3,getPosx(1)+1);
     setPosy(3,getPosy(1));
@@ -97,7 +97,7 @@ switch (etat){
     setPosy(2,getPosy(1));
 
     setPosx(3,getPosx(1));
-    setPosy(3,getPosy(1)-1);
+    setPosy(3,getPosy(1)+1);
     etat=1;
     }
     break;

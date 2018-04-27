@@ -11,18 +11,18 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include "Piece.hpp"
-#include "Piece_I.hpp"
+#include "Piece_T.hpp"
 #include "Board.hpp"
 
 using namespace CppUnit;
 using namespace std;
 
 
-class TestPiece : public CppUnit::TestFixture
+class TestPiece_T : public CppUnit::TestFixture
 {
-    CPPUNIT_TEST_SUITE(TestPiece);
-    CPPUNIT_TEST(testLeft);
-    CPPUNIT_TEST(testMoveLeft);
+    CPPUNIT_TEST_SUITE(TestPiece_T);
+    CPPUNIT_TEST(isRotateable_Piece_T);
+    CPPUNIT_TEST(Rotate_Piece_T);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -30,11 +30,9 @@ public:
     void tearDown(void);
 
 protected:
-    void testLeft(void);
-    void testMoveLeft(void);
-
+    void isRotateable_Piece_T(void);
+    void Rotate_Piece_T(void);
   private:
     Piece *PieceTest1;
-    Piece *PieceTest2;
     Board *BoardTest;
 };
