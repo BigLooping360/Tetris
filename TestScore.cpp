@@ -1,3 +1,6 @@
+#include <iostream>
+#include <fstream>
+#include <string.h>
 #include "TestScore.hpp"
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
@@ -10,27 +13,43 @@
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
-
+#include "Score.hpp"
 
 using namespace CppUnit;
 using namespace std;
 
 
-void TestScore::setUp(void)
-{
-	PieceTest1 = new Piece_I();
-  PieceTest2 = new Piece_I();
-  PieceTest3 = new Piece_I();
-  BoardTest = new Board();
-}
-void TestScore::tearDown(void)
-{
-	delete PieceTest1;
-  delete PieceTest2;
-  delete PieceTest3;
-  delete BoardTest;
+void TestScore::setUp(void) {
 
 }
+
+void TestScore::tearDown(void) {
+
+}
+
+void TestScore::testaddscore(int score) {
+
+
+}
+
+void TestScore::testmeilleurescore(int mscore) {
+
+
+
+}
+
+//on vérifie que le fichier ch.txt s'est bien créé et qu'on pourra écrire dessus, et que l'attribut nomfichier de Score s'est bien mis à jour
+void TestScore::testScore(string ch) {
+
+  strcat(ch,".txt"); // On concatène .txt à ch
+  CPPUNIT_ASSERT();
+  FILE* fichier = NULL;
+  fichier = fopen(ch,'r'+);
+  CPPUNIT_ASSERT(fichier!=NULL);
+
+}
+
+
 //-----------------------------------------------------------------------------
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestScore );
