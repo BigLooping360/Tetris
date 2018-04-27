@@ -199,8 +199,7 @@ void TestPiece::testDown(void)
 	for (int i=0;i<4;i++){
 		 PieceTest1->setPosy(i,1);
 		 PieceTest1->setPosx(i,i+4);
-		 PieceTest2->setPosy(i,0);
-		 PieceTest2->setPosx(i,i+5);}
+		 BoardTest->setGrille(i+2,0);}
 
 // La pièce est bloquée par une autre elle ne peut pas descendre
 	CPPUNIT_ASSERT(false ==PieceTest1->Down(*BoardTest));
@@ -243,8 +242,8 @@ void TestPiece::testMoveDown(void)
 		PieceTest1->setPosx(i,i);
 		PieceTest2->setPosy(i,1);
 		PieceTest2->setPosx(i,i);
-		PieceTest3->setPosy(i,0);
-		PieceTest3->setPosx(i,i);
+		BoardTest->setGrille(i,0);
+
 		}
 
     PieceTest1->MoveDown(*BoardTest);
@@ -260,14 +259,14 @@ void TestPiece::setUp(void)
 {
 	PieceTest1 = new Piece_I();
   PieceTest2 = new Piece_I();
-  PieceTest3 = new Piece_I();
+
   BoardTest = new Board();
 }
 void TestPiece::tearDown(void)
 {
 	delete PieceTest1;
   delete PieceTest2;
-  delete PieceTest3;
+
   delete BoardTest;
 
 }

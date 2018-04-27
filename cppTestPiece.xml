@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
 <TestRun>
-  <FailedTests>
-    <FailedTest id="5">
-      <Name>TestPiece::testDown</Name>
-      <FailureType>Assertion</FailureType>
-      <Location>
-        <File>TestPiece.cpp</File>
-        <Line>206</Line>
-      </Location>
-      <Message>assertion failed
-- Expression: false ==PieceTest1-&gt;Down(*BoardTest)
-</Message>
-    </FailedTest>
-    <FailedTest id="6">
-      <Name>TestPiece::testMoveDown</Name>
-      <FailureType>Assertion</FailureType>
-      <Location>
-        <File>TestPiece.cpp</File>
-        <Line>254</Line>
-      </Location>
-      <Message>assertion failed
-- Expression: PieceTest2-&gt;getPosy(i) == PieceTest1-&gt;getPosy(i)
-</Message>
-    </FailedTest>
-  </FailedTests>
+  <FailedTests></FailedTests>
   <SuccessfulTests>
     <Test id="1">
       <Name>TestPiece::testLeft</Name>
@@ -37,11 +14,17 @@
     <Test id="4">
       <Name>TestPiece::testMoveRight</Name>
     </Test>
+    <Test id="5">
+      <Name>TestPiece::testDown</Name>
+    </Test>
+    <Test id="6">
+      <Name>TestPiece::testMoveDown</Name>
+    </Test>
   </SuccessfulTests>
   <Statistics>
     <Tests>6</Tests>
-    <FailuresTotal>2</FailuresTotal>
+    <FailuresTotal>0</FailuresTotal>
     <Errors>0</Errors>
-    <Failures>2</Failures>
+    <Failures>0</Failures>
   </Statistics>
 </TestRun>

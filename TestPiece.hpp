@@ -18,6 +18,18 @@
 using namespace CppUnit;
 using namespace std;
 
+/*! \class TestPiece_S
+ * \brief Classe Test de Piece
+ * \author Léa Lefrançois, Laura Couret et Léa Lefrançois
+ * \version 1.0
+ * \date avril 2018
+ * \bug Rien à signaler
+ * \warning Rien à signaler
+ *
+ *Ce module sert de test unitaire à la classe Piece
+ *On testera si la Piece peut se déplacer vers la gauche, vers et la droite et descendre
+
+*/
 
 class TestPiece : public CppUnit::TestFixture
 {
@@ -35,17 +47,27 @@ public:
     void tearDown(void);
 
 protected:
+
     void testLeft(void);
     void testMoveLeft(void);
     void testRight(void);
     void testMoveRight(void);
-    void testMoveDown(void);
+    /*! \fn void testDown()
+    * \brief Teste si la Piece peut descendre dans plusieurs situations : au milieu d'un Board vide, lorsqu'un élément l'empêche de descendre et quand elle est à la frontière d'un Board.
+    */
     void testDown(void);
+    /*! \fn void testMoveDown()
+    * \brief Test  la descente d'une Piece : on testera si la pièce est bien descendu
+    */
+    void testMoveDown(void);
+
 
 
   private:
+    /*! /var *Piece1Test1 est le pointeur sur une Piece de test*/
     Piece *PieceTest1;
+    /*! /var *Piece1Test2 est le pointeur sur une Piece de test*/
     Piece *PieceTest2;
-    Piece *PieceTest3;
+    /*! /var *BoardTest est le pointeur sur un Board de test*/
     Board *BoardTest;
 };
