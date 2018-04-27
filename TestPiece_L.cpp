@@ -42,18 +42,29 @@ void TestPiece_L::testisRotateable() {
     PieceTest1->setPosx(i,3+i);
     PieceTest1->setPosy(i,9);
   }
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == true);
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
 
+  //cas où une case pleine à côté de la Piece n'empêche pas la pièce de tourner
   BoardTest->setGrille(4,10);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == true);
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
 
   //cas où une case pleine de la grille empêche la pièce de tourner
   BoardTest->setGrille(3,9);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == false);
+  CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
 
+  //cas où une autre case pleine de la grille empêche la pièce de tourner
   BoardTest->setGrille(3,9);
   BoardTest->setGrille(4,7);
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == false);
+  CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
+
+  //cas où le bord de la grille n'empêche pas la rotation
+  PieceTest1->setPosx(0,BoardTest->getLargeur()-4);
+  PieceTest1->setPosy(0,8);
+  for (i=1;i<4;i++) {
+    PieceTest1->setPosx(i,BoardTest->getLargeur()-5+i);
+    PieceTest1->setPosy(i,9);
+  }
+  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest));
 
   //cas où le bord de la grille empêche la rotation
   PieceTest1->setPosx(0,0);
@@ -62,7 +73,7 @@ void TestPiece_L::testisRotateable() {
     PieceTest1->setPosx(i,i-1);
     PieceTest1->setPosy(i,9);
   }
-  CPPUNIT_ASSERT(PieceTest1->isRotateable(*BoardTest) == false);
+  CPPUNIT_ASSERT(!PieceTest1->isRotateable(*BoardTest));
 
 }
 

@@ -20,7 +20,7 @@ bool Piece_J::isRotateable(Board b){
       break;
 
     case 2:
-      return ((getPosx(1) < b.getLargeur()-2) and (b.getGrille(getPosx(1)+1,getPosy(1))==0) and (b.getGrille(getPosx(1)+2,getPosy(1))==0));
+      return ((getPosx(1) <= b.getLargeur()-3) and (b.getGrille(getPosx(1)+1,getPosy(1))==0) and (b.getGrille(getPosx(1)+2,getPosy(1))==0));
       break;
 
     case 3:

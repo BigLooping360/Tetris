@@ -40,7 +40,7 @@ class Board {
   */
   int getGrille(int x, int y) const;
   /*! \fn void setGrille(int x, int y)
-  * \brief modifie la valeur de la grille dans la case en [x,y]
+  * \brief modifie la valeur de la grille dans la case en [x,y] : si la valeur en [x,y] vaut 1, elle deviendra 0, sinon elle deviendra 1
   */
   void setGrille(int x, int y);
   //Le changer en constructeur
