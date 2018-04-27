@@ -26,7 +26,7 @@ void TestPiece::testLeft(void){
   PieceTest1->setPosx(1,0);
   PieceTest1->setPosx(2,0);
   PieceTest1->setPosx(3,0);
-  for (size_t i = 0; i < 20; i++) {
+  for (size_t i = 0; i < BoardTest->getHauteur(); i++) {
   PieceTest1->setPosy(0,i);
   PieceTest1->setPosy(0,i);
   PieceTest1->setPosy(0,i);
@@ -39,7 +39,7 @@ void TestPiece::testLeft(void){
     PieceTest1->setPosx(1,i);
     PieceTest1->setPosx(2,i);
     PieceTest1->setPosx(3,i);
-    for (size_t j = 0; j < 20; j++) {
+    for (size_t j = 0; j < BoardTest->getHauteur(); j++) {
       PieceTest1->setPosy(0,j);
       PieceTest1->setPosy(1,j);
       PieceTest1->setPosy(2,j);
@@ -53,7 +53,7 @@ void TestPiece::testLeft(void){
     PieceTest1->setPosx(1,i+1);
     PieceTest1->setPosx(2,i+2);
     PieceTest1->setPosx(3,i+3);
-    for (size_t j = 0; j < 17; j++) {
+    for (size_t j = 0; j < (BoardTest->getHauteur()-3); j++) {
       PieceTest1->setPosy(0,j);
       PieceTest1->setPosy(0,j+1);
       PieceTest1->setPosy(0,j+2);
@@ -67,7 +67,7 @@ void TestPiece::testLeft(void){
     PieceTest1->setPosx(1,i+1);
     PieceTest1->setPosx(2,i+1);
     PieceTest1->setPosx(3,i+1);
-    for (size_t j = 0; j < 20; j++) {
+    for (size_t j = 0; j < BoardTest->getHauteur(); j++) {
       BoardTest->setGrille(i,j);
       PieceTest1->setPosy(0,j);
       PieceTest1->setPosy(1,j);
