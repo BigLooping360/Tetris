@@ -18,7 +18,7 @@ bool Piece_L::isRotateable(Board b){
   switch (etat){
 
     case 1:
-      return ((getPosy(1) >= 2 ) and (getPosx(1) >= 1 ) and (b.getGrille(getPosx(1)-1,getPosy(1))==0) and (b.getGrille(getPosx(1)-2,getPosy(1))==0));
+      return ((getPosy(1) >= 2 ) and (getPosx(1) >= 1 ) and (b.getGrille(getPosx(1)-1,getPosy(1))==0) and (b.getGrille(getPosx(1),getPosy(1)-2)==0));
       break;
 
     case 2:
