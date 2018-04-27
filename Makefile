@@ -31,6 +31,16 @@ Test_Piece_L : Board.o TestPiece_L.o Piece.o Bloc.o Piece_L.o
 		$(FC) Board.o TestPiece_L.o Piece.o Bloc.o Piece_L.o $(OPT2) -o TestPiece_L
 		./TestPiece_L
 
+Test_Piece_S : Board.o TestPiece_S.o Piece.o Bloc.o Piece_S.o
+		$(FC) Board.o TestPiece_S.o Piece.o Bloc.o Piece_S.o $(OPT2) -o TestPiece_S
+		./TestPiece_S
+
+Test_Piece_Z : Board.o TestPiece_Z.o Piece.o Bloc.o Piece_Z.o
+		$(FC) Board.o TestPiece_Z.o Piece.o Bloc.o Piece_Z.o $(OPT2) -o TestPiece_Z
+		./TestPiece_Z
+
+
+
 
 
 #Classes
