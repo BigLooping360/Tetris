@@ -79,6 +79,11 @@ Jeu::Jeu(){
 
 
 void Jeu::MaJ(){
+  //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
+  for (size_t i = 0; i < 4; i++) {
+    if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==5)) and (PieceEnCours->getPosy(i)==19))
+      jeu=false;
+  }
 
   //On intègre la pièce en cours bloqué dans le Board b
   for (int i = 0; i < 4; i++) {
@@ -176,6 +181,7 @@ void Jeu::MaJ(){
       PieceSuivante= new Piece_Z();
       break;
   }
+
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
 void Jeu::interaction(int c){

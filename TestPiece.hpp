@@ -20,7 +20,7 @@ using namespace std;
 
 /*! \class TestPiece_S
  * \brief Classe Test de Piece
- * \author Léa Lefrançois, Laura Couret et Léa Lefrançois
+ * \author Léa Lefrançois, Laura Couret et Victor LE MAISTRE
  * \version 1.0
  * \date avril 2018
  * \bug Rien à signaler
