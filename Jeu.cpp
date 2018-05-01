@@ -297,7 +297,6 @@ void Jeu::stocker(){
             PieceStocke = new Piece_Z();
             break;
         }
-        *PieceStocke=*PieceX;
 
 
 
@@ -333,7 +332,6 @@ void Jeu::stocker(){
           PieceStocke= new Piece_Z();
           break;
       }
-      *PieceStocke=*PieceEnCours;
 
       //On passe la piece suivante en tant que piece en cours
       switch (PieceSuivante->getcolor()) {
@@ -399,6 +397,7 @@ void Jeu::stocker(){
       }
 
     }
+    PieceStocke->setstocke();
   }
 
 
