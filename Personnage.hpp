@@ -43,6 +43,10 @@ class Personnage {
     * \return Retourne true si le Personnage peut toujours avancer, false sinon
     */
     bool getbloque();
+    /*! \fn void setbloque()
+    * \brief Mutateur du booléen bloqué du Personnage, permet d'inverser la valeur du booléen bloque
+    */
+    void setbloque();
     /*! \fn bool getDirection()
     * \brief Accesseur du booléen Direction du Personnage
     * \return Retourne le booléen Direction
@@ -60,4 +64,4 @@ class Personnage {
 
 };
 
-endif;
+#endif

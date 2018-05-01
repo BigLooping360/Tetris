@@ -3,6 +3,8 @@
 #include <iostream>
 
 #include "Jeu.hpp"
+#include"JeuClassique.hpp"
+#include "JeuMontagnard.hpp"
 
 
 #include<vector>
@@ -34,10 +36,23 @@ class IHM {
   * \return l'entier correspondant au caractère tapé
   */
   static int getinput();
-  /*! \fn static void afficher(Jeu j)
-  * \brief Affiche l'état courant du Jeu
+
+  /*! \fn static void init()
+  * \brief initialise l'écran
   */
-  static void afficher(Jeu j);
+  static void init();
+  /*! \fn static void fin()
+  * \brief désactive lncurses et l'écran pour rendre le terminal réutilisable
+  */
+  static void fin();
+  /*! \fn static void afficher(JeuClassique j)
+  * \brief Affiche l'état courant du Jeu Classique
+  */
+  static void afficher(JeuClassique j);
+  /*! \fn static void afficher(JeuMontagnard j)
+  * \brief Affiche l'état courant du Jeu Montagnard
+  */
+  static void afficher(JeuMontagnard j);
     /*! \fn static void menu();
   * \brief Affiche le Menu d'accueil de notre application
   */

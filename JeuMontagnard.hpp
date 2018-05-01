@@ -20,7 +20,7 @@ class JeuMontagnard : public Jeu {
 
   private:
     /*! /var temps est le temps de millisecondes d'une partie de JeuMontagnard d'un joueur (jusqu'à ce qu'il perde)*/
-    float Temps;
+    float temps;
     /*! /var p représente le Personnage du JeuMontagnard*/
     Personnage p;
 
@@ -38,6 +38,15 @@ class JeuMontagnard : public Jeu {
     * \brief Met à jour le Board et le Personnage après chaque action du joueur
     */
     void MaJ();
+    /*! \fn Personnage getPersonnage()
+    * \brief Accesseur du personnage
+    * \return Retourne le personnage
+    */
+    Personnage getPersonnage();
+    /*! \fn void BougerPersonnage()
+    * \brief Donne l'ordre au personnage de bouger
+    */
+    void BougerPersonnage();
 
 };
 

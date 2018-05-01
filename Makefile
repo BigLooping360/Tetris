@@ -6,8 +6,8 @@ OPT1 = -lncurses
 OPT2 = -lcppunit
 # executables
 # main
-main : IHM.o 	Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o Menu.o main.o
-	$(FC) Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Piece.o Jeu.o IHM.o main.o Menu.o $(OPT1) -o Tetris
+main : IHM.o 	Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Personnage.o JeuClassique.o JeuMontagnard.o Jeu.o Menu.o main.o
+	$(FC) Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Piece.o Personnage.o JeuClassique.o JeuMontagnard.o Jeu.o IHM.o main.o Menu.o $(OPT1) -o Tetris
 	./Tetris
 
 Test_Piece_T : Board.o Piece.o Bloc.o Piece_T.o  TestPiece_T.o
@@ -53,6 +53,13 @@ TestPiece.o: TestPiece.cpp
 TestPiece_L.o: TestPiece_L.cpp
 	$(FC) -c 	TestPiece_L.cpp
 
+
+JeuMontagnard.o: JeuMontagnard.cpp
+		$(FC) -c JeuMontagnard.cpp
+JeuClassique.o: JeuClassique.cpp
+	$(FC) -c JeuClassique.cpp
+Personnage.o: Personnage.cpp
+	$(FC) -c Personnage.cpp
 main.o: main.cpp
 	$(FC) -c main.cpp
 IHM.o: IHM.cpp

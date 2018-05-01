@@ -28,6 +28,7 @@ using namespace std;
 */
 
 class Jeu {
+protected:
   /*! /var jeu est le booléen qui permet de déterminer si la partie est finie ou non */
   bool jeu;
   static const int a=1;
@@ -51,10 +52,16 @@ class Jeu {
   * \return le booléen jeu
   */
   bool getjeu()const;
-  /*! \fn void MaJ()
+  /*! \fn void MaJPiece()
   * \brief Met à jour la grille à chaque fois qu'une Piece est posée
   */
-  void MaJ();
+  void MaJPiece();
+
+  /*! \fn void MaJ()
+  * \brief Met à l'ensemble des paramètres (scores, Pieces) à chaque fois qu'une pièce est posée.
+  */
+  virtual void MaJ()=0;
+
   /*! \fn bool getstatut()
   * \brief Détermine si le jeu peut continuer ou non
   * \return vrai si la Piece en cours est bloqué, faux sinon

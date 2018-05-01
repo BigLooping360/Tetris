@@ -31,9 +31,18 @@ int main() {
 
 
 /*Test proto 2*/
-
+// initscr();
+// start_color();			/* Start color 			*/
+// init_pair(0, COLOR_WHITE, COLOR_BLACK);
+// attron(COLOR_PAIR(0));
+// char *choix1 = "1 pour Jouer au Tetris Classique";
+//
+// mvprintw(5, 0, choix1);
+// refresh();
+// while(1){}
+//   	endwin();
 Menu m;
-m.jouerClassique();
+m.lancement();
 
 
 

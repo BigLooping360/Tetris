@@ -1,4 +1,4 @@
-#include "Jeu.hpp"
+#include "JeuMontagnard.hpp"
 #include <iostream>
 #include <string>
 #include <time.h>
@@ -8,82 +8,30 @@
 using namespace std;
 
 
-Jeu::Jeu(){
-
-  srand(time(NULL));
-  nombre_aleatoire=rand()%(NombreDePieces-a) +a;
-  b=Board();
-  jeu=true;
-  switch (nombre_aleatoire) {
-    case 1:
-      PieceEnCours= new Piece_I();
-      break;
-
-    case 2:
-      PieceEnCours= new Piece_T();
-      break;
-
-    case 3:
-      PieceEnCours= new Piece_O();
-      break;
-
-    case 4:
-      PieceEnCours= new Piece_L();
-      break;
-
-    case 5:
-      PieceEnCours= new Piece_J();
-      break;
-
-    case 6:
-      PieceEnCours= new Piece_S();
-      break;
-
-    case 7:
-      PieceEnCours= new Piece_Z();
-      break;
-  }
-  nombre_aleatoire=rand()%(NombreDePieces-a) +a;
-
-  switch (nombre_aleatoire) {
-    case 1:
-      PieceSuivante= new Piece_I();
-      break;
-
-    case 2:
-      PieceSuivante= new Piece_T();
-      break;
-
-    case 3:
-      PieceSuivante= new Piece_O();
-      break;
-
-    case 4:
-      PieceSuivante= new Piece_L();
-      break;
-
-    case 5:
-      PieceSuivante= new Piece_J();
-      break;
-
-    case 6:
-      PieceSuivante= new Piece_S();
-      break;
-
-    case 7:
-      PieceSuivante= new Piece_Z();
-      break;
-  }
-
+JeuMontagnard::JeuMontagnard():Jeu(){
+  temps=0;
+  p=Personnage();
 }
 
 
-void Jeu::MaJPiece(){
+float JeuMontagnard::getTemps(){
+  return temps;
+}
+
+void JeuMontagnard::MaJ(){
+  for (size_t i = 0; i < 4; i++) {
+    if ((PieceEnCours->getPosy(i)==p.getPosy()) and (PieceEnCours->getPosx(i)==p.getPosx()) )
+      p.setbloque();
+  }
+
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
   for (size_t i = 0; i < 4; i++) {
     if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==6)) and (PieceEnCours->getPosy(i)==19))
       jeu=false;
   }
+  //On check si le personnage n'est pas arrivé tout en hauteur
+  if (p.getPosy()==19)
+    jeu=false;
 
   //On intègre la pièce en cours bloqué dans le Board b
   for (int i = 0; i < 4; i++) {
@@ -112,6 +60,9 @@ void Jeu::MaJPiece(){
             b.setGrille(j,k-1);
           }
       }
+      //On vérifie si le personnage n'est pas libéré :
+      if ((i==p.getPosy()) and (b.getGrille(p.getPosx(),p.getPosy())==0))
+        p.setbloque();
       //On décrémente ensuite i pour que la même ligne soit recheck
       i--;
     }
@@ -182,26 +133,13 @@ void Jeu::MaJPiece(){
       break;
   }
 
-}
-// Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
-void Jeu::interaction(int c){
-  if (((char)c=='q') or (c==KEY_LEFT))
-    PieceEnCours->MoveLeft(b);
-  if (((char)c=='d') or (c==KEY_RIGHT))
-    PieceEnCours->MoveRight(b);
-  if (((char)c=='s') or (c==KEY_DOWN))
-    PieceEnCours->MoveDown(b);
-  if (((char)c==' ') or (c==KEY_UP))
-    while(!PieceEnCours->getbloque())
-      PieceEnCours->MoveDown(b);
-  if ((char)c=='r')
-    PieceEnCours->Rotate(b);
+  temps++;
 }
 
-bool Jeu::getjeu()const{
-  return jeu;
+Personnage JeuMontagnard::getPersonnage(){
+  return p;
 }
 
-bool Jeu::getstatut(){
-  return PieceEnCours->getbloque();
+void JeuMontagnard::BougerPersonnage(){
+  p.Deplacement(b);
 }
