@@ -50,7 +50,7 @@ void Menu::jouerMontagnard(){
         if (clock()-temps>(CLOCKS_PER_SEC/2)){
             jeum.interaction((int)'s');
             if (!jeum.getPersonnage().getbloque())
-              jeum.BougerPersonnage();
+              jeum.DeplacerPersonnage();
             temps=clock();
           }
         inter=IHM::getinput();

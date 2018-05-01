@@ -36,7 +36,7 @@ protected:
   static const int NombreDePieces=8;
   /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
   int nombre_aleatoire;
-  /*! /var b correspondra à notre grille de jeu */
+  /*! /var b correspondra  à notre grille de jeu */
   Board b;
   /*! /var PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
   Piece *PieceStocke;
@@ -46,7 +46,10 @@ protected:
   Piece *PieceSuivante;
 
   public:
-
+  /*! \fn void stocker()
+  * \brief Stock la pièce en cours si la pièce n'a pas encore été stocké
+  */
+  void stocker();
   /*! \fn bool getjeu()const
   * \brief Accesseur du booleen jeu
   * \return le booléen jeu

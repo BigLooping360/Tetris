@@ -86,13 +86,19 @@ void Piece::MoveRight(Board b){
             setPosx(i,tab[i].getPosx()-1);
             }
 }
-
+void Piece::setstocke(){
+  stocke=!stocke;
+}
+bool Piece::getstocke() {
+  return stocke;
+}
 Piece::Piece():tab(5,Bloc(0,0)) {
   tab[0] = Bloc(4,19);
   tab[1] = Bloc(5,19);
   tab[2] = Bloc(6,19);
   tab[3] = Bloc(5,18);
   bloque=false;
+  stocke=false;
 //On pose 1 comme le premier état sur 4
   etat=1;
 }

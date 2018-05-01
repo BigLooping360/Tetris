@@ -43,10 +43,10 @@ class JeuMontagnard : public Jeu {
     * \return Retourne le personnage
     */
     Personnage getPersonnage();
-    /*! \fn void BougerPersonnage()
+    /*! \fn void DeplacerPersonnage()
     * \brief Donne l'ordre au personnage de bouger
     */
-    void BougerPersonnage();
+    void DeplacerPersonnage();
 
 };
 

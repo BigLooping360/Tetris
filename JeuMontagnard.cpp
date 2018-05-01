@@ -140,6 +140,6 @@ Personnage JeuMontagnard::getPersonnage(){
   return p;
 }
 
-void JeuMontagnard::BougerPersonnage(){
+void JeuMontagnard::DeplacerPersonnage(){
   p.Deplacement(b);
 }

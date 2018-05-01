@@ -34,7 +34,8 @@ class Piece {
   bool bloque;
   /*! /var color définit la couleur de la Piece */
   int color;
-  /*! /var stocke permet de savoir si une Piece peut être stockée. Attention, une Piece ne peut être stockée qu'une fois. */
+  /*! /var stocke permet de savoir si une Piece peut être stockée. Attention, une Piece ne peut être stockée qu'une fois.
+  Vaut vrai si la pièce a déjà était stocké. */
   bool stocke;
   public:
   /*! \fn int getPosx(int i)const
@@ -116,6 +117,15 @@ class Piece {
   * \param b est le Board de notre Tetris
   */
   void MoveLeft(Board b);
+  /*! \fn bool setstocke()
+  * \brief Mutateur de stocke
+  */
+  void setstocke();
+  /*! \fn bool getstocke()
+  * \brief Accesseur de stocke
+  * \return le booléen stocke
+  */
+  bool getstocke();
   /*! \fn virtual bool isRotateable(Board b)=0
   * \brief Vérifie si on peut tourner une Piece d'un cran dans le sens horaire par rapport au Board
   * \param b est le Board de notre Tetris
@@ -129,6 +139,7 @@ class Piece {
   /*! \fn Piece()
   * \brief Constructeur d'une Piece de Jeu général
   */
+
 
   Piece();
 

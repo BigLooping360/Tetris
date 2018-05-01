@@ -74,7 +74,7 @@ Jeu::Jeu(){
       PieceSuivante= new Piece_Z();
       break;
   }
-
+  PieceStocke=NULL;
 }
 
 
@@ -118,7 +118,7 @@ void Jeu::MaJPiece(){
 
 
   }
-  // PieceCours prend la valeur de PieceStockee
+  // PieceCours prend la valeur de PieceStocke
   switch (PieceSuivante->getcolor()) {
     case 1:
       PieceEnCours= new Piece_I();
@@ -196,8 +196,214 @@ void Jeu::interaction(int c){
       PieceEnCours->MoveDown(b);
   if ((char)c=='r')
     PieceEnCours->Rotate(b);
-}
+  if ((char)c=='o')
+    stocker();
 
+}
+void Jeu::stocker(){
+  if (!PieceEnCours->getstocke()){
+    if (PieceStocke!=NULL){
+        // On a besoin d'intervertir les deux pièces, PieceX sera l'intermédiare
+        Piece *PieceX;
+        // On détermine tout d'abord le type de PieceX qui prendra la valeur de PieceEnCours
+        switch (PieceEnCours->getcolor()) {
+          case 1:
+            PieceX = new Piece_I();
+            break;
+
+          case 2:
+            PieceX= new Piece_O();
+            break;
+
+          case 3:
+            PieceX= new Piece_T();
+            break;
+
+          case 4:
+            PieceX= new Piece_L();
+            break;
+
+          case 5:
+            PieceX= new Piece_J();
+            break;
+
+          case 6:
+            PieceX= new Piece_S();
+            break;
+
+          case 7:
+            PieceX= new Piece_Z();
+            break;
+        }
+        *PieceX=*PieceEnCours;
+        // On transmet maintenant PieceStocke à PieceEnCours
+        switch (PieceStocke->getcolor()) {
+          case 1:
+            PieceEnCours = new Piece_I();
+            break;
+
+          case 2:
+            PieceEnCours= new Piece_O();
+            break;
+
+          case 3:
+            PieceEnCours= new Piece_T();
+            break;
+
+          case 4:
+            PieceEnCours= new Piece_L();
+            break;
+
+          case 5:
+            PieceEnCours= new Piece_J();
+            break;
+
+          case 6:
+            PieceEnCours= new Piece_S();
+            break;
+
+          case 7:
+            PieceEnCours= new Piece_Z();
+            break;
+        }
+        *PieceEnCours=*PieceStocke;
+        //Et on met maintenant à jour PieceStocke
+        switch (PieceX->getcolor()) {
+          case 1:
+            PieceStocke = new Piece_I();
+            break;
+
+          case 2:
+            PieceStocke = new Piece_O();
+            break;
+
+          case 3:
+            PieceStocke = new Piece_T();
+            break;
+
+          case 4:
+            PieceStocke = new Piece_L();
+            break;
+
+          case 5:
+            PieceStocke = new Piece_J();
+            break;
+
+          case 6:
+            PieceStocke = new Piece_S();
+            break;
+
+          case 7:
+            PieceStocke = new Piece_Z();
+            break;
+        }
+        *PieceStocke=*PieceX;
+
+
+
+    }
+    else{
+      //On stocke la pièce
+      switch (PieceEnCours->getcolor()) {
+        case 1:
+          PieceStocke = new Piece_I();
+          break;
+
+        case 2:
+          PieceStocke= new Piece_O();
+          break;
+
+        case 3:
+          PieceStocke= new Piece_T();
+          break;
+
+        case 4:
+          PieceStocke= new Piece_L();
+          break;
+
+        case 5:
+          PieceStocke= new Piece_J();
+          break;
+
+        case 6:
+          PieceStocke= new Piece_S();
+          break;
+
+        case 7:
+          PieceStocke= new Piece_Z();
+          break;
+      }
+      *PieceStocke=*PieceEnCours;
+
+      //On passe la piece suivante en tant que piece en cours
+      switch (PieceSuivante->getcolor()) {
+        case 1:
+          PieceEnCours= new Piece_I();
+          break;
+
+        case 2:
+          PieceEnCours= new Piece_O();
+          break;
+
+        case 3:
+          PieceEnCours= new Piece_T();
+          break;
+
+        case 4:
+          PieceEnCours= new Piece_L();
+          break;
+
+        case 5:
+          PieceEnCours= new Piece_J();
+          break;
+
+        case 6:
+          PieceEnCours= new Piece_S();
+          break;
+
+        case 7:
+          PieceEnCours= new Piece_Z();
+          break;
+
+      }
+      //On détermine la prochaine pièce
+      nombre_aleatoire=rand()%(NombreDePieces-a) +a;
+      switch (nombre_aleatoire) {
+        case 1:
+          PieceSuivante= new Piece_I();
+          break;
+
+        case 2:
+          PieceSuivante= new Piece_T();
+          break;
+
+        case 3:
+          PieceSuivante= new Piece_O();
+          break;
+
+        case 4:
+          PieceSuivante= new Piece_L();
+          break;
+
+        case 5:
+          PieceSuivante= new Piece_J();
+          break;
+
+        case 6:
+          PieceSuivante= new Piece_S();
+          break;
+
+        case 7:
+          PieceSuivante= new Piece_Z();
+          break;
+      }
+
+    }
+  }
+
+
+
+}
 bool Jeu::getjeu()const{
   return jeu;
 }
