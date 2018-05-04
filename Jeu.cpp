@@ -78,7 +78,7 @@ Jeu::Jeu(){
 }
 
 
-void Jeu::MaJPiece(){
+int Jeu::MaJPiece(){
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
   for (size_t i = 0; i < 4; i++) {
     if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==6)) and (PieceEnCours->getPosy(i)==19))
@@ -89,6 +89,8 @@ void Jeu::MaJPiece(){
   for (int i = 0; i < 4; i++) {
     b.setGrille(PieceEnCours->getPosx(i), PieceEnCours->getPosy(i));
   }
+
+  int nb_ligneCompletee=0;
   //On vérifie pour toutes les lignes qu'il n'y a pas de ligne formé
   for (int i = 0; i < b.getHauteur(); i++) {
     bool LigneCompletee=true;
@@ -99,6 +101,7 @@ void Jeu::MaJPiece(){
     }
     //Si la ligne en question est complétée :
     if (LigneCompletee){
+      nb_ligneCompletee++;
       //On vide la Ligne en question
       for (int j = 0; j < b.getLargeur(); j++)
         b.setGrille(j,i);

@@ -55,10 +55,11 @@ protected:
   * \return le booléen jeu
   */
   bool getjeu()const;
-  /*! \fn void MaJPiece()
+  /*! \fn int MaJPiece()
   * \brief Met à jour la grille à chaque fois qu'une Piece est posée
+  * \return la nombre de lignes complétées grâce à la Piece ajoutée
   */
-  void MaJPiece();
+  int MaJPiece();
 
   /*! \fn void MaJ()
   * \brief Met à l'ensemble des paramètres (scores, Pieces) à chaque fois qu'une pièce est posée.

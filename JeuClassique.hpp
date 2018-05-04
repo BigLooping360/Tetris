@@ -31,6 +31,10 @@ class JeuClassique : public Jeu {
     * \return le score du joueur
     */
     int getpoints();
+    /*! \fn setpoints()
+    * \brief Modifie le nombre de points du jeu 
+    */
+    void setpoints(int l);
     /*! \fn void MaJ()
     * \brief Met à jour le Board après chaque action du joueur
     */
