@@ -28,6 +28,10 @@ class Personnage {
     bool Direction;
 
   public:
+    /*! \fn void setPosy()
+    * \brief Mutateur de la position en y du Personnage
+    */
+    void setPosy(int i);
     /*! \fn int getPosx()
     * \brief Accesseur de la position en x du Personnage
     * \return l'entier correspondant à la position en x du Personnage dans un Board

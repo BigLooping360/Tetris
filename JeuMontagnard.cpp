@@ -132,8 +132,12 @@ void JeuMontagnard::MaJ(){
       PieceSuivante= new Piece_Z();
       break;
   }
-
-  temps++;
+  //On vérifie que le personnage a toujours un bloc en dessous de lui sinon
+  //on le fait tomber :
+  if (b.getGrille(p.getPosx(),p.getPosy()-1)==0)
+    while ((b.getGrille(p.getPosx(),p.getPosy()-1)==0) and (p.getPosy()>=1))
+      p.setPosy(p.getPosy()-1);
+    temps++;
 }
 
 Personnage JeuMontagnard::getPersonnage(){

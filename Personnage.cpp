@@ -21,6 +21,10 @@ Personnage::Personnage(){
     return Posy;
   }
 
+  void Personnage::setPosy(int i){
+    Posy=i;
+  }
+
   bool Personnage::getbloque(){
     return bloque;
   }
