@@ -1,6 +1,11 @@
 #ifndef __Score_HPP__
 #define __Score_HPP__
 #include <iostream>
+#include <string>
+#include <time.h>
+#include <stdlib.h>
+#include <stream.h>
+#include <fstream>
 
 using namespace std;
 
@@ -29,6 +34,10 @@ class Score {
   * \param ch est le nom du fichier de Score à créer (un pour JeuClassique, un pour JeuMontagnard)
   */
   Score(string ch);
+  /*! \fn string getNomfichier()
+  * \brief Accesseur du nom du fichier correspondant au type de jeu
+  * \return "classique.txt" si JeuClassique, "montagnard.txt" si JeuMontagnard
+  */
   string getNomfichier();
   /*! \fn addscore(int s)
   * \brief Ajoute un nouveau Score au fichier des meilleurs Score
