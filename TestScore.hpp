@@ -44,11 +44,12 @@ class TestScore : public CppUnit::TestFixture
     /*! \fn void testScore(string);
     * \brief Vérifie si le fichier se créé bien et qu'on pourra le modifier
     */
-    void testScore(string);
+    void testScore(void);
 
   protected:
 
   private:
-    Score *Score;
+    Score *ScoreClassique;
+    Score *ScoreMontagnard;
 
 };

@@ -21,14 +21,50 @@ using namespace std;
 
 void TestScore::setUp(void) {
 
+  ScoreClassique = new Score("classique");
+  ScoreMontagnard = new Score("montagnard");
+
 }
 
 void TestScore::tearDown(void) {
+
+  delete ScoreClassique;
+  delete ScoreMontagnard;
 
 }
 
 void TestScore::testaddscore(int score) {
 
+    //on ajoute des scores dans les classiques et les montagnards
+    ScoreClassique<-addscore(100);
+    ScoreMontagnard<-addscore(150);
+    char temp[100];
+
+    //et ensuite on parcourt les fichiers pour voir si les scores ont bien été rentrés()
+    FILE* f1 = NULL;
+    FILE* f2 = NULL;
+    f1 = fopen("classique.txt",'r'); //r : mode lecture seule
+    f2 = fopen("montagnard.txt",'r');
+    if (f1 != NULL) {
+		    char ligne1[100];
+        //on recupere la dernière ligne de f1
+		    while (fgets(ligne1,sizeof(ligne1),f1) != NULL) {
+            memset(temp,0,sizeof(temp));
+            strcpy(temp,ligne1);
+			  }
+        CPPUNIT_ASSERT(strcmp("100",temp)==0);
+	  };
+    if (f2 != NULL) {
+		    char ligne2[100];
+        //on recupere la dernière ligne de f2
+		    while (fgets(ligne2,sizeof(ligne2),f2) != NULL) {
+          memset(temp,0,sizeof(temp));
+          strcpy(temp,ligne2);
+			  }
+        CPPUNIT_ASSERT(strcmp("150",temp)==0);
+	  };
+    fclose(f1);
+    fclose(f2);
 
 }
 
@@ -38,14 +74,19 @@ void TestScore::testmeilleurescore(int mscore) {
 
 }
 
-//on vérifie que le fichier ch.txt s'est bien créé et qu'on pourra écrire dessus, et que l'attribut nomfichier de Score s'est bien mis à jour
-void TestScore::testScore(string ch) {
+//on vérifie que les fichiers classique.txt et montagnard.txt se sont bien créés et qu'on peut écrire dessus
+void TestScore::testScore() {
 
-  strcat(ch,".txt"); // On concatène .txt à ch
-  CPPUNIT_ASSERT();
-  FILE* fichier = NULL;
-  fichier = fopen(ch,'r'+);
-  CPPUNIT_ASSERT(fichier!=NULL);
+  char cl[50] = "classique.txt";
+  char m[50] = "montagnard.txt";
+  FILE* f1 = NULL;
+  FILE* f2 = NULL;
+  f1 = fopen(cl,'r+'); //r+ : mode écriture et le fichier doit exister
+  f2 = fopen(m,'r+');
+  CPPUNIT_ASSERT(f1!=NULL);
+  CPPUNIT_ASSERT(f2!=NULL);
+  fclose(f1);
+  fclose(f2);
 
 }
 
