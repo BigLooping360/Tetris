@@ -1,7 +1,9 @@
 #ifndef __Score_HPP__
 #define __Score_HPP__
+#include <iostream>
 
 using namespace std;
+
 
 /*! \class Score
  * \brief Gestion des meilleurs Score des joueurs
@@ -27,6 +29,7 @@ class Score {
   * \param ch est le nom du fichier de Score à créer (un pour JeuClassique, un pour JeuMontagnard)
   */
   Score(string ch);
+  string getNomfichier();
   /*! \fn addscore(int s)
   * \brief Ajoute un nouveau Score au fichier des meilleurs Score
   * \param s est le Score réalisé à ajouter

@@ -12,8 +12,8 @@
 #include <cppunit/XmlOutputter.h>
 
 
-
 void TestPiece_I::isRotateable_Piece_I(){
+  
   PieceTest1 = new Piece_I();
   //Cas banal dans les 4 positions
   PieceTest1->setPosx(0,5);

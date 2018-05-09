@@ -38,8 +38,8 @@ void TestScore::tearDown(void) {
 void TestScore::testaddscore(int score) {
 
     //on ajoute des scores dans les classiques et les montagnards
-    ScoreClassique<-addscore(100);
-    ScoreMontagnard<-addscore(150);
+    ScoreClassique->addscore(100);
+    ScoreMontagnard->addscore(150);
     char temp[100];
 
     //et ensuite on parcourt les fichiers pour voir si les scores ont bien été rentrés()

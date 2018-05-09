@@ -32,7 +32,7 @@ class JeuClassique : public Jeu {
     */
     int getpoints();
     /*! \fn setpoints()
-    * \brief Modifie le nombre de points du jeu 
+    * \brief Modifie le nombre de points du jeu
     */
     void setpoints(int l);
     /*! \fn void MaJ()

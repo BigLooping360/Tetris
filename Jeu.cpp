@@ -3,7 +3,7 @@
 #include <string>
 #include <time.h>
 #include <ncurses.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 using namespace std;
 
