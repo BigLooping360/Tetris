@@ -32,7 +32,7 @@ void Score::addscore(int s) {
   int j=0;
   int max = 10; //nb max de meilleurs scores que l'on décide de sauvegarder
   bool OK=true;
-  vector<int> scores(10); //tableau permettant de stocker les scores
+  vector<int> scores(10,-1); //tableau permettant de stocker les scores
   vector<string> pseudos(10); //tableau permettant de stocker les pseudos
   string nomf = getNomfichier();
   ifstream fichier(nomf,ios::in); //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier
@@ -61,7 +61,7 @@ void Score::addscore(int s) {
   //on réécrit tout dans notre fichier texte que l'on écrase
   ofstream fichier(nomf,ios::out | ios::trunc); //trunc permet de supprimer l'ancien contenu
   int n = 0;
-  while (n<(max-1) && scores[n]!=0) {
+  while (n<(max-1) && scores[n]>=0) {
     fichier << pseudos[n] << " " << scores[n] << endl;
     n++;
   }
