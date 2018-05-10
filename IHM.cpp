@@ -74,9 +74,10 @@ void IHM::menu(){
   char *msg3 = "Appuyer sur la touche :";
   char *choix1 = "1 pour Jouer au Tetris Classique";
   char *choix2 = "2 pour Jouer au Tetris Montagnard";
-  char *choix3 = "3 pour consulter les meilleurs scores";
-  char *choix4 = "4 pour consulter les règles";
-  char *choix5 = "5 pour quitter l'application";
+  char *choix3 = "3 pour consulter les meilleurs scores du Tetris Classique";
+  char *choix4 = "4 pour consulter les meilleurs scores du Tetris Montagnard";
+  char *choix5 = "5 pour consulter les règles";
+  char *choix6 = "6 pour quitter l'application";
   int taille1= strlen(msg1);
   int taille2= strlen(msg2);
   int taille3= strlen(msg3);
@@ -85,6 +86,7 @@ void IHM::menu(){
   int taille6= strlen(choix3);
   int taille7= strlen(choix4);
   int taille8 = strlen(choix5);
+  int taille9 = strlen(choix6);
   attron(A_DIM | A_BOLD);
   mvprintw(0, (COLS / 2) - (taille1 / 2), msg1);
   attroff(A_DIM | A_BOLD);
@@ -104,7 +106,10 @@ void IHM::menu(){
   attroff(COLOR_PAIR(5));
   attron(COLOR_PAIR(6));
   mvprintw(16, (COLS / 2) - (taille8 / 2), choix5);
-  attroff(COLOR_PAIR(5));
+  attroff(COLOR_PAIR(2));
+  attron(COLOR_PAIR(4));
+  mvprintw(18, (COLS / 2) - (taille9 / 2), choix6);
+  attroff(COLOR_PAIR(8));
 
   refresh();
 
@@ -274,65 +279,62 @@ void IHM::afficher(JeuMontagnard Jeu1){
 
 }
 
-void IHM::score() {
-
-  clear();
-  ScoreClassique();
-  //ScoreMontagnard();
-
-}
 
 void IHM::ScoreMontagnard() {
 
-  int max = 10;
-  int j = 0;
-  vector<float> scores(10,-1); //tableau permettant de stocker les scores
-  vector<string> pseudos(10); //tableau permettant de stocker les pseudos
+  clear();
+  int inter=-1;
+  int i=3;
+  char *msg1 = "Les meilleurs scores pour le Tetris Montagnard sont : ";
+  int taille1 = strlen(msg1);
+  attron(A_DIM | A_BOLD);
+  mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
 
-  //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier classique.txt
-  ifstream fichier("montagnard.txt",ios::in);
-  if (fichier) {
-    for (int i=0;i<max;i++) {
-      fichier >> pseudos[i] >> scores[i];
-    }
+  ifstream f("montagnard.txt",ios::in);
+  if (f) {
+    string ligne;
+      while(getline(f, ligne)) {
+        ligne+=" secondes";
+        mvprintw(i,5,ligne.c_str());
+        i=i+2;
+      }
   }
-  fichier.close();
+  f.close();
 
-  mvprintw(0,0,"Les meilleurs scores pour le Tetris Montagnard sont : ");
-
-  while (j<(max-1) && scores[j]>=0) {
-    cout << pseudos[j] << " : " << scores[j] << " points" << endl; //a revoir
-    j++;
+  mvprintw(i+2,2,"Appuyer sur Entrée pour revenir au menu principal");
+  while (inter!=(char)'\n') {
+    inter=IHM::getinput();
   }
+  IHM::menu();
 
 }
 
 void IHM::ScoreClassique() {
 
-  int max = 10;
-  int j = 0;
-  vector<int> scores(10,-1); //tableau permettant de stocker les scores
-  vector<string> pseudos(10); //tableau permettant de stocker les pseudos
+  clear();
+  int inter=-1;
+  int i=3;
+  char *msg1 = "Les meilleurs scores pour le Tetris Classique sont : ";
+  int taille1 = strlen(msg1);
+  attron(A_DIM | A_BOLD);
+  mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
 
-  //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier classique.txt
-  ifstream fichier("classique.txt",ios::in);
-  if (fichier) {
-    for (int i=0;i<max;i++) {
-      fichier >> pseudos[i] >> scores[i];
-    }
+  ifstream f("classique.txt",ios::in);
+  if (f) {
+    string ligne;
+      while(getline(f, ligne)) {
+        ligne+=" points";
+        mvprintw(i,5,ligne.c_str());
+        i=i+2;
+      }
   }
-  fichier.close();
+  f.close();
 
-  mvprintw(0,0,"Les meilleurs scores pour le Tetris Classique sont : ");
-  //char *temp;
-  while (j<(max-1) && scores[j]>=0) {
-    //strcpy(temp,pseudos[j].c_str());
-    //strcat(temp," : ");
-    //strcat(temp,scores[j].c_str());
-    //strcat(temp," points\n");
-    //mvprintw(1,1,temp);
-    j++;
+  mvprintw(i+2,2,"Appuyer sur Entrée pour revenir au menu principal");
+  while (inter!=(char)'\n') {
+    inter=IHM::getinput();
   }
+  IHM::menu();
 
 
 }

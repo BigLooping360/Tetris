@@ -51,7 +51,8 @@ public:
   */
   void jouerMontagnard();
   void ConsulterRegles();
-  void ConsulterScore();
+  void ConsulterScoreClassique();
+  void ConsulterScoreMontagnard();
   void Quitter();
 
 };

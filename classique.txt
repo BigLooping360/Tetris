@@ -1,2 +1,3 @@
-Abcde 60
-Loulou 50
+Loulou 150
+Léa 70
+Victor 60
