@@ -69,7 +69,7 @@ void Score::addscore(float s,string nomjoueur) {
 
 }
 
-bool meilleurescore(float s)
+bool Score::meilleurescore(float s)
 
 {
   bool ok(false);

@@ -1,5 +1,6 @@
 #include "Menu.hpp"
 
+using namespace std;
 
 void Menu::lancement() {
   //scorec = Score("classique");
@@ -71,7 +72,7 @@ void Menu::jouerMontagnard(){
 
 void Menu::ConsulterScore() {
   clear();
-  IHM::init();
-  IHM::score();
+  //IHM::init();
+  //IHM::score();
 
 }

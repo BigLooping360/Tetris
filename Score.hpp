@@ -50,7 +50,7 @@ class Score {
   * \param s est le Score réalisé à comparer avec ceux déjà réalisé
   * \return true s'il s'agit d'un nouveau meilleur Score, false sinon
   */
-  bool meilleurescore(int s);
+  bool meilleurescore(float s);
 
 };
 

@@ -2,6 +2,7 @@
 #include "Bloc.hpp"
 #include "Board.hpp"
 #include "Piece.hpp"
+#include "Score.hpp"
 #include "Menu.hpp"
 #include "Jeu.hpp"
 #include <vector>

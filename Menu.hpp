@@ -1,13 +1,14 @@
 #ifndef __Menu_HPP__
 #define __Menu_HPP__
 #include "Jeu.hpp"
-#include "Score.hpp"
+//#include "Score.hpp"
 #include "JeuClassique.hpp"
 #include "JeuMontagnard.hpp"
 #include "IHM.hpp"
 #include <time.h>
 #include <ncurses.h>
 #include <stdlib.h>
+#include <string>
 
 using namespace std;
 
@@ -29,14 +30,14 @@ private:
   JeuClassique jeuc;
   /*! /var jeum est le JeuMontagnard du Tetris qui sera lancé à la demande de l'utilisateur*/
   JeuMontagnard jeum;
+
   // /*! /var scoreclassique est ce qui servira à gérer les Score de l'utilisateur pour le JeuClassique*/
   // Score scoreclassique;
   // /*! /var scoreM est ce qui servira à gérer les Score de l'utilisateur pour le JeuMontagnard*/
   // Score scoreM;
-  Score scorec;
-  Score scorem;
 
 public:
+
   /*! \fn void lancement()
   * \brief Correspond au main de l'application
   */
