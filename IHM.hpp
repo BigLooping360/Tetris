@@ -87,6 +87,11 @@ class IHM {
   * \return Retourne le sième meilleure Score des JeuMontagnard
   */
   static float MeilleurScoreMontagnard(int s);
+  /*! \fn static string getPseudoGagnant()
+  * \brief Demande au joueur courant de rentrer un pseudo
+  * \return Retourne le pseudo choisi par le joueur
+  */
+  static string getPseudoGagnant();
 
 
 

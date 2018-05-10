@@ -3,7 +3,8 @@
 #include <string>
 #include <time.h>
 #include <ncurses.h>
-#include<stdlib.h>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ using namespace std;
 JeuMontagnard::JeuMontagnard():Jeu(){
   temps=0;
   p=Personnage();
+  srand(time(NULL));
 }
 
 
@@ -27,12 +29,20 @@ void JeuMontagnard::MaJ(){
 
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
   for (size_t i = 0; i < 4; i++) {
-    if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==6)) and (PieceEnCours->getPosy(i)==19))
+    if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==6)) and (PieceEnCours->getPosy(i)==19)) {
       jeu=false;
+      clock_t sec = clock();
+      temps = ((float) sec/CLOCKS_PER_SEC);
+
+    }
   }
   //On check si le personnage n'est pas arrivé tout en hauteur
-  if (p.getPosy()==19)
+  if (p.getPosy()==19) {
     jeu=false;
+    clock_t sec = clock();
+    temps = ((float) sec/CLOCKS_PER_SEC);
+  }
+
 
   //On intègre la pièce en cours bloqué dans le Board b
   for (int i = 0; i < 4; i++) {
@@ -134,7 +144,6 @@ void JeuMontagnard::MaJ(){
       break;
   }
 
-  temps++;
 }
 
 Personnage JeuMontagnard::getPersonnage(){

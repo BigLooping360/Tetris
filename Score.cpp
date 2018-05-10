@@ -9,6 +9,9 @@
 
 using namespace std;
 
+Score::Score() {
+
+}
 
 Score::Score(string ch) {
 

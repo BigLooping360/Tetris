@@ -3,8 +3,8 @@
 using namespace std;
 
 void Menu::lancement() {
-  //scorec = Score("classique");
-  //scorem = Score("montagnard");
+  scoreC = Score("classique");
+  scoreM = Score("montagnard");
   IHM::init();
   IHM::menu();
   int inter=-1;
@@ -44,7 +44,13 @@ void Menu::jouerClassique(){
         }
       jeuc.MaJ();
   }
-IHM::menu();
+
+  if (scoreC.meilleurescore(jeuc.getpoints())) {
+    string pseudo = IHM::getPseudoGagnant();
+    scoreC.addscore(jeuc.getpoints(),pseudo);
+  }
+
+  IHM::menu();
 }
 
 void Menu::jouerMontagnard(){
@@ -70,6 +76,12 @@ void Menu::jouerMontagnard(){
         }
       jeum.MaJ();
   }
+
+  if (scoreM.meilleurescore(jeum.getTemps())) {
+    string pseudo = IHM::getPseudoGagnant();
+    scoreM.addscore(jeum.getTemps(),pseudo);
+  }
+
   IHM::menu();
 
 }

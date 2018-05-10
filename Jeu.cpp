@@ -185,6 +185,8 @@ int Jeu::MaJPiece(){
       break;
   }
 
+  return nb_ligneCompletee;
+
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
 void Jeu::interaction(int c){

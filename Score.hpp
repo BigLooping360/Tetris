@@ -30,6 +30,7 @@ class Score {
   string nomfichier;
 
   public:
+  Score();
   /*! \fn Score(string ch)
   * \brief Constructeur d'un Score
   * \param ch est le nom du fichier de Score à créer (un pour JeuClassique, un pour JeuMontagnard)

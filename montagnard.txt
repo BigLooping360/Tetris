@@ -1,10 +1,2 @@
-abcde 2.5
-abcde 3.5
-abcde 4.5
-abcde 5.5
-abcde 6.5
-abcde 7.5
-abcde 8.5
-abcde 9.5
-abcde 10.5
-abcde 11.5
+laura 2.53241
+VLL 9.64046
