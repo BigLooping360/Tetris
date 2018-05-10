@@ -23,14 +23,14 @@ string Score::getNomfichier() {
   return nomfichier;
 }
 
-void Score::addscore(int s,string nomjoueur) {
+void Score::addscore(float s,string nomjoueur) {
 
   //déclaration des variables
   int j = 0;
   int n = 0;
   int max = 10; //nb max de meilleurs scores que l'on décide de sauvegarder
   bool OK = true;
-  vector<int> scores(10,-1); //tableau permettant de stocker les scores
+  vector<float> scores(10,-1); //tableau permettant de stocker les scores
   vector<string> pseudos(10); //tableau permettant de stocker les pseudos
 
   //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier

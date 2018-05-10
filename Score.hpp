@@ -44,7 +44,7 @@ class Score {
   * \brief Ajoute un nouveau Score au fichier des meilleurs Score
   * \param s est le Score réalisé à ajouter
   */
-  void addscore(int s,string pseudo);
+  void addscore(float s,string pseudo);
   /*! \fn bool meilleurescore(int s)
   * \brief Vérifie si un joueur peut rentrer dans le palmares des 5 meilleurs Score
   * \param s est le Score réalisé à comparer avec ceux déjà réalisé

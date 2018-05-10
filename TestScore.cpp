@@ -50,7 +50,7 @@ void TestScore::testaddscore(void) {
     bool OK = true;
     vector<int> scoresc(10,-1); //tableau permettant de stocker les scores classiques, tout initialité à -1
     vector<string> pseudosc(10); //tableau permettant de stocker les pseudos classiques
-    vector<int> scoresm(10,-1); //tableau permettant de stocker les scores montagnard, tout initialité à -1
+    vector<float> scoresm(10,-1); //tableau permettant de stocker les scores montagnard, tout initialité à -1
     vector<string> pseudosm(10); //tableau permettant de stocker les pseudos montagnard
 
     //on ouvre en mode lecture pour recupérer tous les scores contenues sur les 2 fichiers
@@ -100,7 +100,7 @@ void TestScore::testaddscore(void) {
     fc2.close();
     fm2.close();
     CPPUNIT_ASSERT(scoresc[jc] == scla);
-    CPPUNIT_ASSERT((abs(scoresm[jm] - smon)) < 0.00001); //epsilon à revoir !
+    CPPUNIT_ASSERT(abs(scoresm[jm]-smon) <= 0.000001); 
     CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
     CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
 
