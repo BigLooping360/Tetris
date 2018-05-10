@@ -1,12 +1,3 @@
-Loulou 150
-Léa 70
-Abcde 60
-Abcde 60
-Victor 60
-abcde 14.3
-abcde 13.3
-abcde 12.3
-abcde 11.3
 abcde 14.3
 abcde 13.3
 abcde 12.3

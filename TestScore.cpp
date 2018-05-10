@@ -39,54 +39,65 @@ void TestScore::tearDown(void) {
 
 void TestScore::testaddscore(void) {
 
-    float scla = 60;
-    float smon = 4.2;
-    string joueur = "Abcde";
-
     //déclaration des variables
     int jc = 0; //jc est l'indice où on ajoutera le nouveau score classique
     int jm = 0; //jm est l'indice où on ajoutera le nouveau score classique
     int max = 10; //nb max de scores que l'on peut avoir sur un fichier
     bool OK = true;
-    vector<int> scoresc(10,-1); //tableau permettant de stocker les scores classiques, tout initialité à -1
-    vector<string> pseudosc(10); //tableau permettant de stocker les pseudos classiques
-    vector<float> scoresm(10,-1); //tableau permettant de stocker les scores montagnard, tout initialité à -1
-    vector<string> pseudosm(10); //tableau permettant de stocker les pseudos montagnard
+    vector<float> scoresc(max,-1); //tableau permettant de stocker les scores classiques, tout initialité à -1
+    vector<string> pseudosc(max); //tableau permettant de stocker les pseudos classiques
+    vector<float> scoresm(max,-1); //tableau permettant de stocker les scores montagnard, tout initialité à -1
+    vector<string> pseudosm(max); //tableau permettant de stocker les pseudos montagnard
 
-    //on ouvre en mode lecture pour recupérer tous les scores contenues sur les 2 fichiers
     string nomfc = ScoreClassique->getNomfichier();
     string nomfm = ScoreMontagnard->getNomfichier();
-    ifstream fc(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
-    ifstream fm(nomfm.c_str(),ios::in);
-    if (fc && fm) {
-      for (int i=0;i<max;i++) {
-        fc >> pseudosc[i] >> scoresc[i];
-        fm >> pseudosm[i] >> scoresm[i];
+    string ligne;
+    string joueur = "abc";
+    ofstream fc1(nomfc.c_str(),ios::out | ios::trunc); //on écrase le contenu avec trunc
+    ofstream fm1(nomfm.c_str(),ios::out | ios::trunc);
+
+
+    //on remplit notre fichier de quelques scores
+    string pseudo = "def";
+    if (fc1) {
+      for (int i=0;i<max;i++){
+        pseudosc[i] = pseudo;
+        float score = 100-10*i;
+        scoresc[i] = score;
+        fc1 << pseudo << " " << score << endl;
       }
     }
-    fc.close();
-    fm.close();
+    if (fm1) {
+      for (int i=0;i<max;i++) {
+        pseudosm[i] = pseudo;
+        float score = 6.7*(i+1);
+        scoresm[i] = score;
+        fm1 << pseudo << " " << score << endl;
+      }
+    }
+    fc1.close();
+    fm1.close();
+
+    //on ajoute un nouveau score dans classique et montagnard qui se range au milieu
+    ScoreClassique->addscore(55,joueur);
+    ScoreMontagnard->addscore(10.6,joueur);
 
     //on récupère le rang jc (respectivement jm) où sera inséré notre nouveau score classique (respectivement notre nouveau score montagnard)
-    while ((jc<max) && OK) {
-       if (scoresc[jc] > scla) {
+    while ((jc<(max-1)) && OK) {
+       if (scoresc[jc] > 55) {
            jc++;
        } else {
            OK=false;
        }
      }
      OK = true;
-     while ((jm<max) && OK) {
-        if (scoresm[jm] > smon) {
+     while ((jm<(max-1)) && OK) {
+        if ((scoresm[jm] < 10.6) && scoresm[jm]>=0) {
             jm++;
         } else {
             OK=false;
         }
       }
-
-    //on ajoute un nouveau score dans classique et montagnard
-    ScoreClassique->addscore(scla,joueur);
-    ScoreMontagnard->addscore(smon,joueur);
 
     //on vérifie que les scores et les nom du joueur ont bien été rangé aux rangs jc et jm
     ifstream fc2(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
@@ -99,8 +110,89 @@ void TestScore::testaddscore(void) {
     }
     fc2.close();
     fm2.close();
-    CPPUNIT_ASSERT(scoresc[jc] == scla);
-    CPPUNIT_ASSERT(abs(scoresm[jm]-smon) <= 0.000001);
+    CPPUNIT_ASSERT(abs(scoresc[jc] - 55) <= 0.000001);
+    CPPUNIT_ASSERT(abs(scoresm[jm]-10.6) <= 0.000001);
+    CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
+    CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
+
+
+    //on ajoute un nouveau score dans classique et montagnard qui se range au tout début des 10 meilleurs scores
+    ScoreClassique->addscore(2000,joueur);
+    ScoreMontagnard->addscore(1.3,joueur);
+
+    //on récupère le rang jc (respectivement jm) où sera inséré notre nouveau score classique (respectivement notre nouveau score montagnard)
+    jc = 0;
+    jm = 0;
+    OK = true;
+    while ((jc<(max-1)) && OK) {
+       if (scoresc[jc] > 2000) {
+           jc++;
+       } else {
+           OK=false;
+       }
+     }
+     OK = true;
+     while ((jm<(max-1)) && OK) {
+        if ((scoresm[jm] < 1.3) && scoresm[jm]>=0) {
+            jm++;
+        } else {
+            OK=false;
+        }
+      }
+
+    //on vérifie que les scores et les nom du joueur ont bien été rangé aux rangs jc et jm
+    ifstream fc3(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
+    ifstream fm3(nomfm.c_str(),ios::in);
+    if (fc3 && fm3) {
+      for (int i=0;i<max;i++) {
+        fc3 >> pseudosc[i] >> scoresc[i];
+        fm3 >> pseudosm[i] >> scoresm[i];
+      }
+    }
+    fc3.close();
+    fm3.close();
+    CPPUNIT_ASSERT(abs(scoresc[jc] - 2000) <= 0.000001);
+    CPPUNIT_ASSERT(abs(scoresm[jm]-1.3) <= 0.000001);
+    CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
+    CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
+
+    //on ajoute un nouveau score dans classique et montagnard qui se range tout à la fin des 10 meilleurs
+    ScoreClassique->addscore(45,joueur);
+    ScoreMontagnard->addscore(41.2,joueur);
+
+    //on récupère le rang jc (respectivement jm) où sera inséré notre nouveau score classique (respectivement notre nouveau score montagnard)
+    jc = 0;
+    jm = 0;
+    OK = true;
+    while ((jc<(max-1)) && OK) {
+       if (scoresc[jc] > 45) {
+           jc++;
+       } else {
+           OK=false;
+       }
+     }
+     OK = true;
+     while ((jm<(max-1)) && OK) {
+        if ((scoresm[jm] < 41.2 ) && scoresm[jm]>=0) {
+            jm++;
+        } else {
+            OK=false;
+        }
+      }
+
+    //on vérifie que les scores et les nom du joueur ont bien été rangé aux rangs jc et jm
+    ifstream fc4(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
+    ifstream fm4(nomfm.c_str(),ios::in);
+    if (fc4 && fm4) {
+      for (int i=0;i<max;i++) {
+        fc4 >> pseudosc[i] >> scoresc[i];
+        fm4 >> pseudosm[i] >> scoresm[i];
+      }
+    }
+    fc4.close();
+    fm4.close();
+    CPPUNIT_ASSERT(abs(scoresc[jc] - 45) <= 0.000001);
+    CPPUNIT_ASSERT(abs(scoresm[jm]-41.2) <= 0.000001);
     CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
     CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
 
@@ -108,17 +200,18 @@ void TestScore::testaddscore(void) {
 
 void TestScore::testmeilleurescore(void) {
   float score1 = 14;
-  float score2= 1.2;
-
-
-  // si le fichier est vide on peut forcément ajouter notre score
-    CPPUNIT_ASSERT(ScoreClassique -> meilleurescore(score1)==true);
-    CPPUNIT_ASSERT(ScoreMontagnard -> meilleurescore(score1)==true);
+  float score2 = 1.2;
 
     string nomfc = ScoreClassique->getNomfichier();
     string nomfm = ScoreMontagnard->getNomfichier();
+    ofstream fc(nomfc.c_str(),ios::out | ios::trunc);
+    ofstream fm(nomfm.c_str(),ios::out | ios::trunc);
+
+    // si le fichier est vide on peut forcément ajouter notre score
+    CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score1));
+    CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score1));
+
   //je remplis mon fichier de score de 10 scores
-    ofstream fc(nomfc.c_str(),ios::app);
     if (fc) {
       for (int i=0;i<10;i++){
         string pseudo = "abcde";
@@ -126,8 +219,6 @@ void TestScore::testmeilleurescore(void) {
         fc << pseudo << " " << score << endl;
       }
     }
-
-    ofstream fm(nomfm.c_str(),ios::app);
     if (fm) {
       for (int i=0;i<10;i++){
         string pseudo = "abcde";
@@ -135,6 +226,9 @@ void TestScore::testmeilleurescore(void) {
         fm << pseudo << " " << score << endl;
       }
     }
+
+  fc.close();
+  fm.close();
 
   // on test si c'est des meilleurs scores
   CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score1)==true);

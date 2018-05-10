@@ -30,8 +30,8 @@ void Score::addscore(float s,string nomjoueur) {
   int n = 0;
   int max = 10; //nb max de meilleurs scores que l'on décide de sauvegarder
   bool OK = true;
-  vector<float> scores(10,-1); //tableau permettant de stocker les scores
-  vector<string> pseudos(10); //tableau permettant de stocker les pseudos
+  vector<float> scores(max,-1); //tableau permettant de stocker les scores
+  vector<string> pseudos(max); //tableau permettant de stocker les pseudos
 
   //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier
   string nomf = getNomfichier();
@@ -44,13 +44,25 @@ void Score::addscore(float s,string nomjoueur) {
   fichier.close();
 
   //on insère le nouveau à la bonne place dans nos deux tableaux
-  while ((j<max) && OK) {   //on récupère le rang où on doit insérer notre nouveau score
-	   if (scores[j] > s) {
-		     j++;
-	   } else {
-		     OK=false;
-	   }
-   }
+  if (nomf.compare("montagnard.txt") == 0 ) {
+    while ((j<(max-1)) && OK) {
+   	  if (scores[j] < s && scores[j]>=0) {
+   		   j++; //on récupère le rang où on doit insérer notre nouveau score
+   	  } else {
+   		   OK=false;
+   	  }
+    }
+  } else {
+    while ((j<(max-1)) && OK) {
+   	  if (scores[j] > s) {
+   		   j++; //on récupère le rang où on doit insérer notre nouveau score
+   	  } else {
+   		   OK=false;
+   	  }
+    }
+  }
+
+
 	for (int i=(max-1);i>=(j+1);i--) {
 		scores[i]=scores[i-1];
 		pseudos[i]=pseudos[i-1];
@@ -65,7 +77,7 @@ void Score::addscore(float s,string nomjoueur) {
     n++;
   }
 
-  fichier.close();
+  fichier2.close();
 
 }
 

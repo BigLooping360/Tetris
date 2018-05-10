@@ -46,8 +46,6 @@ Test_Score : Score.o TestScore.o
 
 
 
-
-
 #Classes
 TestScore.o : TestScore.cpp
 	$(FC) -c 	TestScore.cpp
