@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stream.h>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
