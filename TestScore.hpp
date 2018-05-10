@@ -34,22 +34,26 @@ using namespace std;
 */
 
 
-class TestScore : public CppUnit::TestFixture
-{
+class TestScore : public CppUnit::TestFixture {
+
     CPPUNIT_TEST_SUITE(TestScore);
+    CPPUNIT_TEST(testaddscore);
+    CPPUNIT_TEST(testmeilleurescore);
+    CPPUNIT_TEST(testScore);
     CPPUNIT_TEST_SUITE_END();
 
   public:
     void setUp(void);
     void tearDown(void);
-    void testaddscore(int,float,string);
-    void testmeilleurescore(int);
+
+  protected:
+
+    void testaddscore(void);
+    void testmeilleurescore(void);
     /*! \fn void testScore(string);
     * \brief Vérifie si le fichier se créé bien et qu'on pourra le modifier
     */
     void testScore(void);
-
-  protected:
 
   private:
     Score *ScoreClassique;

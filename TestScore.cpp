@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <vector>
 #include <cmath>
-#include "TestScore.hpp"
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
 #include <cppunit/ui/text/TextTestRunner.h>
@@ -17,6 +16,7 @@
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
+#include "TestScore.hpp"
 #include "Score.hpp"
 
 using namespace CppUnit;
@@ -37,7 +37,11 @@ void TestScore::tearDown(void) {
 
 }
 
-void TestScore::testaddscore(int scla, float smon, string joueur) {
+void TestScore::testaddscore(void) {
+
+    int scla = 60;
+    float smon = 47.2;
+    string joueur = "Abcde";
 
     //déclaration des variables
     int jc = 0; //jc est l'indice où on ajoutera le nouveau score classique
@@ -96,20 +100,20 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
     fc2.close();
     fm2.close();
     CPPUNIT_ASSERT(scoresc[jc] == scla);
-    CPPUNIT_ASSERT(abs(scoresm[jm] - smon) < 0.000001); //epsilon à revoir !
+    CPPUNIT_ASSERT((abs(scoresm[jm] - smon)) < 0.00001); //epsilon à revoir !
     CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
     CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
 
 }
 
-void TestScore::testmeilleurescore(int mscore) {
+void TestScore::testmeilleurescore(void) {
 
 
 
 }
 
 //on vérifie que les fichiers classique.txt et montagnard.txt se sont bien créés et qu'on peut écrire dessus
-void TestScore::testScore() {
+void TestScore::testScore(void) {
 
   string cl;
   string m;
