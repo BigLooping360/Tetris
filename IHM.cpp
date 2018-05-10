@@ -1,7 +1,10 @@
 #include "IHM.hpp"
 #include <iostream>
+#include <vector>
 #include <ncurses.h>
 #include <string.h>
+#include <fstream>
+#include <string>
 
 
 using namespace std;
@@ -233,5 +236,67 @@ void IHM::afficher(JeuMontagnard Jeu1){
   else
     mvaddch(Jeu1.b.getHauteur()-Jeu1.getPersonnage().getPosy()-1,Jeu1.getPersonnage().getPosx()+1,'q');
   attroff(COLOR_PAIR(4));
+
+}
+
+void IHM::score() {
+
+  ScoreClassique();
+  //ScoreMontagnard();
+
+}
+
+void IHM::ScoreMontagnard() {
+
+  int max = 10;
+  int j = 0;
+  vector<float> scores(10,-1); //tableau permettant de stocker les scores
+  vector<string> pseudos(10); //tableau permettant de stocker les pseudos
+
+  //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier classique.txt
+  ifstream fichier("montagnard.txt",ios::in);
+  if (fichier) {
+    for (int i=0;i<max;i++) {
+      fichier >> pseudos[i] >> scores[i];
+    }
+  }
+  fichier.close();
+
+  mvprintw(0,0,"Les meilleurs scores pour le Tetris Montagnard sont : ");
+
+  while (j<(max-1) && scores[j]>=0) {
+    cout << pseudos[j] << " : " << scores[j] << " points" << endl; //a revoir
+    j++;
+  }
+
+}
+
+void IHM::ScoreClassique() {
+
+  int max = 10;
+  int j = 0;
+  vector<int> scores(10,-1); //tableau permettant de stocker les scores
+  vector<string> pseudos(10); //tableau permettant de stocker les pseudos
+
+  //on ouvre en mode lecture pour recupérer tous les scores contenues sur le fichier classique.txt
+  ifstream fichier("classique.txt",ios::in);
+  if (fichier) {
+    for (int i=0;i<max;i++) {
+      fichier >> pseudos[i] >> scores[i];
+    }
+  }
+  fichier.close();
+
+  mvprintw(0,0,"Les meilleurs scores pour le Tetris Classique sont : ");
+  //char *temp;
+  while (j<(max-1) && scores[j]>=0) {
+    //strcpy(temp,pseudos[j].c_str());
+    //strcat(temp," : ");
+    //strcat(temp,scores[j].c_str());
+    //strcat(temp," points\n");
+    //mvprintw(1,1,temp);
+    j++;
+  }
+
 
 }

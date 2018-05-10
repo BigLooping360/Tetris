@@ -1,13 +1,13 @@
 #ifndef __Menu_HPP__
 #define __Menu_HPP__
 #include "Jeu.hpp"
+#include "Score.hpp"
 #include "JeuClassique.hpp"
 #include "JeuMontagnard.hpp"
-// #include "Score.hpp"
 #include "IHM.hpp"
 #include <time.h>
 #include <ncurses.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -33,6 +33,8 @@ private:
   // Score scoreclassique;
   // /*! /var scoreM est ce qui servira à gérer les Score de l'utilisateur pour le JeuMontagnard*/
   // Score scoreM;
+  Score scorec;
+  Score scorem;
 
 public:
   /*! \fn void lancement()

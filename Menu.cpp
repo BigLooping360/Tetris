@@ -1,7 +1,9 @@
 #include "Menu.hpp"
 
 
-void Menu::lancement(){
+void Menu::lancement() {
+  //scorec = Score("classique");
+  //scorem = Score("montagnard");
   IHM::init();
   IHM::menu();
   int inter=-1;
@@ -11,6 +13,8 @@ void Menu::lancement(){
       jouerClassique();
     if (inter==(int)'2')
       jouerMontagnard();
+    if (inter==(int)'3')
+      ConsulterScore();
   }
   IHM::fin();
 
@@ -62,5 +66,12 @@ void Menu::jouerMontagnard(){
       jeum.MaJ();
   }
   IHM::menu();
+
+}
+
+void Menu::ConsulterScore() {
+  clear();
+  IHM::init();
+  IHM::score();
 
 }
