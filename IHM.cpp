@@ -16,7 +16,6 @@ int IHM::getinput(){
 string IHM::getPseudoGagnant() {
 
   clear();
-
   char *msg1 = "Gagné ! Vous pouvez entrer votre pseudo pour rentrer dans le palmares de nos meilleurs joueurs : ";
   string nom;
   int taille1 = strlen(msg1);
@@ -24,6 +23,7 @@ string IHM::getPseudoGagnant() {
   mvprintw(25, (COLS / 2) - (taille1 / 2), msg1);
   cin >> nom;
   return nom;
+
 
 }
 

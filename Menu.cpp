@@ -44,6 +44,7 @@ void Menu::jouerClassique(){
         }
       jeuc.MaJ();
   }
+  
 
   if (scoreC.meilleurescore(jeuc.getpoints())) {
     string pseudo = IHM::getPseudoGagnant();
