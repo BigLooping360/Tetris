@@ -2,11 +2,11 @@
 #define __Score_HPP__
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <stdio.h>
+#include <vector>
 #include <time.h>
 #include <stdlib.h>
-#include <stream.h>
-#include <fstream>
-#include <vector>
 
 using namespace std;
 
@@ -25,7 +25,7 @@ using namespace std;
 
 class Score {
 
-  private:
+  protected:
   /*! /var nomfichier est le nom du fichier où seront stockés les meilleurs Score réalisés*/
   string nomfichier;
 
@@ -44,7 +44,7 @@ class Score {
   * \brief Ajoute un nouveau Score au fichier des meilleurs Score
   * \param s est le Score réalisé à ajouter
   */
-  void addscore(int s);
+  void addscore(int s,string pseudo);
   /*! \fn bool meilleurescore(int s)
   * \brief Vérifie si un joueur peut rentrer dans le palmares des 5 meilleurs Score
   * \param s est le Score réalisé à comparer avec ceux déjà réalisé

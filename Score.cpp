@@ -3,7 +3,7 @@
 #include <string>
 #include <time.h>
 #include <stdlib.h>
-#include <stream>
+#include <stdio.h>
 #include <fstream>
 #include <vector>
 
@@ -12,24 +12,20 @@ using namespace std;
 
 Score::Score(string ch) {
 
-    strcat(ch,".txt");
+    ch+=".txt";
     ifstream fichier(ch.c_str(),ios::app);  //on utilise append pour créer le fichier s'il n'existe pas
     fichier.close();
-    string nomfichier = ch; //on affecte le nom du mode de jeu + .txt pour le nom du fichier
+    nomfichier = ch; //on affecte le nom du mode de jeu + .txt pour le nom du fichier
 
 }
 
-string getNomfichier() {
-
+string Score::getNomfichier() {
   return nomfichier;
-
 }
 
-void Score::addscore(int s) {
+void Score::addscore(int s,string nomjoueur) {
 
   //déclaration des variables
-  //ATTENTION, gérer a
-  string a = "mon pseudo";
   int j = 0;
   int n = 0;
   int max = 10; //nb max de meilleurs scores que l'on décide de sauvegarder
@@ -41,7 +37,7 @@ void Score::addscore(int s) {
   string nomf = getNomfichier();
   ifstream fichier(nomf.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
   if (fichier) {
-    for (int i=0;i<10;i++) {
+    for (int i=0;i<max;i++) {
       fichier >> pseudos[i] >> scores[i];
     }
   }
@@ -59,13 +55,13 @@ void Score::addscore(int s) {
 		scores[i]=scores[i-1];
 		pseudos[i]=pseudos[i-1];
 	}
-	scores[j]=sc;
-	pseudos[j]=a;
+	scores[j] = s;
+	pseudos[j] = nomjoueur;
 
   //on réécrit tout dans notre fichier texte que l'on écrase
-  ofstream fichier(nomf.c_str(),ios::out | ios::trunc); //trunc permet de supprimer l'ancien contenu
+  ofstream fichier2(nomf.c_str(),ios::out | ios::trunc); //trunc permet de supprimer l'ancien contenu
   while (n<(max-1) && scores[n]>=0) {
-    fichier << pseudos[n] << " " << scores[n] << endl;
+    fichier2 << pseudos[n] << " " << scores[n] << endl;
     n++;
   }
 

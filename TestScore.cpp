@@ -44,9 +44,9 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
     int jm = 0; //jm est l'indice où on ajoutera le nouveau score classique
     int max = 10; //nb max de scores que l'on peut avoir sur un fichier
     bool OK = true;
-    vector<int> scoresc(10,-1); //tableau permettant de stocker les scores classiques
+    vector<int> scoresc(10,-1); //tableau permettant de stocker les scores classiques, tout initialité à -1
     vector<string> pseudosc(10); //tableau permettant de stocker les pseudos classiques
-    vector<int> scoresm(10,-1); //tableau permettant de stocker les scores montagnard
+    vector<int> scoresm(10,-1); //tableau permettant de stocker les scores montagnard, tout initialité à -1
     vector<string> pseudosm(10); //tableau permettant de stocker les pseudos montagnard
 
     //on ouvre en mode lecture pour recupérer tous les scores contenues sur les 2 fichiers
@@ -55,7 +55,7 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
     ifstream fc(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
     ifstream fm(nomfm.c_str(),ios::in);
     if (fc && fm) {
-      for (int i=0;i<10;i++) {
+      for (int i=0;i<max;i++) {
         fc >> pseudosc[i] >> scoresc[i];
         fm >> pseudosm[i] >> scoresm[i];
       }
@@ -65,7 +65,7 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
 
     //on récupère le rang jc (respectivement jm) où sera inséré notre nouveau score classique (respectivement notre nouveau score montagnard)
     while ((jc<max) && OK) {
-       if (scoresc[j] > scla) {
+       if (scoresc[jc] > scla) {
            jc++;
        } else {
            OK=false;
@@ -73,7 +73,7 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
      }
      OK = true;
      while ((jm<max) && OK) {
-        if (scoresm[j] > smon) {
+        if (scoresm[jm] > smon) {
             jm++;
         } else {
             OK=false;
@@ -88,7 +88,7 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
     ifstream fc2(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
     ifstream fm2(nomfm.c_str(),ios::in);
     if (fc2 && fm2) {
-      for (int i=0;i<10;i++) {
+      for (int i=0;i<max;i++) {
         fc2 >> pseudosc[i] >> scoresc[i];
         fm2 >> pseudosm[i] >> scoresm[i];
       }
@@ -96,12 +96,9 @@ void TestScore::testaddscore(int scla, float smon, string joueur) {
     fc2.close();
     fm2.close();
     CPPUNIT_ASSERT(scoresc[jc] == scla);
-    CPPUNIT_ASSERT(abs(scores[jm] - smon) < 0.00001);
+    CPPUNIT_ASSERT(abs(scoresm[jm] - smon) < 0.000001); //epsilon à revoir !
     CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
     CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
-
-
-
 
 }
 

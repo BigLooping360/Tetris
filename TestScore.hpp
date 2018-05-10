@@ -42,7 +42,7 @@ class TestScore : public CppUnit::TestFixture
   public:
     void setUp(void);
     void tearDown(void);
-    void testaddscore(int,string);
+    void testaddscore(int,float,string);
     void testmeilleurescore(int);
     /*! \fn void testScore(string);
     * \brief Vérifie si le fichier se créé bien et qu'on pourra le modifier

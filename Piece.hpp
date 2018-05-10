@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Bloc.hpp"
 #include "Board.hpp"
-#include<vector>
+#include <vector>
 
 using namespace std;
 
