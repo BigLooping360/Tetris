@@ -39,7 +39,7 @@ void TestScore::tearDown(void) {
 
 void TestScore::testaddscore(void) {
 
-    int scla = 60;
+    float scla = 60;
     float smon = 47.2;
     string joueur = "Abcde";
 
@@ -100,7 +100,7 @@ void TestScore::testaddscore(void) {
     fc2.close();
     fm2.close();
     CPPUNIT_ASSERT(scoresc[jc] == scla);
-    CPPUNIT_ASSERT(abs(scoresm[jm]-smon) <= 0.000001); 
+    CPPUNIT_ASSERT(abs(scoresm[jm]-smon) <= 0.000001);
     CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
     CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
 

@@ -8,7 +8,7 @@ void Menu::lancement() {
   IHM::init();
   IHM::menu();
   int inter=-1;
-  while (inter!=(int)'4'){
+  while (inter!=(int)'5'){
     inter=IHM::getinput();
     if (inter==(int)'1')
       jouerClassique();
@@ -16,6 +16,8 @@ void Menu::lancement() {
       jouerMontagnard();
     if (inter==(int)'3')
       ConsulterScore();
+    if (inter==(int)'4')
+      ConsulterRegles();
   }
   IHM::fin();
 
@@ -71,8 +73,11 @@ void Menu::jouerMontagnard(){
 }
 
 void Menu::ConsulterScore() {
-  clear();
-  //IHM::init();
   //IHM::score();
+
+}
+
+void Menu::ConsulterRegles() {
+  IHM::reglesduJeu();
 
 }
