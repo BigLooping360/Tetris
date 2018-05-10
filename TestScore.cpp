@@ -236,9 +236,6 @@ void TestScore::testmeilleurescore(void) {
   CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score2)==true);
   CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score1)==false);
 
-
-
-
 }
 
 //on vérifie que les fichiers classique.txt et montagnard.txt se sont bien créés et qu'on peut écrire dessus
