@@ -1,16 +1,25 @@
 #include "Menu.hpp"
 
+using namespace std;
 
-void Menu::lancement(){
+void Menu::lancement() {
+  scoreC = Score("classique");
+  scoreM = Score("montagnard");
   IHM::init();
   IHM::menu();
   int inter=-1;
-  while (inter!=(int)'4'){
+  while (inter!=(int)'6'){
     inter=IHM::getinput();
     if (inter==(int)'1')
       jouerClassique();
     if (inter==(int)'2')
       jouerMontagnard();
+    if (inter==(int)'3')
+      ConsulterScoreClassique();
+    if (inter==(int)'4')
+      ConsulterScoreMontagnard();
+    if (inter==(int)'5')
+      ConsulterRegles();
   }
   IHM::fin();
 
@@ -35,7 +44,14 @@ void Menu::jouerClassique(){
         }
       jeuc.MaJ();
   }
-IHM::menu();
+  
+
+  if (scoreC.meilleurescore(jeuc.getpoints())) {
+    string pseudo = IHM::getPseudoGagnant();
+    scoreC.addscore(jeuc.getpoints(),pseudo);
+  }
+
+  IHM::menu();
 }
 
 void Menu::jouerMontagnard(){
@@ -61,6 +77,25 @@ void Menu::jouerMontagnard(){
         }
       jeum.MaJ();
   }
+
+  if (scoreM.meilleurescore(jeum.getTemps())) {
+    string pseudo = IHM::getPseudoGagnant();
+    scoreM.addscore(jeum.getTemps(),pseudo);
+  }
+
   IHM::menu();
+
+}
+
+void Menu::ConsulterScoreClassique() {
+  IHM::ScoreClassique();
+}
+
+void Menu::ConsulterScoreMontagnard() {
+  IHM::ScoreMontagnard();
+}
+
+void Menu::ConsulterRegles() {
+  IHM::reglesduJeu();
 
 }

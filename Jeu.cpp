@@ -3,7 +3,7 @@
 #include <string>
 #include <time.h>
 #include <ncurses.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -184,6 +184,8 @@ int Jeu::MaJPiece(){
       PieceSuivante= new Piece_Z();
       break;
   }
+
+  return nb_ligneCompletee;
 
 }
 // Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé

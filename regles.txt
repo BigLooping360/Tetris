@@ -1,0 +1,18 @@
+Tetris Classique :
+
+Le jeu du Tetris se compose d'une grille rectangulaire et de pièces appelées "Tetrominos" que le joueur va devoir placer les unes à la suite des autres dans la grille afin de compléter des lignes.
+Un Tetromino est composé de 4 cases et peut prendre diverses formes géométriques.
+Un Tetromino descend petit à petit le long de la grille jusqu'à atteindre un élément (soit le bas de la grille, soit d'autres Tetrominos) : à ce moment-là, la position du Tetromino se fige et un autre apparaît en haut de la grille.
+Tant que le Tetromino est en train de descendre (tant que sa position n'est pas fixe), le joueur peut choisir de le décaler à gauche ou à droite dans la grille, ou d'appliquer une rotation à 90 degrés du Tetromino.
+Une fois qu'une ligne est complète, elle s'efface et le joueur gagne des points. Si le Joueur complète plusieurs lignes en même temps, il marque plus de points. Les Tetrominos qui étaient au dessus retombent tous d'un ou de plusieurs crans, en fonction du nombre de lignes qui ont été complétées.
+Tant qu'il reste de la place dans la grille, le jeu continue. Si, à un moment, le joueur n'arrive pas à caser le Tetromino dans la grille, il a perdu et le jeu s'arrête.
+Le Joueur peut toujours voir la prochaine pièce qui va arriver. Cela lui permet d'anticiper ses propres coups. Le Joueur a aussi la possibilité de garder un Tetromino qu'il peut rejouer à n'importe quel moment.
+
+
+Tetris Montagnard :
+
+Au début de la partie, un personnage se situe en bas de la grille. L'objectif est de le faire monter le plus haut possible, jusqu'à atteindre le plafond de la grille. Le score du jeu correspondra au temps qu'a mis le personnage à atteindre le sommet.
+Pour pouvoir monter sur un Tétrimino, il faut que ce dernier se situe au maximum un cran au-dessus de lui. Ceci implique que le personnage ne peut pas accéder à une marche éloignée de plus de 1 cran au-dessus de lui.  Bien évidemment, il faut que le personnage atteigne le haut de la grille avant que le jeu ne soit bloqué, c'est-à-dire avant que toutes les lignes de la grille soient bloquées par des Tétriminos.
+Si le personnage se retrouve écrasé par un Tétriminos, il faut arriver à compléter les lignes qui le bloquent. Ainsi, ces lignes seront supprimés, le personnage réapparaîtra et le jeu pourra reprendre normalement. 
+Remarque : le personnage est translucide, c'est-à-dire qu'il ne représente pas d'obstacle au passage d'un Tétrimino.
+

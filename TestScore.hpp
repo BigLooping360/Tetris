@@ -1,6 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
 #include <cppunit/ui/text/TextTestRunner.h>
@@ -31,24 +34,29 @@ using namespace std;
 */
 
 
-class TestScore : public CppUnit::TestFixture
-{
+class TestScore : public CppUnit::TestFixture {
+
     CPPUNIT_TEST_SUITE(TestScore);
+    CPPUNIT_TEST(testaddscore);
+    CPPUNIT_TEST(testmeilleurescore);
+    CPPUNIT_TEST(testScore);
     CPPUNIT_TEST_SUITE_END();
 
   public:
     void setUp(void);
     void tearDown(void);
-    void testaddscore(int);
-    void testmeilleurescore(int);
-    /*! \fn void testScore(string);
-    * \brief Vérifie si le fichier se créé bien et qu'on pourra le modifier
-    */
-    void testScore(string);
 
   protected:
 
+    void testaddscore(void);
+    void testmeilleurescore(void);
+    /*! \fn void testScore(string);
+    * \brief Vérifie si le fichier se créé bien et qu'on pourra le modifier
+    */
+    void testScore(void);
+
   private:
-    Score *Score;
+    Score *ScoreClassique;
+    Score *ScoreMontagnard;
 
 };
