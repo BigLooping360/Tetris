@@ -69,7 +69,38 @@ void Score::addscore(float s,string nomjoueur) {
 
 }
 
-bool Score::meilleurescore(int s) {
+bool meilleurescore(float s)
+
+{
+  bool ok(false);
+  int i(0);
+  float score;
+  string pseudo;
 
 
+  //on ouvre en mode lecture pour rÉcupérer tous les scores contenus sur le fichier
+  string nomFichier = getNomfichier();
+  ifstream fichier(nomFichier.c_str());
+
+  if(fichier){
+    while ((ok==false) && !fichier.eof()){ //on va chercher si on a réalisé un meilleure score que ceux déja dans le fichier
+      i++; // cela va nous permettre de compter le nombre de score déjà dans le fichier
+      fichier >> pseudo;
+      fichier >> score;
+      if (nomFichier=="Score_Jeu_Classique.txt"){
+        if (s>score){ok=true;}
+      }
+      else if(nomFichier=="Score_Jeu_Montagnard.txt"){
+        if (s<score){ok=true;}
+      }
+    }
+
+    if (i-1<10){// si il y a moins de 10 scores on a forcément réalisé un nouveau meilleure score
+      ok=true;
+      }
+
+  }
+  fichier.close();
+
+  return ok;
 }
