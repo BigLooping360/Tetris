@@ -19,6 +19,7 @@ float JeuMontagnard::getTemps(){
 }
 
 void JeuMontagnard::MaJ(){
+
   for (size_t i = 0; i < 4; i++) {
     if ((PieceEnCours->getPosy(i)==p.getPosy()) and (PieceEnCours->getPosx(i)==p.getPosx()) )
       p.setbloque();

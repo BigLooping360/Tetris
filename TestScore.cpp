@@ -40,7 +40,7 @@ void TestScore::tearDown(void) {
 void TestScore::testaddscore(void) {
 
     float scla = 60;
-    float smon = 47.2;
+    float smon = 4.2;
     string joueur = "Abcde";
 
     //déclaration des variables
@@ -107,6 +107,41 @@ void TestScore::testaddscore(void) {
 }
 
 void TestScore::testmeilleurescore(void) {
+  float score1 = 14;
+  float score2= 1.2;
+
+
+  // si le fichier est vide on peut forcément ajouter notre score
+    CPPUNIT_ASSERT(ScoreClassique -> meilleurescore(score1)==true);
+    CPPUNIT_ASSERT(ScoreMontagnard -> meilleurescore(score1)==true);
+
+    string nomfc = ScoreClassique->getNomfichier();
+    string nomfm = ScoreMontagnard->getNomfichier();
+  //je remplis mon fichier de score de 10 scores
+    ofstream fc(nomfc.c_str(),ios::app);
+    if (fc) {
+      for (int i=0;i<10;i++){
+        string pseudo = "abcde";
+        float score = 14.3-i;
+        fc << pseudo << " " << score << endl;
+      }
+    }
+
+    ofstream fm(nomfm.c_str(),ios::app);
+    if (fm) {
+      for (int i=0;i<10;i++){
+        string pseudo = "abcde";
+        float score = i+2.5;
+        fm << pseudo << " " << score << endl;
+      }
+    }
+
+  // on test si c'est des meilleurs scores
+  CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score1)==true);
+  CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score2)==false);
+  CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score2)==true);
+  CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score1)==false);
+
 
 
 

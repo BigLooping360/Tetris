@@ -60,7 +60,6 @@ void IHM::init(){
   init_pair(6, COLOR_CYAN, COLOR_BLACK);
   init_pair(7, COLOR_CYAN, COLOR_BLACK);
 
-
 }
 
 void IHM::fin(){
