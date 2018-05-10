@@ -1,8 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <string>
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+#include <cmath>
 #include "TestScore.hpp"
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
@@ -35,38 +37,71 @@ void TestScore::tearDown(void) {
 
 }
 
-void TestScore::testaddscore(int score) {
+void TestScore::testaddscore(int scla, float smon, string joueur) {
 
-    //on ajoute des scores dans les classiques et les montagnards
-    ScoreClassique->addscore(100);
-    ScoreMontagnard->addscore(150);
-    char temp[100];
+    //déclaration des variables
+    int jc = 0; //jc est l'indice où on ajoutera le nouveau score classique
+    int jm = 0; //jm est l'indice où on ajoutera le nouveau score classique
+    int max = 10; //nb max de scores que l'on peut avoir sur un fichier
+    bool OK = true;
+    vector<int> scoresc(10,-1); //tableau permettant de stocker les scores classiques
+    vector<string> pseudosc(10); //tableau permettant de stocker les pseudos classiques
+    vector<int> scoresm(10,-1); //tableau permettant de stocker les scores montagnard
+    vector<string> pseudosm(10); //tableau permettant de stocker les pseudos montagnard
 
-    //et ensuite on parcourt les fichiers pour voir si les scores ont bien été rentrés()
-    FILE* f1 = NULL;
-    FILE* f2 = NULL;
-    f1 = fopen("classique.txt",'r'); //r : mode lecture seule
-    f2 = fopen("montagnard.txt",'r');
-    if (f1 != NULL) {
-		    char ligne1[100];
-        //on recupere la dernière ligne de f1
-		    while (fgets(ligne1,sizeof(ligne1),f1) != NULL) {
-            memset(temp,0,sizeof(temp));
-            strcpy(temp,ligne1);
-			  }
-        CPPUNIT_ASSERT(strcmp("100",temp)==0);
-	  };
-    if (f2 != NULL) {
-		    char ligne2[100];
-        //on recupere la dernière ligne de f2
-		    while (fgets(ligne2,sizeof(ligne2),f2) != NULL) {
-          memset(temp,0,sizeof(temp));
-          strcpy(temp,ligne2);
-			  }
-        CPPUNIT_ASSERT(strcmp("150",temp)==0);
-	  };
-    fclose(f1);
-    fclose(f2);
+    //on ouvre en mode lecture pour recupérer tous les scores contenues sur les 2 fichiers
+    string nomfc = ScoreClassique->getNomfichier();
+    string nomfm = ScoreMontagnard->getNomfichier();
+    ifstream fc(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
+    ifstream fm(nomfm.c_str(),ios::in);
+    if (fc && fm) {
+      for (int i=0;i<10;i++) {
+        fc >> pseudosc[i] >> scoresc[i];
+        fm >> pseudosm[i] >> scoresm[i];
+      }
+    }
+    fc.close();
+    fm.close();
+
+    //on récupère le rang jc (respectivement jm) où sera inséré notre nouveau score classique (respectivement notre nouveau score montagnard)
+    while ((jc<max) && OK) {
+       if (scoresc[j] > scla) {
+           jc++;
+       } else {
+           OK=false;
+       }
+     }
+     OK = true;
+     while ((jm<max) && OK) {
+        if (scoresm[j] > smon) {
+            jm++;
+        } else {
+            OK=false;
+        }
+      }
+
+    //on ajoute un nouveau score dans classique et montagnard
+    ScoreClassique->addscore(scla,joueur);
+    ScoreMontagnard->addscore(smon,joueur);
+
+    //on vérifie que les scores et les nom du joueur ont bien été rangé aux rangs jc et jm
+    ifstream fc2(nomfc.c_str(),ios::in); //c_str() permet de transformer nomf en pointeur vers une chaine de caractere
+    ifstream fm2(nomfm.c_str(),ios::in);
+    if (fc2 && fm2) {
+      for (int i=0;i<10;i++) {
+        fc2 >> pseudosc[i] >> scoresc[i];
+        fm2 >> pseudosm[i] >> scoresm[i];
+      }
+    }
+    fc2.close();
+    fm2.close();
+    CPPUNIT_ASSERT(scoresc[jc] == scla);
+    CPPUNIT_ASSERT(abs(scores[jm] - smon) < 0.00001);
+    CPPUNIT_ASSERT(joueur.compare(pseudosc[jc]) == 0);
+    CPPUNIT_ASSERT(joueur.compare(pseudosm[jm]) == 0);
+
+
+
 
 }
 
@@ -79,16 +114,26 @@ void TestScore::testmeilleurescore(int mscore) {
 //on vérifie que les fichiers classique.txt et montagnard.txt se sont bien créés et qu'on peut écrire dessus
 void TestScore::testScore() {
 
-  char cl[50] = "classique.txt";
-  char m[50] = "montagnard.txt";
-  FILE* f1 = NULL;
-  FILE* f2 = NULL;
-  f1 = fopen(cl,'r+'); //r+ : mode écriture et le fichier doit exister
-  f2 = fopen(m,'r+');
-  CPPUNIT_ASSERT(f1!=NULL);
-  CPPUNIT_ASSERT(f2!=NULL);
-  fclose(f1);
-  fclose(f2);
+  string cl;
+  string m;
+  cl = ScoreClassique->getNomfichier();
+  m = ScoreMontagnard->getNomfichier();
+
+  //On vérifie que les nomfichier sont biens mis à jour
+  CPPUNIT_ASSERT(cl.compare("classique.txt") == 0);
+  CPPUNIT_ASSERT(m.compare("montagnard.txt") == 0);
+
+  //on utilise le mode lecture+écriture pour déterminer si les fichiers ont bien été créés
+  //ate permet de ne pas effacer le contenu s'ils existent
+  fstream f1(cl.c_str(), ios::in | ios::out | ios::ate);
+  fstream f2(m.c_str(), ios::in | ios::out | ios::ate);
+
+  //On vérifie que les fichiers ont bien été créés
+  CPPUNIT_ASSERT(f1);
+  CPPUNIT_ASSERT(f2);
+
+  f1.close();
+  f2.close();
 
 }
 
