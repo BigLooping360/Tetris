@@ -102,10 +102,10 @@ bool Score::meilleurescore(float s)
       i++; // cela va nous permettre de compter le nombre de score déjà dans le fichier
       fichier >> pseudo;
       fichier >> score;
-      if (nomFichier=="Score_Jeu_Classique.txt"){
+      if (nomFichier=="classique.txt"){
         if (s>score){ok=true;}
       }
-      else if(nomFichier=="Score_Jeu_Montagnard.txt"){
+      else if(nomFichier=="montagnard.txt"){
         if (s<score){ok=true;}
       }
     }
