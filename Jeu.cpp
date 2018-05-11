@@ -1,3 +1,12 @@
+#include "Board.hpp"
+#include "Piece_I.hpp"
+#include "Piece_O.hpp"
+#include "Piece_T.hpp"
+#include "Piece_L.hpp"
+#include "Piece_J.hpp"
+#include "Piece_S.hpp"
+#include "Piece_Z.hpp"
+#include "Piece.hpp"
 #include "Jeu.hpp"
 #include <iostream>
 #include <string>
@@ -205,6 +214,9 @@ void Jeu::interaction(int c){
     stocker();
 
 }
+
+
+
 void Jeu::stocker(){
   if (!PieceEnCours->getstocke()){
     if (PieceStocke!=NULL){

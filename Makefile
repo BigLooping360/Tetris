@@ -44,9 +44,16 @@ Test_Score : Score.o TestScore.o
 		$(FC) Score.o TestScore.o $(OPT2) -o TestScore
 		./TestScore
 
+Test_Jeu : Jeu.o TestJeu.o
+		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o $(OPT2) -o TestJeu
+		./TestJeu
+
 
 
 #Classes
+TestJeu.o : TestJeu.cpp
+	$(FC) -c 	TestJeu.cpp
+
 TestScore.o : TestScore.cpp
 	$(FC) -c 	TestScore.cpp
 
@@ -126,4 +133,4 @@ Menu.o : Menu.cpp
 	$(FC) -c Menu.cpp
 
 clean:
-	rm *.hpp.gch Tetris *.o *.xml TestPiece_I TestPiece_T TestPiece_L TestPiece TestPiece_J TestPiece_S TestPiece_Z TestScore
+	rm *.hpp.gch Tetris *.o *.xml TestPiece_I TestPiece_T TestPiece_L TestPiece TestPiece_J TestPiece_S TestPiece_Z TestScore TestJeu
