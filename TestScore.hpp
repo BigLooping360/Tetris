@@ -21,16 +21,16 @@ using namespace CppUnit;
 using namespace std;
 
 /*! \class TestScore
- * \brief Classe Test de Piece_L
+ * \brief Classe Test de Score
  * \author Laura Couret
  * \author Léa Lefrançois
  * \version 1.0
- * \date avril 2018
+ * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
  *Ce module sert de test unitaire à la classe Score
- *On testera
+ *On testera le constructeur de Score, l'ajout d'un score dans le palmares, et si un score peut rentrer dans le palmares ou non
 */
 
 
@@ -48,9 +48,15 @@ class TestScore : public CppUnit::TestFixture {
 
   protected:
 
+    /*! \fn void testaddscore(void)
+    * \brief Teste l'ajout d'un meilleur score dans le palmares, et vérifie si le score se range bien au bon endroit dans le palmares (du meilleur au pire score)
+    */
     void testaddscore(void);
+    /*! \fn void testmeilleurescore(void)
+    * \brief Teste si on détermine bien quand il s'agit d'un meilleur score ou non
+    */
     void testmeilleurescore(void);
-    /*! \fn void testScore(string);
+    /*! \fn void testScore(string)
     * \brief Vérifie si le fichier se créé bien et qu'on pourra le modifier
     */
     void testScore(void);

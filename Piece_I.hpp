@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Piece.hpp"
 
-#include<vector>
+#include <vector>
 using namespace std;
 
 /*! \class Piece_I

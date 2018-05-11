@@ -65,7 +65,6 @@ class Piece {
   * \return Retourne le booléen bloque
   */
   bool getbloque();
-
   /*! \fn int getcolor()
   * \brief Accesseur de la couleur d'une Piece
   * \return Retourne l'entier correspondant à la couleur de la Piece
@@ -139,8 +138,6 @@ class Piece {
   /*! \fn Piece()
   * \brief Constructeur d'une Piece de Jeu général
   */
-
-
   Piece();
 
 

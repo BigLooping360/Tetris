@@ -49,7 +49,7 @@ class Personnage {
     void setbloque();
     /*! \fn bool getDirection()
     * \brief Accesseur du booléen Direction du Personnage
-    * \return Retourne le booléen Direction
+    * \return Retourne le booléen Direction du Personnage
     */
     bool getDirection();
     /*! \fn void Deplacement(Board b)

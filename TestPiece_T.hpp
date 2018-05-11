@@ -26,7 +26,7 @@ using namespace std;
  * \warning Rien à signaler
  *
  *Ce module sert de test unitaire à la classe Piece_T
- *On testera si la Piece_Z peut tourner dans plusieurs situations, et qu'elle
+ *On testera si la Piece_T peut tourner dans plusieurs situations, et qu'elle
  *est bien bloqué lorsqu'elle ne peut pas tourner.
  *et on testera la rotation en elle-même.
 */
@@ -46,9 +46,18 @@ public:
     void tearDown(void);
 
 protected:
+    /*! \fn void testisRotateable()
+    * \brief Teste si la rotation d'une Piece_S est possible dans plusieurs situations (normales et extremes)
+    */
     void isRotateable_Piece_T(void);
+    /*! \fn void testRotate()
+    * \brief Test de la rotation d'une Piece_S : on testera si les rotations se font biens et si 4 rotations ramènent bien la Piece_T dans son état original
+    */
     void Rotate_Piece_T(void);
+
   private:
+    /*! /var *PieceTest1 est le pointeur sur une Piece_T de test*/
     Piece *PieceTest1;
+    /*! /var *BoardTest est le pointeur sur un Board de test*/
     Board *BoardTest;
 };

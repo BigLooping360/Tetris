@@ -28,6 +28,7 @@ using namespace std;
 */
 
 class Jeu {
+
 protected:
   /*! /var jeu est le booléen qui permet de déterminer si la partie est finie ou non */
   bool jeu;
@@ -47,25 +48,23 @@ protected:
 
   public:
   /*! \fn void stocker()
-  * \brief Stock la pièce en cours si la pièce n'a pas encore été stocké
+  * \brief Stocke la pièce en cours si la pièce n'a pas encore été stockée
   */
   void stocker();
   /*! \fn bool getjeu()const
-  * \brief Accesseur du booleen jeu
+  * \brief Accesseur du booléen jeu
   * \return le booléen jeu
   */
   bool getjeu()const;
   /*! \fn int MaJPiece()
   * \brief Met à jour la grille à chaque fois qu'une Piece est posée
-  * \return la nombre de lignes complétées grâce à la Piece ajoutée
+  * \return le nombre de lignes complétées par l'utilisateur grâce à la dernière Piece ajoutée
   */
   int MaJPiece();
-
   /*! \fn void MaJ()
-  * \brief Met à l'ensemble des paramètres (scores, Pieces) à chaque fois qu'une pièce est posée.
+  * \brief Met à jour l'ensemble des paramètres (scores, Pieces) à chaque fois qu'une pièce est posée
   */
   virtual void MaJ()=0;
-
   /*! \fn bool getstatut()
   * \brief Détermine si le jeu peut continuer ou non
   * \return vrai si la Piece en cours est bloqué, faux sinon

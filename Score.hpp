@@ -15,7 +15,7 @@ using namespace std;
  * \brief Gestion des meilleurs Score des joueurs
  * \author Laura Couret
  * \version 1.0
- * \date avril 2018
+ * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
@@ -30,6 +30,9 @@ class Score {
   string nomfichier;
 
   public:
+  /*! \fn Score()
+  * \brief Constructeur d'un Score
+  */
   Score();
   /*! \fn Score(string ch)
   * \brief Constructeur d'un Score
@@ -47,8 +50,8 @@ class Score {
   */
   void addscore(float s,string pseudo);
   /*! \fn bool meilleurescore(int s)
-  * \brief Vérifie si un joueur peut rentrer dans le palmares des 5 meilleurs Score
-  * \param s est le Score réalisé à comparer avec ceux déjà réalisé
+  * \brief Vérifie si un joueur peut rentrer dans le palmares des 10 meilleurs Score
+  * \param s est le Score réalisé à comparer avec ceux déjà réalisés
   * \return true s'il s'agit d'un nouveau meilleur Score, false sinon
   */
   bool meilleurescore(float s);

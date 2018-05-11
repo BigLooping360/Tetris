@@ -7,7 +7,7 @@
  * \brief Gestion du déroulement d'un Jeu Montagnard
  * \author Victor Le Maistre
  * \version 1.0
- * \date avril 2018
+ * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
@@ -19,7 +19,7 @@
 class JeuMontagnard : public Jeu {
 
   private:
-    /*! /var temps est le temps de millisecondes d'une partie de JeuMontagnard d'un joueur (jusqu'à ce qu'il perde)*/
+    /*! /var temps est le temps de secondes d'une partie de JeuMontagnard d'un joueur (jusqu'à ce qu'il perde)*/
     float temps;
     /*! /var p représente le Personnage du JeuMontagnard*/
     Personnage p;

@@ -19,6 +19,7 @@ class Bloc {
   int Posx;
   /*! /var Posy est un entier qui représente la position en ordonnée*/
   int Posy;
+  
   public :
   /*! \fn Bloc(int x,int y)
   * \brief Constructeur d'un Bloc
