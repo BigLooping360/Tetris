@@ -57,15 +57,15 @@ protected:
     void testRotate();
 
 private:
-    /*! /var *mTestPiece1 est le pointeur sur une Piece_S de test*/
+    /*! *mTestPiece1 est le pointeur sur une Piece_S de test*/
     Piece *mTestPiece1;
-    /*! /var *mTestPiece2 est le pointeur sur une Piece_S de test*/
+    /*! *mTestPiece2 est le pointeur sur une Piece_S de test*/
     Piece *mTestPiece2;
-    /*! /var *mTestPiece3 est le pointeur sur une Piece_S de test*/
+    /*! *mTestPiece3 est le pointeur sur une Piece_S de test*/
     Piece *mTestPiece3;
-    /*! /var *mTestPiece4 est le pointeur sur une Piece_S de test*/
+    /*! *mTestPiece4 est le pointeur sur une Piece_S de test*/
     Piece *mTestPiece4;
-    /*! /var *mTestBoard est le pointeur sur un Board de test*/
+    /*! *mTestBoard est le pointeur sur un Board de test*/
     Board *mTestBoard;
 
 };

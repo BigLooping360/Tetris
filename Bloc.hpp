@@ -1,5 +1,6 @@
 #ifndef __Bloc_HPP__
 #define __Bloc_HPP__
+
 using namespace std;
 
 /*! \class Bloc
@@ -15,21 +16,23 @@ using namespace std;
 */
 
 class Bloc {
-  /*! /var Posx est un entier qui représente la position en abscisse*/
+
+  protected:
+  /*! Posx est un entier qui représente la position en abscisse*/
   int Posx;
-  /*! /var Posy est un entier qui représente la position en ordonnée*/
+  /*! Posy est un entier qui représente la position en ordonnée*/
   int Posy;
-  
-  public :
+
+  public:
   /*! \fn Bloc(int x,int y)
   * \brief Constructeur d'un Bloc
   */
   Bloc(int x, int y);
-  /*! \fn int getPosx()
+  /*! \fn int getPosx() const
   * \return renvoie la position en abscisse d'un Bloc
   */
   int getPosx() const;
-  /*! \fn int getPosy()
+  /*! \fn int getPosy() const
   * \return renvoie la position en ordonnée d'un Bloc
   */
   int getPosy() const;

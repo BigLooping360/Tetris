@@ -22,6 +22,7 @@ using namespace std;
  * \date avril 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
+ *
  *Ce module permet l'initialisation du début d'une partie,
  *la mise à jour des différents paramètres suite aux actions d'un joueur,
  *et actionne le déplacement d'une Piece.
@@ -30,20 +31,20 @@ using namespace std;
 class Jeu {
 
 protected:
-  /*! /var jeu est le booléen qui permet de déterminer si la partie est finie ou non */
+  /*! jeu est le booléen qui permet de déterminer si la partie est finie ou non */
   bool jeu;
   static const int a=1;
-  /*! /var NombreDePieces est le nombre max de Tetriminos disponibles dans notre Jeu*/
+  /*! NombreDePieces est le nombre max de Tetriminos disponibles dans notre Jeu*/
   static const int NombreDePieces=8;
-  /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
+  /*! nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
   int nombre_aleatoire;
-  /*! /var b correspondra  à notre grille de jeu */
+  /*! b correspondra  à notre grille de jeu */
   Board b;
-  /*! /var PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
+  /*! PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
   Piece *PieceStocke;
-  /*! /var PieceEnCours est le pointeur sur la Piece en cours, c'est-à-dire celle en train de descendre le long du Board */
+  /*! PieceEnCours est le pointeur sur la Piece en cours, c'est-à-dire celle en train de descendre le long du Board */
   Piece *PieceEnCours;
-  /*! /var PieceSuivante est le pointeur sur la Piece suivante, c'est-à-dire celle suivant la Piece en cours*/
+  /*! PieceSuivante est le pointeur sur la Piece suivante, c'est-à-dire celle suivant la Piece en cours*/
   Piece *PieceSuivante;
 
   public:

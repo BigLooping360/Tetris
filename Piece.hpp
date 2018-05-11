@@ -21,20 +21,20 @@ using namespace std;
  *Plus particulièrement, on pourra changer les paramètres caractéristiques de la Piece,
  * vérifier si on peut la déplacer ou la tourner,
  * la déplacer dans les 3 sens (gauche, droite, bas),
- * et la tourner dans le sens horaire ou dans le sens trigonométrique.
+ * et la tourner dans le sens horaire.
 */
 
 class Piece {
   protected:
-  /*! /var tab un vecteur de Bloc, c'est-à-dire un vecteur où chaque case a pour attribut la position en x et la position en y*/
+  /*! tab un vecteur de Bloc, c'est-à-dire un vecteur où chaque case a pour attribut la position en x et la position en y*/
   vector<Bloc> tab;
-  /*! /var etat correspond à dans quel état de rotation se situe la Piece*/
+  /*! etat correspond à dans quel état de rotation se situe la Piece*/
   int etat;
-  /*! /var bloque est un booleen qui permet de savoir si une Piece a atteint sa position finale dans le Board ou si elle peut encore descendre*/
+  /*! bloque est un booleen qui permet de savoir si une Piece a atteint sa position finale dans le Board ou si elle peut encore descendre*/
   bool bloque;
-  /*! /var color définit la couleur de la Piece */
+  /*! color définit la couleur de la Piece */
   int color;
-  /*! /var stocke permet de savoir si une Piece peut être stockée. Attention, une Piece ne peut être stockée qu'une fois.
+  /*! stocke permet de savoir si une Piece peut être stockée. Attention, une Piece ne peut être stockée qu'une fois.
   Vaut vrai si la pièce a déjà était stocké. */
   bool stocke;
   public:
@@ -72,7 +72,7 @@ class Piece {
   int getcolor();
 
   /*! \fn void setetat(int i)
-  * \brief Mutateur d'état d'une pièce ATTENTION UTILE SEULEMENT POUR LES TESTS UNITAIRES A NE PAS UTILISER
+  * \brief Mutateur d'état d'une pièce. Attention, cette fonction est utile seulement pour les tests unitaires et n'est pas à utiliser ailleurs.
   * \param i est l'entier qui correspond à l'état que l'on veut donner à la pièce
   */
   void setetat(int i);

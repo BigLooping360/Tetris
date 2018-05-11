@@ -26,14 +26,14 @@ using namespace std;
 class Menu {
 
 private:
-  /*! /var jeuc est le JeuClassique du Tetris qui sera lancé à la demande de l'utilisateur*/
+  /*! jeuc est le JeuClassique du Tetris qui sera lancé à la demande de l'utilisateur*/
   JeuClassique jeuc;
-  /*! /var jeum est le JeuMontagnard du Tetris qui sera lancé à la demande de l'utilisateur*/
+  /*! jeum est le JeuMontagnard du Tetris qui sera lancé à la demande de l'utilisateur*/
   JeuMontagnard jeum;
 
-  /*! /var scoreclassique est ce qui servira à gérer les Score pour le JeuClassique*/
+  /*! scoreclassique est ce qui servira à gérer les Score pour le JeuClassique*/
   Score scoreC;
-  /*! /var scoreM est ce qui servira à gérer les Score pour le JeuMontagnard*/
+  /*! scoreM est ce qui servira à gérer les Score pour le JeuMontagnard*/
   Score scoreM;
 
 public:

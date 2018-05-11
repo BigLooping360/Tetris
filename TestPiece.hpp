@@ -18,7 +18,7 @@
 using namespace CppUnit;
 using namespace std;
 
-/*! \class TestPiece_S
+/*! \class TestPiece
  * \brief Classe Test de Piece
  * \author Léa Lefrançois, Laura Couret et Victor Le Maistre
  * \version 1.0
@@ -76,10 +76,10 @@ protected:
 
 
   private:
-    /*! /var *Piece1Test1 est le pointeur sur une Piece de test*/
+    /*! *Piece1Test1 est le pointeur sur une Piece de test*/
     Piece *PieceTest1;
-    /*! /var *Piece1Test2 est le pointeur sur une Piece de test*/
+    /*! *Piece1Test2 est le pointeur sur une Piece de test*/
     Piece *PieceTest2;
-    /*! /var *BoardTest est le pointeur sur un Board de test*/
+    /*! *BoardTest est le pointeur sur un Board de test*/
     Board *BoardTest;
 };

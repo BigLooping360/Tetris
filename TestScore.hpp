@@ -62,7 +62,9 @@ class TestScore : public CppUnit::TestFixture {
     void testScore(void);
 
   private:
+    /*! *ScoreClassique est le pointeur sur un Score de JeuClassique de test*/
     Score *ScoreClassique;
+    /*! *ScoreMontagnard est le pointeur sur un Score de JeuMontagnard de test*/
     Score *ScoreMontagnard;
 
 };

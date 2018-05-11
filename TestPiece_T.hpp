@@ -56,8 +56,8 @@ protected:
     void Rotate_Piece_T(void);
 
   private:
-    /*! /var *PieceTest1 est le pointeur sur une Piece_T de test*/
+    /*! *PieceTest1 est le pointeur sur une Piece_T de test*/
     Piece *PieceTest1;
-    /*! /var *BoardTest est le pointeur sur un Board de test*/
+    /*! *BoardTest est le pointeur sur un Board de test*/
     Board *BoardTest;
 };

@@ -18,15 +18,17 @@ using namespace std;
 */
 class Board {
 
+  protected:
   // Largeur et Hauteur sont static et const pour pouvoir initialiser  la grille
-  /*! /var Largeur représente le nombre de colonnes de la grille. Par défaut, elle est fixée à 10.*/
+  /*! static const int Largeur représente le nombre de colonnes de la grille. Par défaut, elle est fixée à 10.*/
   static const int Largeur=10;
-  /*! /var Hauteur représente le nombre de lignes de la grille. Par défaut, elle est fixée à 20.*/
+  /*! Hauteur représente le nombre de lignes de la grille. Par défaut, elle est fixée à 20.*/
   static const int Hauteur=20;
 
-  /*! /var Grille est un tableau de dimension Largeur x Hauteur. Attention, l'origine de notre grille est fixée en bas à gauche alors que l'origine d'un tableau est fixée en haut à gauche. */
+  /*! Grille est un tableau de dimension Largeur x Hauteur. Attention, l'origine de notre grille est fixée en bas à gauche alors que l'origine d'un tableau est fixée en haut à gauche. */
   int Grille[Largeur][Hauteur];
-  public :
+
+  public:
   /*! \fn int getLargeur() const
   * \brief renvoie la largeur de la grille, c'est-à-dire le nombre de colonnes
   */

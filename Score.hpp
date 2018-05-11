@@ -26,7 +26,7 @@ using namespace std;
 class Score {
 
   protected:
-  /*! /var nomfichier est le nom du fichier où seront stockés les meilleurs Score réalisés*/
+  /*! nomfichier est le nom du fichier où seront stockés les meilleurs Score réalisés*/
   string nomfichier;
 
   public:

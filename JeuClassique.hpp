@@ -5,6 +5,7 @@
 /*! \class JeuClassique
  * \brief Gestion du déroulement d'un Jeu Classique
  * \author Léa Lefrançois
+ * \author Laura Couret 
  * \version 1.0
  * \date mai 2018
  * \bug Rien à signaler
@@ -18,7 +19,7 @@
 class JeuClassique : public Jeu {
 
   private:
-    /*! /var points est le nombre de points gagnés par le joueur dans une partie de JeuClassique*/
+    /*! points est le nombre de points gagnés par le joueur dans une partie de JeuClassique*/
     int points;
 
   public:

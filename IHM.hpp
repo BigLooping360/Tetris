@@ -23,8 +23,8 @@ using namespace std;
  *Ce module va permettre de :
  *- récupérer les saisies clavier de l'utilisateur
  *- afficher le Menu
- *- afficher une interface graphique du jeu
- *- afficher les Score et les règles du jeu
+ *- afficher une interface graphique du Jeu
+ *- afficher les Score et les règles du Jeu
  *- demande à un joueur de rentrer un pseudo lorsqu'il a gagné
 */
 
@@ -57,7 +57,7 @@ class IHM {
   */
   static void menu();
   /*! \fn static void reglesduJeu();
-  * \brief Affiche les règles du jeu
+  * \brief Affiche les règles du Jeu
   */
   static void reglesduJeu();
   /*! \fn static void ScoreClassique();
