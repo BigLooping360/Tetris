@@ -148,10 +148,9 @@ void JeuMontagnard::MaJ(){
   if (b.getGrille(p.getPosx(),p.getPosy()-1)==0)
     while ((b.getGrille(p.getPosx(),p.getPosy()-1)==0) and (p.getPosy()>=1))
       p.setPosy(p.getPosy()-1);
-  
 
 
->>>>>>> 81cd91e3529a198c44327c341e17c9d6f07be703
+
 }
 
 Personnage JeuMontagnard::getPersonnage(){
