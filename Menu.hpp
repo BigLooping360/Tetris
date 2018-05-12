@@ -26,20 +26,20 @@ using namespace std;
 class Menu {
 
 private:
-  /*! /var jeuc est le JeuClassique du Tetris qui sera lancé à la demande de l'utilisateur*/
+  /*! jeuc est le JeuClassique du Tetris qui sera lancé à la demande de l'utilisateur*/
   JeuClassique jeuc;
-  /*! /var jeum est le JeuMontagnard du Tetris qui sera lancé à la demande de l'utilisateur*/
+  /*! jeum est le JeuMontagnard du Tetris qui sera lancé à la demande de l'utilisateur*/
   JeuMontagnard jeum;
 
-  /*! /var scoreclassique est ce qui servira à gérer les Score de l'utilisateur pour le JeuClassique*/
+  /*! scoreclassique est ce qui servira à gérer les Score pour le JeuClassique*/
   Score scoreC;
-  /*! /var scoreM est ce qui servira à gérer les Score de l'utilisateur pour le JeuMontagnard*/
+  /*! scoreM est ce qui servira à gérer les Score pour le JeuMontagnard*/
   Score scoreM;
 
 public:
 
   /*! \fn void lancement()
-  * \brief Correspond au main de l'application
+  * \brief Correspond au main de l'application (lance notre application)
   */
   void lancement();
   /*! \fn void jouerClassique()
@@ -50,9 +50,21 @@ public:
   * \brief Lance une partie de Tetris Montagnard
   */
   void jouerMontagnard();
+  /*! \fn void ConsulterRegles()
+  * \brief Lance la consultation des règles du JeuClassique et du JeuMontagnard
+  */
   void ConsulterRegles();
+  /*! \fn void ConsulterScoreClassique()
+  * \brief Lance la consultation des scores du Tetris JeuClassique
+  */
   void ConsulterScoreClassique();
+  /*! \fn void ConsulterScoreMontagnard()
+  * \brief Lance la consultation des scores du Tetris JeuMontagnard
+  */
   void ConsulterScoreMontagnard();
+  /*! \fn void Quitter()
+  * \brief Lance la fermeture du terminal, quitte notre application
+  */
   void Quitter();
 
 };

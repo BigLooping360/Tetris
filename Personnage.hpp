@@ -18,13 +18,13 @@
 class Personnage {
 
   private:
-    /*! /var Posx est la position en x du Personnage dans notre Board*/
+    /*! Posx est la position en x du Personnage dans notre Board*/
     int Posx;
-    /*! /var Posy est la position en y du Personnage dans notre Board*/
+    /*! Posy est la position en y du Personnage dans notre Board*/
     int Posy;
-    /*! /var bloque est le booleen qui permet de savoir si le Personnage est bloqué ou non*/
+    /*! bloque est le booleen qui permet de savoir si le Personnage est bloqué ou non*/
     bool bloque;
-    /*! /var Direction est le booleen qui vaut true si le Personnage se dirige vers la droite, false si c'est vers la gauche*/
+    /*! Direction est le booleen qui vaut true si le Personnage se dirige vers la droite, false si c'est vers la gauche*/
     bool Direction;
 
   public:
@@ -53,7 +53,7 @@ class Personnage {
     void setbloque();
     /*! \fn bool getDirection()
     * \brief Accesseur du booléen Direction du Personnage
-    * \return Retourne le booléen Direction
+    * \return Retourne le booléen Direction du Personnage
     */
     bool getDirection();
     /*! \fn void Deplacement(Board b)

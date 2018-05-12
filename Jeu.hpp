@@ -22,50 +22,50 @@ using namespace std;
  * \date avril 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
+ *
  *Ce module permet l'initialisation du début d'une partie,
  *la mise à jour des différents paramètres suite aux actions d'un joueur,
  *et actionne le déplacement d'une Piece.
 */
 
 class Jeu {
+
 protected:
-  /*! /var jeu est le booléen qui permet de déterminer si la partie est finie ou non */
+  /*! jeu est le booléen qui permet de déterminer si la partie est finie ou non */
   bool jeu;
   static const int a=1;
-  /*! /var NombreDePieces est le nombre max de Tetriminos disponibles dans notre Jeu*/
+  /*! NombreDePieces est le nombre max de Tetriminos disponibles dans notre Jeu*/
   static const int NombreDePieces=8;
-  /*! /var nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
+  /*! nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
   int nombre_aleatoire;
-  /*! /var b correspondra  à notre grille de jeu */
+  /*! b correspondra  à notre grille de jeu */
   Board b;
-  /*! /var PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
+  /*! PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
   Piece *PieceStocke;
-  /*! /var PieceEnCours est le pointeur sur la Piece en cours, c'est-à-dire celle en train de descendre le long du Board */
+  /*! PieceEnCours est le pointeur sur la Piece en cours, c'est-à-dire celle en train de descendre le long du Board */
   Piece *PieceEnCours;
-  /*! /var PieceSuivante est le pointeur sur la Piece suivante, c'est-à-dire celle suivant la Piece en cours*/
+  /*! PieceSuivante est le pointeur sur la Piece suivante, c'est-à-dire celle suivant la Piece en cours*/
   Piece *PieceSuivante;
 
   public:
   /*! \fn void stocker()
-  * \brief Stock la pièce en cours si la pièce n'a pas encore été stocké
+  * \brief Stocke la pièce en cours si la pièce n'a pas encore été stockée
   */
   void stocker();
   /*! \fn bool getjeu()const
-  * \brief Accesseur du booleen jeu
+  * \brief Accesseur du booléen jeu
   * \return le booléen jeu
   */
   bool getjeu()const;
   /*! \fn int MaJPiece()
   * \brief Met à jour la grille à chaque fois qu'une Piece est posée
-  * \return la nombre de lignes complétées grâce à la Piece ajoutée
+  * \return le nombre de lignes complétées par l'utilisateur grâce à la dernière Piece ajoutée
   */
   int MaJPiece();
-
   /*! \fn void MaJ()
-  * \brief Met à l'ensemble des paramètres (scores, Pieces) à chaque fois qu'une pièce est posée.
+  * \brief Met à jour l'ensemble des paramètres (scores, Pieces) à chaque fois qu'une pièce est posée
   */
   virtual void MaJ()=0;
-
   /*! \fn bool getstatut()
   * \brief Détermine si le jeu peut continuer ou non
   * \return vrai si la Piece en cours est bloqué, faux sinon

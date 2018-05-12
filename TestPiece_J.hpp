@@ -53,11 +53,11 @@ protected:
     void testRotate();
 
 private:
-    /*! /var *PieceTest1 est le pointeur sur une Piece_J de test*/
+    /*! *PieceTest1 est le pointeur sur une Piece_J de test*/
     Piece_J *PieceTest1;
-    /*! /var *PieceTest2 est le pointeur sur une Piece_J qui servira de comparaison pour les tests*/
+    /*! *PieceTest2 est le pointeur sur une Piece_J qui servira de comparaison pour les tests*/
     Piece_J *PieceTest2;
-    /*! /var *BoardTest est le pointeur sur un Board de test*/
+    /*! *BoardTest est le pointeur sur un Board de test*/
     Board *BoardTest;
 
 };

@@ -199,42 +199,46 @@ void TestScore::testaddscore(void) {
 }
 
 void TestScore::testmeilleurescore(void) {
-  float score1 = 14;
-  float score2 = 1.2;
+  float scorec1 = 34;
+    float scorec2 = 150;
+    float scorem1 = 0.7;
+    float scorem2 = 50;
+
+
+
+    //dans notre fichier il y a actuellement 9 scores donc notre score sera forcément un meilleur score
+    CPPUNIT_ASSERT(ScoreClassique->meilleurescore(scorec1)==true);
+    CPPUNIT_ASSERT(ScoreClassique->meilleurescore(scorec2)==true);
+    CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(scorem1)==true);
+    CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(scorem2)==true);
+
 
     string nomfc = ScoreClassique->getNomfichier();
     string nomfm = ScoreMontagnard->getNomfichier();
-    ofstream fc(nomfc.c_str(),ios::out | ios::trunc);
-    ofstream fm(nomfm.c_str(),ios::out | ios::trunc);
+    ofstream fc(nomfc.c_str(),ios::app);
+    ofstream fm(nomfm.c_str(),ios::app);
 
-    // si le fichier est vide on peut forcément ajouter notre score
-    CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score1));
-    CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score1));
 
-  //je remplis mon fichier de score de 10 scores
+
+  //on ajoute un score dans chaque fichier pour avoir 10 scores
     if (fc) {
-      for (int i=0;i<10;i++){
-        string pseudo = "abcde";
-        float score = 14.3-i;
-        fc << pseudo << " " << score << endl;
-      }
-    }
+        fc << "abc" << " " << 40 << endl;
+        }
+
     if (fm) {
-      for (int i=0;i<10;i++){
-        string pseudo = "abcde";
-        float score = i+2.5;
-        fm << pseudo << " " << score << endl;
+      fm << "abc" << " " << 44.7 << endl;
       }
-    }
+
 
   fc.close();
   fm.close();
 
-  // on test si c'est des meilleurs scores
-  CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score1)==true);
-  CPPUNIT_ASSERT(ScoreClassique->meilleurescore(score2)==false);
-  CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score2)==true);
-  CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(score1)==false);
+  CPPUNIT_ASSERT(ScoreClassique->meilleurescore(scorec2)==true);
+    CPPUNIT_ASSERT(ScoreClassique->meilleurescore(scorec1)==false);
+    CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(scorem1)==true);
+    CPPUNIT_ASSERT(ScoreMontagnard->meilleurescore(scorem2)==false);
+
+
 
 }
 

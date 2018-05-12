@@ -15,15 +15,24 @@ int IHM::getinput(){
 
 string IHM::getPseudoGagnant() {
 
-  clear();
-  char *msg1 = "Gagné ! Vous pouvez entrer votre pseudo pour rentrer dans le palmares de nos meilleurs joueurs : ";
-  string nom;
-  int taille1 = strlen(msg1);
-  attron(A_DIM | A_BOLD);
-  mvprintw(25, (COLS / 2) - (taille1 / 2), msg1);
-  cin >> nom;
-  return nom;
+    clear();
+    refresh();
 
+    char *str;
+    string input = "hello"; //en attendant
+    char *msg1 = "Gagné !";
+    char *msg2 = "Vous pouvez entrer votre pseudo pour rentrer dans le palmares de nos meilleurs joueurs : ";
+    int taille1 = strlen(msg1);
+    int taille2 = strlen(msg2);
+    attron(A_DIM | A_BOLD);
+    attron(COLOR_PAIR(1));
+    mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
+    attroff(COLOR_PAIR(1));
+    mvprintw(3,3, msg2);
+    //mvgetstr(5,3,str);
+    mvprintw(5,3,str);
+    attroff(A_DIM | A_BOLD);
+    return input;
 
 }
 
@@ -32,12 +41,13 @@ void IHM::reglesduJeu() {
   clear();
 
   int inter=-1;
-  int i=2;
+  int i=3;
   char *msg1 = "Les règles du Tetris";
   int taille1 = strlen(msg1);
   attron(A_DIM | A_BOLD);
-  mvprintw(0, (COLS / 2) - (taille1 / 2), msg1);
-
+  attron(COLOR_PAIR(6));
+  mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
+  attroff(COLOR_PAIR(6));
   ifstream f("regles.txt",ios::in);
   if (f) {
     string ligne;
@@ -47,11 +57,15 @@ void IHM::reglesduJeu() {
       }
   }
   f.close();
+  attron(COLOR_PAIR(0));
   mvprintw(i+2,2,"Appuyer sur Entrée pour revenir au menu principal");
+  attroff(COLOR_PAIR(0));
 
   while (inter!=(char)'\n') {
     inter=IHM::getinput();
   }
+
+  attroff(A_DIM | A_BOLD);
 
   IHM::menu();
 
@@ -72,7 +86,7 @@ void IHM::init(){
   init_pair(4, COLOR_BLUE, COLOR_BLACK);
   init_pair(5, COLOR_MAGENTA, COLOR_BLACK);
   init_pair(6, COLOR_CYAN, COLOR_BLACK);
-  init_pair(7, COLOR_CYAN, COLOR_BLACK);
+  init_pair(7, COLOR_CYAN, COLOR_BLACK); //idem que 6, fait expres ?
 
 }
 
@@ -119,10 +133,10 @@ void IHM::menu(){
   attroff(COLOR_PAIR(5));
   attron(COLOR_PAIR(6));
   mvprintw(16, (COLS / 2) - (taille8 / 2), choix5);
-  attroff(COLOR_PAIR(2));
-  attron(COLOR_PAIR(4));
+  attroff(COLOR_PAIR(6));
+  attron(COLOR_PAIR(1));
   mvprintw(18, (COLS / 2) - (taille9 / 2), choix6);
-  attroff(COLOR_PAIR(8));
+  attroff(COLOR_PAIR(1));
 
   refresh();
 
@@ -301,7 +315,9 @@ void IHM::ScoreMontagnard() {
   char *msg1 = "Les meilleurs scores pour le Tetris Montagnard sont : ";
   int taille1 = strlen(msg1);
   attron(A_DIM | A_BOLD);
+  attron(COLOR_PAIR(5));
   mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
+  attroff(COLOR_PAIR(5));
 
   ifstream f("montagnard.txt",ios::in);
   if (f) {
@@ -314,7 +330,10 @@ void IHM::ScoreMontagnard() {
   }
   f.close();
 
+  attron(COLOR_PAIR(0));
   mvprintw(i+2,2,"Appuyer sur Entrée pour revenir au menu principal");
+  attroff(COLOR_PAIR(0));
+
   while (inter!=(char)'\n') {
     inter=IHM::getinput();
   }
@@ -330,7 +349,9 @@ void IHM::ScoreClassique() {
   char *msg1 = "Les meilleurs scores pour le Tetris Classique sont : ";
   int taille1 = strlen(msg1);
   attron(A_DIM | A_BOLD);
+  attron(COLOR_PAIR(3));
   mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
+  attroff(COLOR_PAIR(3));
 
   ifstream f("classique.txt",ios::in);
   if (f) {
@@ -343,7 +364,10 @@ void IHM::ScoreClassique() {
   }
   f.close();
 
+  attron(COLOR_PAIR(0));
   mvprintw(i+2,2,"Appuyer sur Entrée pour revenir au menu principal");
+  attroff(COLOR_PAIR(0));
+
   while (inter!=(char)'\n') {
     inter=IHM::getinput();
   }

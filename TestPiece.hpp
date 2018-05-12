@@ -18,9 +18,9 @@
 using namespace CppUnit;
 using namespace std;
 
-/*! \class TestPiece_S
+/*! \class TestPiece
  * \brief Classe Test de Piece
- * \author Léa Lefrançois, Laura Couret et Victor LE MAISTRE
+ * \author Léa Lefrançois, Laura Couret et Victor Le Maistre
  * \version 1.0
  * \date avril 2018
  * \bug Rien à signaler
@@ -28,7 +28,7 @@ using namespace std;
  *
  *Ce module sert de test unitaire à la classe Piece
  *On testera si la Piece peut se déplacer vers la gauche, vers et la droite et descendre
-
+ *Ces tests sont les mêmes quel que soit la forme du Tetrimino, c'est pour cette raison qu'ils sont fait dans la classe Piece dont ils heritent tous
 */
 
 class TestPiece : public CppUnit::TestFixture
@@ -48,26 +48,38 @@ public:
 
 protected:
 
+    /*! \fn void testLeft(void)
+    * \brief Teste si la Piece peut se déplacer vers la gauche dans plusieurs cas (normales et extremes)
+    */
     void testLeft(void);
+    /*! \fn void testMoveLeft(void)
+    * \brief Teste si la Piece se déplace bien vers la gauche dans plusieurs cas (normales et extremes)
+    */
     void testMoveLeft(void);
+    /*! \fn void testRight(void)
+    * \brief Teste si la Piece peut se déplacer vers la droite dans plusieurs cas (normales et extremes)
+    */
     void testRight(void);
+    /*! \fn void testMoveRight(void)
+    * \brief Teste si la Piece se déplace bien vers la droite dans plusieurs cas (normales et extremes)
+    */
     void testMoveRight(void);
     /*! \fn void testDown()
     * \brief Teste si la Piece peut descendre dans plusieurs situations : au milieu d'un Board vide, lorsqu'un élément l'empêche de descendre et quand elle est à la frontière d'un Board.
     */
     void testDown(void);
     /*! \fn void testMoveDown()
-    * \brief Test  la descente d'une Piece : on testera si la pièce est bien descendu
+    * \brief Teste la descente d'une Piece : on testera si la pièce est bien descendue
     */
     void testMoveDown(void);
 
 
 
   private:
-    /*! /var *Piece1Test1 est le pointeur sur une Piece de test*/
+    /*! *Piece1Test1 est le pointeur sur une Piece de test*/
     Piece *PieceTest1;
-    /*! /var *Piece1Test2 est le pointeur sur une Piece de test*/
+    /*! *Piece1Test2 est le pointeur sur une Piece de test*/
     Piece *PieceTest2;
-    /*! /var *BoardTest est le pointeur sur un Board de test*/
+    /*! *BoardTest est le pointeur sur un Board de test*/
     Board *BoardTest;
 };

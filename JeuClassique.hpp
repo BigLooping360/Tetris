@@ -5,8 +5,9 @@
 /*! \class JeuClassique
  * \brief Gestion du déroulement d'un Jeu Classique
  * \author Léa Lefrançois
+ * \author Laura Couret 
  * \version 1.0
- * \date avril 2018
+ * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
@@ -18,7 +19,7 @@
 class JeuClassique : public Jeu {
 
   private:
-    /*! /var points est le nombre de point gagné par le joueur dans une partie de JeuClassique*/
+    /*! points est le nombre de points gagnés par le joueur dans une partie de JeuClassique*/
     int points;
 
   public:
@@ -33,6 +34,7 @@ class JeuClassique : public Jeu {
     int getpoints();
     /*! \fn setpoints()
     * \brief Modifie le nombre de points du jeu
+    * \param l est l'entier que l'on veut ajouter au nombre de points actuels
     */
     void setpoints(int l);
     /*! \fn void MaJ()

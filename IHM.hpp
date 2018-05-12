@@ -3,9 +3,8 @@
 #include <iostream>
 #include <ncurses.h>
 
-
 #include "Jeu.hpp"
-#include"JeuClassique.hpp"
+#include "JeuClassique.hpp"
 #include "JeuMontagnard.hpp"
 
 
@@ -14,20 +13,19 @@ using namespace std;
 
 /*! \class IHM
  * \brief Gère les interactions entre les actions du joueur et le jeu à proprement parler
- * \author Léa Lefrançois
  * \author Laura Couret
-  * \author Victor Le Maistre
+ * \author Victor Le Maistre
  * \version 1.0
- * \date avril 2018
+ * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
  *Ce module va permettre de :
  *- récupérer les saisies clavier de l'utilisateur
  *- afficher le Menu
- *- afficher une interface graphique du jeu
- *- afficher les Score et les règles du jeu
- *- consulter et ajouter des meilleurs Score autant pour le JeuClassique que le JeuMontagnard
+ *- afficher une interface graphique du Jeu
+ *- afficher les Score et les règles du Jeu
+ *- demande à un joueur de rentrer un pseudo lorsqu'il a gagné
 */
 
 class IHM {
@@ -38,7 +36,6 @@ class IHM {
   * \return l'entier correspondant au caractère tapé
   */
   static int getinput();
-
   /*! \fn static void init()
   * \brief initialise l'écran
   */
@@ -59,12 +56,8 @@ class IHM {
   * \brief Affiche le Menu d'accueil de notre application
   */
   static void menu();
-  /*! \fn static void score();
-  * \brief Affiche tous les meilleurs Score (JeuClassique et JeuMontagnard)
-  */
-  static void score();
   /*! \fn static void reglesduJeu();
-  * \brief Affiche les règles du jeu
+  * \brief Affiche les règles du Jeu
   */
   static void reglesduJeu();
   /*! \fn static void ScoreClassique();
