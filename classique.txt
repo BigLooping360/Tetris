@@ -1,10 +1,2 @@
-abc 2000
-def 100
-def 90
-def 80
-def 70
-def 60
-abc 55
-def 50
-abc 45
-abc 40
+hello 10
+hello 10

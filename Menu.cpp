@@ -78,7 +78,7 @@ void Menu::jouerMontagnard(){
       jeum.MaJ();
   }
 
-  if (scoreM.meilleurescore(jeum.getTemps())) {
+  if ( (scoreM.meilleurescore(jeum.getTemps())) and (jeum.getPersonnage().getPosy()==19) ) {
     string pseudo = IHM::getPseudoGagnant();
     scoreM.addscore(jeum.getTemps(),pseudo);
   }

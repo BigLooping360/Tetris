@@ -36,7 +36,7 @@ void JeuMontagnard::MaJ(){
 
     }
   }
-  //On check si le personnage n'est pas arrivé tout en hauteur
+  //On check si le personnage n'est pas arrivé tout en haut
   if (p.getPosy()==19) {
     jeu=false;
     clock_t sec = clock();
