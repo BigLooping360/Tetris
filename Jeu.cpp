@@ -197,7 +197,7 @@ int Jeu::MaJPiece(){
   return nb_ligneCompletee;
 
 }
-// Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
+// Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougée
 void Jeu::interaction(int c){
   if (((char)c=='q') or (c==KEY_LEFT))
     PieceEnCours->MoveLeft(b);

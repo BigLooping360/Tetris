@@ -29,7 +29,7 @@ string IHM::getPseudoGagnant() {
     mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
     attroff(COLOR_PAIR(1));
     mvprintw(3,3, msg2);
-    //mvgetstr(5,3,str);
+    mvgetstr(5,3,str);
     mvprintw(5,3,str);
     attroff(A_DIM | A_BOLD);
     return input;
@@ -160,6 +160,61 @@ void IHM::afficher(JeuClassique Jeu1){
   for (int i=0; i<Jeu1.b.getLargeur()+2;i++){
     mvaddch(Jeu1.b.getHauteur(),i,'x');
   }
+
+  char *msg1 = "Piece suivante : I";
+  char *msg2 = "Piece suivante : O";
+  char *msg3 = "Piece suivante : T";
+  char *msg4 = "Piece suivante : L";
+  char *msg5 = "Piece suivante : J";
+  char *msg6 = "Piece suivante : S";
+  char *msg7 = "Piece suivante : Z";
+
+
+  switch (Jeu1.PieceSuivante->getcolor()) {
+
+    case 1:
+      attron(COLOR_PAIR(1));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg1);
+      attroff(COLOR_PAIR(1));
+      break;
+    case 2:
+      attron(COLOR_PAIR(2));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg2);
+      attroff(COLOR_PAIR(2));
+      break;
+
+    case 3:
+      attron(COLOR_PAIR(4));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg3);
+      attroff(COLOR_PAIR(4));
+      break;
+
+    case 4:
+      attron(COLOR_PAIR(4));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg4);
+      attroff(COLOR_PAIR(4));
+      break;
+
+    case 5:
+      attron(COLOR_PAIR(5));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg5);
+      attroff(COLOR_PAIR(5));
+      break;
+
+    case 6:
+      attron(COLOR_PAIR(6));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg6);
+      attroff(COLOR_PAIR(6));
+      break;
+
+    case 7:
+      attron(COLOR_PAIR(6));
+      mvprintw(1,Jeu1.b.getLargeur()+5,msg7);
+      attroff(COLOR_PAIR(6));
+      break;
+  }
+
+
   //On affiche la pièce
   switch (Jeu1.PieceEnCours->getcolor()){
     case 1:
@@ -303,6 +358,60 @@ void IHM::afficher(JeuMontagnard Jeu1){
   else
     mvaddch(Jeu1.b.getHauteur()-Jeu1.getPersonnage().getPosy()-1,Jeu1.getPersonnage().getPosx()+1,'q');
   attroff(COLOR_PAIR(4));
+
+
+    char *msg1 = "Piece suivante : I";
+    char *msg2 = "Piece suivante : O";
+    char *msg3 = "Piece suivante : T";
+    char *msg4 = "Piece suivante : L";
+    char *msg5 = "Piece suivante : J";
+    char *msg6 = "Piece suivante : S";
+    char *msg7 = "Piece suivante : Z";
+
+
+    switch (Jeu1.PieceSuivante->getcolor()) {
+
+      case 1:
+        attron(COLOR_PAIR(1));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg1);
+        attroff(COLOR_PAIR(1));
+        break;
+      case 2:
+        attron(COLOR_PAIR(2));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg2);
+        attroff(COLOR_PAIR(2));
+        break;
+
+      case 3:
+        attron(COLOR_PAIR(4));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg3);
+        attroff(COLOR_PAIR(4));
+        break;
+
+      case 4:
+        attron(COLOR_PAIR(4));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg4);
+        attroff(COLOR_PAIR(4));
+        break;
+
+      case 5:
+        attron(COLOR_PAIR(5));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg5);
+        attroff(COLOR_PAIR(5));
+        break;
+
+      case 6:
+        attron(COLOR_PAIR(6));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg6);
+        attroff(COLOR_PAIR(6));
+        break;
+
+      case 7:
+        attron(COLOR_PAIR(6));
+        mvprintw(1,Jeu1.b.getLargeur()+5,msg7);
+        attroff(COLOR_PAIR(6));
+        break;
+    }
 
 }
 
