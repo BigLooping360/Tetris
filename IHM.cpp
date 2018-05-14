@@ -5,6 +5,7 @@
 #include <string.h>
 #include <fstream>
 #include <string>
+#include <string.h>
 
 
 using namespace std;
@@ -17,9 +18,7 @@ string IHM::getPseudoGagnant() {
 
     clear();
     refresh();
-
-    char *str;
-    string input = "hello"; //en attendant
+    string input;
     char *msg1 = "Gagné !";
     char *msg2 = "Vous pouvez entrer votre pseudo pour rentrer dans le palmares de nos meilleurs joueurs : ";
     int taille1 = strlen(msg1);
@@ -29,8 +28,17 @@ string IHM::getPseudoGagnant() {
     mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
     attroff(COLOR_PAIR(1));
     mvprintw(3,3, msg2);
-    //mvgetstr(5,3,str);
-    mvprintw(5,3,str);
+    refresh();
+
+    int inter=-1;
+
+    while (inter!=(char)'\n') {
+      inter=IHM::getinput();
+      char a = (char)inter;
+      input+=a;
+    }
+
+    refresh();
     attroff(A_DIM | A_BOLD);
     return input;
 
@@ -229,10 +237,12 @@ void IHM::afficher(JeuClassique Jeu1){
   char *msg8 = "Appuyer sur r pour faire tourner la Piece";
   char *msg9 = "Appuyer sur o pour stocker la Piece";
   char *msg10 = "Appuyer sur p pour faire une pause";
+  char *msg10 = "Points : ";
 
-  mvprintw(4,Jeu1.b.getLargeur()+5,msg8);
-  mvprintw(5,Jeu1.b.getLargeur()+5,msg9);
-  mvprintw(6,Jeu1.b.getLargeur()+5,msg10);
+  mvprintw(4,Jeu1.b.getLargeur()+5,msg11);
+  mvprintw(5,Jeu1.b.getLargeur()+5,msg8);
+  mvprintw(6,Jeu1.b.getLargeur()+5,msg9);
+  mvprintw(7,Jeu1.b.getLargeur()+5,msg10);
 
   //on affiche la piece suivante
   switch (Jeu1.PieceSuivante->getcolor()) {
