@@ -6,9 +6,17 @@
 #include <fstream>
 #include <string>
 #include <string.h>
-
+#include <sstream>
+#include <curses.h>
 
 using namespace std;
+
+template <typename T>
+string to_string(T value) {
+  ostringstream os ;
+  os << value ;
+  return os.str() ;
+}
 
 int IHM::getinput(){
   return getch();
@@ -18,20 +26,11 @@ string IHM::getPseudoGagnant() {
 
     clear();
     refresh();
-    char *inp;
-    char *msg1 = "Gagné !";
-    char *msg2 = "Vous pouvez entrer votre pseudo pour rentrer dans le palmares de nos meilleurs joueurs : ";
-    int taille1 = strlen(msg1);
-    attron(A_DIM | A_BOLD);
-    attron(COLOR_PAIR(1));
-    mvprintw(1, (COLS / 2) - (taille1 / 2), msg1);
-    attroff(COLOR_PAIR(1));
-    mvprintw(3,3, msg2);
-    mvscanw(5,3,"%s",inp);
-    refresh();
-    string nana = string(inp);
-    attroff(A_DIM | A_BOLD);
-    return nana;
+    string input;
+    cout << endl;
+    cout << "Gagné ! Vous pouvez entrer votre pseudo pour rentrer dans le palmares de nos meilleurs joueurs : ";
+    cin >> input;
+    return input;
 
 }
 
