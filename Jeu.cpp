@@ -86,7 +86,17 @@ Jeu::Jeu(){
   PieceStocke=NULL;
 }
 
+Piece* Jeu::getPieceEncours() {
+  return PieceEnCours;
+}
 
+Piece* Jeu::getPieceSuivante() {
+  return PieceSuivante;
+}
+
+Board Jeu::getBoard() {
+  return b;
+}
 
 int Jeu::MaJPiece(){
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
