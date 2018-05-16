@@ -10,38 +10,6 @@ using namespace std;
 
 JeuMontagnard::JeuMontagnard(Board b1):Jeu(){
   b=b1;
-  // // PieceCours prend la valeur de p1
-  // switch (p1->getcolor()) {
-  //   case 1:
-  //     PieceEnCours= new Piece_I();
-  //     break;
-  //
-  //   case 2:
-  //     PieceEnCours= new Piece_O();
-  //     break;
-  //
-  //   case 3:
-  //     PieceEnCours= new Piece_T();
-  //     break;
-  //
-  //   case 4:
-  //     PieceEnCours= new Piece_L();
-  //     break;
-  //
-  //   case 5:
-  //     PieceEnCours= new Piece_J();
-  //     break;
-  //
-  //   case 6:
-  //     PieceEnCours= new Piece_S();
-  //     break;
-  //
-  //   case 7:
-  //     PieceEnCours= new Piece_Z();
-  //     break;
-  //
-  // }
-  // *PieceEnCours=*p1;
 p=Personnage();
 
 }
@@ -63,15 +31,7 @@ void JeuMontagnard::MaJ(){
       p.setbloque();
   }
 
-  //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
-  for (size_t i = 0; i < 4; i++) {
-    if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==6)) and (PieceEnCours->getPosy(i)==19)) {
-      jeu=false;
-      clock_t sec = clock();
-      temps = ((float) sec/CLOCKS_PER_SEC);
 
-    }
-  }
   //On check si le personnage n'est pas arrivé tout en haut
   if (p.getPosy()==19) {
     jeu=false;
@@ -148,6 +108,11 @@ void JeuMontagnard::MaJ(){
 
   }
   *PieceEnCours=*PieceSuivante;
+  //On check que la nouvelle pièce peut bien s'intégrer dans le board :
+  for (size_t i = 0; i < 4; i++) {
+    if (b.getGrille(PieceEnCours->getPosx(i),PieceEnCours->getPosy(i))==1)
+      jeu=false;
+  }
 
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
   switch (nombre_aleatoire) {

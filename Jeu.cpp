@@ -96,11 +96,7 @@ void Jeu::setPieceEnCoursO() {
 
 
 int Jeu::MaJPiece(){
-  //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
-  for (size_t i = 0; i < 4; i++) {
-    if ( ((PieceEnCours->getPosx(i)==4) or (PieceEnCours->getPosx(i)==5) or (PieceEnCours->getPosx(i)==6)) and (PieceEnCours->getPosy(i)==19))
-      jeu=false;
-  }
+
 
   //On intègre la pièce en cours bloqué dans le Board b
   for (int i = 0; i < 4; i++) {
@@ -138,7 +134,7 @@ int Jeu::MaJPiece(){
 
 
   }
-  // PieceCours prend la valeur de PieceStocke
+  // PieceCours prend la valeur de PieceSuivante
   switch (PieceSuivante->getcolor()) {
     case 1:
       PieceEnCours= new Piece_I();
@@ -170,6 +166,11 @@ int Jeu::MaJPiece(){
 
   }
   *PieceEnCours=*PieceSuivante;
+  //On check que la nouvelle pièce peut bien s'intégrer dans le board :
+  for (size_t i = 0; i < 4; i++) {
+    if (b.getGrille(PieceEnCours->getPosx(i),PieceEnCours->getPosy(i))==1)
+      jeu=false;
+  }
 
   nombre_aleatoire=rand()%(NombreDePieces-a) +a;
   switch (nombre_aleatoire) {

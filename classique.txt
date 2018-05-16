@@ -1,18 +1,1 @@
-<<<<<<< HEAD
-hello 10
-hello 10
-hello 10
-hello 0
-hello 0
-hello 0
-hello 0
-hello 0
-=======
-mlkj 0
-louis 0
-mlkjh 0
-juliejik 0
-julie 0
-Anonyme 0
-Anonyme 0
->>>>>>> f713260abc09c0db19dc82636caeafc4c2fecd91
+bob 0
