@@ -87,6 +87,7 @@ Jeu::Jeu(){
 }
 
 
+
 int Jeu::MaJPiece(){
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
   for (size_t i = 0; i < 4; i++) {

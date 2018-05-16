@@ -362,7 +362,7 @@ void IHM::afficher(JeuMontagnard Jeu1){
         mvaddch(Jeu1.b.getHauteur()-Jeu1.PieceEnCours->getPosy(i)-1,Jeu1.PieceEnCours->getPosx(i)+1,'x');
       }
       attroff(COLOR_PAIR(1));
-      break;
+      break; 
     case 2:
       attron(COLOR_PAIR(2));
       for (int i = 0; i < 4; i++) {
