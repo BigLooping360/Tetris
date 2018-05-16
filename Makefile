@@ -44,7 +44,7 @@ Test_Score : Score.o TestScore.o
 		$(FC) Score.o TestScore.o $(OPT2) -o TestScore
 		./TestScore
 
-Test_Jeu : Jeu.o TestJeu.o
+Test_Jeu : Jeu.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o TestJeu.o JeuClassique.o Jeu.o
 		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o $(OPT2) -o TestJeu
 		./TestJeu
 
