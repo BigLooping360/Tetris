@@ -86,17 +86,14 @@ Jeu::Jeu(){
   PieceStocke=NULL;
 }
 
-Piece* Jeu::getPieceEncours() {
-  return PieceEnCours;
+void Jeu::setPieceEnCoursI() {
+  PieceEnCours = new Piece_I();
 }
 
-Piece* Jeu::getPieceSuivante() {
-  return PieceSuivante;
+void Jeu::setPieceEnCoursO() {
+  PieceEnCours = new Piece_O();
 }
 
-Board Jeu::getBoard() {
-  return b;
-}
 
 int Jeu::MaJPiece(){
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
@@ -219,7 +216,7 @@ void Jeu::interaction(int c){
   if (((char)c==' ') or (c==KEY_UP))
     while(!PieceEnCours->getbloque())
       PieceEnCours->MoveDown(b);
-  if ((char)c=='r')
+  if (((char)c=='r') or (c==KEY_BACKSPACE))
     PieceEnCours->Rotate(b);
   if ((char)c=='o')
     stocker();

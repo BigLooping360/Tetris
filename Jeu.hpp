@@ -48,21 +48,8 @@ protected:
   Piece *PieceSuivante;
 
   public:
-  /*! \fn Board getBoard()
-  * \brief Accesseur du Board, utile seulement pour les tests unitaires
-  */
-  Board getBoard();
-  /*! \fn Piece* getPieceEncours()
-  * \brief Accesseur de la PieceEnCours, utile seulement pour les tests unitaires
-  */
-  Piece* getPieceEncours();
-  /*! \fn Piece* getSuivante()
-  * \brief Accesseur de la PieceSuivante, utile seulement pour les tests unitaires
-  */
-  Piece* getPieceSuivante();
-  /*! \fn void stocker()
-  * \brief Stocke la pièce en cours si la pièce n'a pas encore été stockée
-  */
+  void setPieceEnCoursI();
+  void setPieceEnCoursO();
   void stocker();
   /*! \fn bool getjeu()const
   * \brief Accesseur du booléen jeu

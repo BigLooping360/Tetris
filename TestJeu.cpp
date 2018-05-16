@@ -17,6 +17,7 @@
 #include "JeuClassique.hpp"
 #include "Piece.hpp"
 #include "Piece_I.hpp"
+#include "Piece_O.hpp"
 #include "Board.hpp"
 
 using namespace CppUnit;
@@ -25,46 +26,282 @@ using namespace std;
 
 void TestJeu::setUp(void) {
 
-  JeuTest = new JeuClassique();
-  //BoardTest = new Board();
-  //PieceTest = new Piece_I();
+  JeuTest1 = new JeuClassique();
+  JeuTest2 = new JeuClassique();
+  JeuTest3 = new JeuClassique();
+  JeuTest4 = new JeuClassique();
+
 
 }
 
 void TestJeu::tearDown(void) {
 
-  delete JeuTest;
-  //delete BoardTest;
-  //delete PieceTest;
+  delete JeuTest1;
+  delete JeuTest2;
+  delete JeuTest3;
+  delete JeuTest4;
 
 }
 
 
-void TestJeu::testMaJPiece(void) {
+void TestJeu::testMaJPiece1(void) {
 
-  //tout debut d'une partie, on fait descendre la premiere piece, le nombre de lignes complétées est forcément 0
-  JeuTest->interaction(KEY_UP);
-  CPPUNIT_ASSERT(JeuTest->MaJPiece() == 0);
-  //le jeu ne peut pas déjà être bloqué
-  CPPUNIT_ASSERT(JeuTest->getjeu());
-
-  //on fait tomber 10 pièces pour être sûr que le jeu doit s'arrêter
-  for (int i = 0; i < 10; i++ ) {
-    JeuTest->interaction(KEY_UP);
+  //on teste que la suppression de 1 lignes complete se fait bien
+  int j;
+  //on remplit une ligne complète sans une case
+  //une Piece_I à fond à gauche
+  JeuTest1->setPieceEnCoursI();
+  for (int i = 0; i < 5 ; i++) {
+    JeuTest1->interaction(KEY_LEFT);
   }
-  CPPUNIT_ASSERT(!JeuTest->getjeu());
+  JeuTest1->interaction(KEY_UP);
+  j = JeuTest1->MaJPiece();
+
+  //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0)
+  JeuTest1->setPieceEnCoursO();
+  for (int i = 0; i < 3 ; i++) {
+    JeuTest1->interaction(KEY_LEFT);
+  }
+  JeuTest1->interaction(KEY_UP);
+  j = JeuTest1->MaJPiece();
+
+  //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0)
+  JeuTest1->setPieceEnCoursO();
+  JeuTest1->interaction(KEY_LEFT);
+  JeuTest1->interaction(KEY_UP);
+  j = JeuTest1->MaJPiece();
+
+  //on rajoute un I couché décalée au max à droite
+  JeuTest1->setPieceEnCoursI();
+  JeuTest1->interaction(KEY_BACKSPACE);
+  for (int i = 0 ; i < 3 ; i++ ) {
+    JeuTest1->interaction(KEY_RIGHT);
+  }
+  JeuTest1->interaction(KEY_UP);
+  j = JeuTest1->MaJPiece();
+
+  //on ajoute la Piece manquante
+  JeuTest1->setPieceEnCoursI();
+  JeuTest1->interaction(KEY_UP);
+
+  //et on vérifie que le nb de lignes supprimées est bon
+  CPPUNIT_ASSERT(JeuTest1->MaJPiece() == 1);
 
 
+}
+
+void TestJeu::testMaJPiece2(void) {
+
+  //on teste que la suppression de 2 lignes completes se fait bien
+
+  int j;
+
+  //on remplit une ligne complète sans une case
+  //une Piece_I à fond à gauche
+  JeuTest2->setPieceEnCoursI();
+  for (int i = 0; i < 5 ; i++) {
+    JeuTest2->interaction(KEY_LEFT);
+  }
+  JeuTest2->interaction(KEY_UP);
+  j = JeuTest2->MaJPiece();
+
+  //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0)
+  JeuTest2->setPieceEnCoursO();
+  for (int i = 0; i < 3 ; i++) {
+    JeuTest2->interaction(KEY_LEFT);
+  }
+  JeuTest2->interaction(KEY_UP);
+  j = JeuTest2->MaJPiece();
+
+  //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0)
+  JeuTest2->setPieceEnCoursO();
+  JeuTest2->interaction(KEY_LEFT);
+  JeuTest2->interaction(KEY_UP);
+  j = JeuTest2->MaJPiece();
+
+  //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0)
+  JeuTest2->setPieceEnCoursO();
+  for (int i = 0; i < 4 ; i++) {
+    JeuTest2->interaction(KEY_RIGHT);
+  }
+  JeuTest2->interaction(KEY_UP);
+  j = JeuTest2->MaJPiece();
+
+  //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0)
+  JeuTest2->setPieceEnCoursO();
+  for (int i = 0; i < 2 ; i++) {
+    JeuTest2->interaction(KEY_RIGHT);
+  }
+  JeuTest2->interaction(KEY_UP);
+  j = JeuTest2->MaJPiece();
+
+  //on ajoute la Piece manquante
+  JeuTest2->setPieceEnCoursI();
+  JeuTest2->interaction(KEY_UP);
+
+  //et on vérifie que le nb de lignes supprimées est bon
+  CPPUNIT_ASSERT(JeuTest2->MaJPiece() == 2);
+
+}
+
+void TestJeu::testMaJPiece3(void) {
+
+  //on teste que la suppression de 3 lignes completes se fait bien
+
+  int j;
+
+  //une Piece_I à fond à gauche
+  JeuTest3->setPieceEnCoursI();
+  for (int i = 0; i < 5 ; i++) {
+    JeuTest3->interaction(KEY_LEFT);
+  }
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 0 et 1
+  JeuTest3->setPieceEnCoursO();
+  for (int i = 0; i < 3 ; i++) {
+    JeuTest3->interaction(KEY_LEFT);
+  }
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 2 et 3
+  JeuTest3->setPieceEnCoursO();
+  for (int i = 0; i < 3 ; i++) {
+    JeuTest3->interaction(KEY_LEFT);
+  }
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 0 et 1
+  JeuTest3->setPieceEnCoursO();
+  JeuTest3->interaction(KEY_LEFT);
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 2 et 3
+  JeuTest3->setPieceEnCoursO();
+  JeuTest3->interaction(KEY_LEFT);
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0)
+  JeuTest3->setPieceEnCoursO();
+  for (int i = 0; i < 4 ; i++) {
+    JeuTest3->interaction(KEY_RIGHT);
+  }
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0)
+  JeuTest3->setPieceEnCoursO();
+  for (int i = 0; i < 2 ; i++) {
+    JeuTest3->interaction(KEY_RIGHT);
+  }
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
+
+  //on rajoute un I couché décalée au max à droite
+  JeuTest3->setPieceEnCoursI();
+  JeuTest3->interaction(KEY_BACKSPACE);
+  for (int i = 0 ; i < 3 ; i++ ) {
+    JeuTest3->interaction(KEY_RIGHT);
+  }
+  JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
 
 
+  //on ajoute la Piece manquante
+  JeuTest3->setPieceEnCoursI();
+  JeuTest3->interaction(KEY_UP);
 
+  //et on vérifie que le nb de lignes supprimées est bon
+  CPPUNIT_ASSERT(JeuTest3->MaJPiece() == 3);
 
+}
 
-  //on complete pour que la prochaine piece complete 2 lignes
+void TestJeu::testMaJPiece4(void) {
 
-  //on complete pour que la prochaine piece complete 3 lignes
+  //on teste que la suppression de 4 lignes completes se fait bien
 
-  //on complete pour que la prochaine piece complete 4 lignes
+  int j;
+
+  //on remplit une ligne complète sans une case
+  //une Piece_I à fond à gauche
+  JeuTest4->setPieceEnCoursI();
+  for (int i = 0; i < 5 ; i++) {
+    JeuTest4->interaction(KEY_LEFT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 0 et 1
+  JeuTest4->setPieceEnCoursO();
+  for (int i = 0; i < 3 ; i++) {
+    JeuTest4->interaction(KEY_LEFT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 2 et 3
+  JeuTest4->setPieceEnCoursO();
+  for (int i = 0; i < 3 ; i++) {
+    JeuTest4->interaction(KEY_LEFT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 0 et 1
+  JeuTest4->setPieceEnCoursO();
+  JeuTest4->interaction(KEY_LEFT);
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 2 et 3
+  JeuTest4->setPieceEnCoursO();
+  JeuTest4->interaction(KEY_LEFT);
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0) ligne 0 et 1
+  JeuTest4->setPieceEnCoursO();
+  for (int i = 0; i < 4 ; i++) {
+    JeuTest4->interaction(KEY_RIGHT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0) ligne 2 et 3
+  JeuTest4->setPieceEnCoursO();
+  for (int i = 0; i < 4 ; i++) {
+    JeuTest4->interaction(KEY_RIGHT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0) ligne 0 et 1
+  JeuTest4->setPieceEnCoursO();
+  for (int i = 0; i < 2 ; i++) {
+    JeuTest4->interaction(KEY_RIGHT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0) ligne 2 et 3
+  JeuTest4->setPieceEnCoursO();
+  for (int i = 0; i < 2 ; i++) {
+    JeuTest4->interaction(KEY_RIGHT);
+  }
+  JeuTest4->interaction(KEY_UP);
+  j = JeuTest4->MaJPiece();
+
+  //on ajoute la Piece manquante
+  JeuTest4->setPieceEnCoursI();
+  JeuTest4->interaction(KEY_UP);
+
+  //et on vérifie que le nb de lignes supprimées est bon
+  CPPUNIT_ASSERT(JeuTest4->MaJPiece() == 4);
 
 
 }
