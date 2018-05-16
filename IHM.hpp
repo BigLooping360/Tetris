@@ -31,6 +31,10 @@ using namespace std;
 class IHM {
 
   public :
+  /*! \fn void Pause()
+  * \brief Affiche l'écran de Pause du Jeu
+  */
+  static void Pause();
   /*! \fn static int getinput()
   * \brief Récupère les données saisies par l'utilisateur sur le clavier
   * \return l'entier correspondant au caractère tapé

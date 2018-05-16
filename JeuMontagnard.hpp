@@ -30,6 +30,8 @@ class JeuMontagnard : public Jeu {
     * \brief Constructeur d'un JeuMontagnard, c'est-à-dire d'un Tetris avec un Personnage
     */
     JeuMontagnard();
+
+    JeuMontagnard(Board b);
     /*! \fn getTemps()
     * \brief Accesseur du temps de partie d'un JeuMontagnard pour un joueur
     * \return le temps du joueur

@@ -47,7 +47,7 @@ class Board {
   void setGrille(int x, int y);
   //Le changer en constructeur
   /*! \fn void init()
-  * \brief initialise une grille en début de Jeu en la remplissant de 0
+  * \brief Change la valeur de la grille en (x,y)
   */
   void init();
 

@@ -37,8 +37,17 @@ void Menu::jouerClassique(){
             temps=clock();
           }
         inter=IHM::getinput();
+
+        if ((char)inter == 'p'){
+          IHM::Pause();
+          inter = -1;
+          while ( (char)inter != 'p'){
+            inter=IHM::getinput();
+          }
+        }
         if (inter!=-1)
           jeuc.interaction(inter);
+
         IHM::afficher(jeuc);
         refresh();
         }
@@ -70,6 +79,19 @@ void Menu::jouerMontagnard(){
             temps=clock();
           }
         inter=IHM::getinput();
+        if ((char)inter == 'p'){
+          IHM::Pause();
+          inter = -1;
+          while ( (char)inter != 'p'){
+            inter=IHM::getinput();
+          }
+        }
+        if ((char)inter == 'i'){
+          IHM::Pause();
+          while ( (char)inter != 'i'){
+            inter=IHM::getinput();
+          }
+        }
         if (inter!=-1)
           jeum.interaction(inter);
         IHM::afficher(jeum);

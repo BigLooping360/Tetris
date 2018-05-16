@@ -44,13 +44,16 @@ Test_Score : Score.o TestScore.o
 		$(FC) Score.o TestScore.o $(OPT2) -o TestScore
 		./TestScore
 
-Test_Jeu : Jeu.o TestJeu.o
+Test_Jeu :  Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o
 		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o $(OPT2) -o TestJeu
 		./TestJeu
-
-
+Test_JeuMontagnard : Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o JeuMontagnard.o Test_JeuMontagnard.o
+	$(FC)  Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o JeuMontagnard.o Test_JeuMontagnard.o $(OPT2) -o Test_JeuMontagnard
+	./Test_JeuMontagnard
 
 #Classes
+Test_JeuMontagnard.o : Test_JeuMontagnard.cpp
+	$(FC) -c 	Test_JeuMontagnard.cpp
 TestJeu.o : TestJeu.cpp
 	$(FC) -c 	TestJeu.cpp
 
@@ -67,7 +70,7 @@ TestPiece_L.o: TestPiece_L.cpp
 	$(FC) -c 	TestPiece_L.cpp
 
 TestPiece_J.o: TestPiece_J.cpp
-	$(FC) -c 	TestPiece_J.cpp 
+	$(FC) -c 	TestPiece_J.cpp
 
 TestPiece_Z.o: TestPiece_Z.cpp
 	$(FC) -c 	TestPiece_Z.cpp
@@ -94,7 +97,7 @@ IHM.o: IHM.cpp
 	$(FC) -c IHM.cpp
 
 Score.o: Score.cpp
-	$(FC) -c Score.cpp 
+	$(FC) -c Score.cpp
 
 Bloc.o: Bloc.cpp
 	$(FC) -c Bloc.cpp

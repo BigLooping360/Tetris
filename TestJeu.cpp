@@ -48,8 +48,8 @@ void TestJeu::testMaJPiece(void) {
   //le jeu ne peut pas déjà être bloqué
   CPPUNIT_ASSERT(JeuTest->getjeu());
 
-  //on fait tomber 10 pièces pour être sûr que le jeu doit s'arrêter
-  for (int i = 0; i < 10; i++ ) {
+  //on fait tomber 20 pièces pour être sûr que le jeu doit s'arrêter
+  for (int i = 0; i < 20; i++ ) {
     JeuTest->interaction(KEY_UP);
   }
   CPPUNIT_ASSERT(!JeuTest->getjeu());

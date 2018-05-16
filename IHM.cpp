@@ -71,6 +71,21 @@ void IHM::reglesduJeu() {
 
 }
 
+void IHM::Pause(){
+  clear();
+  noecho();
+  char *msg10 = "Vous avez pausé le jeu";
+  char *msg11 = "Appuyer sur p pour reprendre votre partie";
+  int taille10= strlen(msg10);
+  int taille11= strlen(msg11);
+
+  mvprintw(0, (COLS / 2) - (taille10 / 2), msg10);
+  mvprintw(1, (COLS / 2) - (taille11 / 2), msg11);
+  refresh();
+
+
+
+}
 
 void IHM::init(){
   initscr();
@@ -160,6 +175,8 @@ void IHM::afficher(JeuClassique Jeu1){
   for (int i=0; i<Jeu1.b.getLargeur()+2;i++){
     mvaddch(Jeu1.b.getHauteur(),i,'x');
   }
+
+
   //On affiche la pièce
   switch (Jeu1.PieceEnCours->getcolor()){
     case 1:

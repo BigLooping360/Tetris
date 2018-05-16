@@ -81,6 +81,8 @@ protected:
   */
   Jeu();
 
+
+
   friend class IHM;
 
 

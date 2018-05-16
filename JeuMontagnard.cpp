@@ -8,7 +8,43 @@
 
 using namespace std;
 
+JeuMontagnard::JeuMontagnard(Board b1):Jeu(){
+  b=b1;
+  // // PieceCours prend la valeur de p1
+  // switch (p1->getcolor()) {
+  //   case 1:
+  //     PieceEnCours= new Piece_I();
+  //     break;
+  //
+  //   case 2:
+  //     PieceEnCours= new Piece_O();
+  //     break;
+  //
+  //   case 3:
+  //     PieceEnCours= new Piece_T();
+  //     break;
+  //
+  //   case 4:
+  //     PieceEnCours= new Piece_L();
+  //     break;
+  //
+  //   case 5:
+  //     PieceEnCours= new Piece_J();
+  //     break;
+  //
+  //   case 6:
+  //     PieceEnCours= new Piece_S();
+  //     break;
+  //
+  //   case 7:
+  //     PieceEnCours= new Piece_Z();
+  //     break;
+  //
+  // }
+  // *PieceEnCours=*p1;
+p=Personnage();
 
+}
 JeuMontagnard::JeuMontagnard():Jeu(){
   temps=0;
   p=Personnage();

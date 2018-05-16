@@ -51,10 +51,11 @@ Personnage::Personnage(){
           }
           else
             Direction=!Direction;
+
           }
       }
     }
-    if (!Direction){
+    else{
       if (Posx==0)
         Direction=!Direction;
       else{
