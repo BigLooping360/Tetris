@@ -86,6 +86,14 @@ Jeu::Jeu(){
   PieceStocke=NULL;
 }
 
+void Jeu::setPieceEnCoursI() {
+  PieceEnCours = new Piece_I();
+}
+
+void Jeu::setPieceEnCoursO() {
+  PieceEnCours = new Piece_O();
+}
+
 
 int Jeu::MaJPiece(){
   //On check que la pièce ne bloquera pas l'entrée de la nouvelle pièce
@@ -197,7 +205,7 @@ int Jeu::MaJPiece(){
   return nb_ligneCompletee;
 
 }
-// Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougé
+// Envoie l'ordre de bouger une pièce, renvoie true si une pièce est bougée
 void Jeu::interaction(int c){
   if (((char)c=='q') or (c==KEY_LEFT))
     PieceEnCours->MoveLeft(b);
@@ -208,7 +216,7 @@ void Jeu::interaction(int c){
   if (((char)c==' ') or (c==KEY_UP))
     while(!PieceEnCours->getbloque())
       PieceEnCours->MoveDown(b);
-  if ((char)c=='r')
+  if (((char)c=='r') or (c==KEY_BACKSPACE))
     PieceEnCours->Rotate(b);
   if ((char)c=='o')
     stocker();

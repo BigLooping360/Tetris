@@ -48,9 +48,8 @@ protected:
   Piece *PieceSuivante;
 
   public:
-  /*! \fn void stocker()
-  * \brief Stocke la pièce en cours si la pièce n'a pas encore été stockée
-  */
+  void setPieceEnCoursI();
+  void setPieceEnCoursO();
   void stocker();
   /*! \fn bool getjeu()const
   * \brief Accesseur du booléen jeu

@@ -44,9 +44,9 @@ void TestJeu::tearDown(void) {
 }
 
 
-void TestJeu::testMaJPiece1(void) {
+void TestJeu::testMaJ1(void) {
 
-  //on teste que la suppression de 1 lignes complete se fait bien
+  //on teste que le score augmente bien après la suppression de 1 lignes complete se fait bien
   int j;
   //on remplit une ligne complète sans une case
   //une Piece_I à fond à gauche
@@ -83,16 +83,17 @@ void TestJeu::testMaJPiece1(void) {
   //on ajoute la Piece manquante
   JeuTest1->setPieceEnCoursI();
   JeuTest1->interaction(KEY_UP);
+  j = JeuTest1->MaJPiece();
 
-  //et on vérifie que le nb de lignes supprimées est bon
-  CPPUNIT_ASSERT(JeuTest1->MaJPiece() == 1);
+//on vérifie que le score a bien augmenté
+  CPPUNIT_ASSERT(JeuTest1->getpoints() == 10);
 
 
 }
 
-void TestJeu::testMaJPiece2(void) {
+void TestJeu::testMaJ2(void) {
 
-  //on teste que la suppression de 2 lignes completes se fait bien
+  //on teste que le score augmente bien après la suppression de 2 lignes completes se fait bien
 
   int j;
 
@@ -138,15 +139,16 @@ void TestJeu::testMaJPiece2(void) {
   //on ajoute la Piece manquante
   JeuTest2->setPieceEnCoursI();
   JeuTest2->interaction(KEY_UP);
+    j = JeuTest2->MaJPiece();
 
-  //et on vérifie que le nb de lignes supprimées est bon
-  CPPUNIT_ASSERT(JeuTest2->MaJPiece() == 2);
+  //on vérifie que le score a bien augmenté
+  CPPUNIT_ASSERT(JeuTest2->getpoints() == 30);
 
 }
 
-void TestJeu::testMaJPiece3(void) {
+void TestJeu::testMaJ3(void) {
 
-  //on teste que la suppression de 3 lignes completes se fait bien
+  //on teste que le score augmente bien après la suppression de 3 lignes completes se fait bien
 
   int j;
 
@@ -215,29 +217,24 @@ void TestJeu::testMaJPiece3(void) {
   //on ajoute la Piece manquante
   JeuTest3->setPieceEnCoursI();
   JeuTest3->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
 
-  //et on vérifie que le nb de lignes supprimées est bon
-  CPPUNIT_ASSERT(JeuTest3->MaJPiece() == 3);
+//on vérifie que le score a bien augmenté
+  CPPUNIT_ASSERT(JeuTest3->getpoints() == 60 );
 
 }
 
-void TestJeu::testMaJPiece4(void) {
+void TestJeu::testMaJ4(void) {
 
-  //on teste que la suppression de 4 lignes completes se fait bien
+  //on teste que le score augmente bien après la suppression de 4 lignes completes se fait bien
 
   int j;
 
-<<<<<<< HEAD
-  //on fait tomber 20 pièces pour être sûr que le jeu doit s'arrêter
-  for (int i = 0; i < 20; i++ ) {
-    JeuTest->interaction(KEY_UP);
-=======
   //on remplit une ligne complète sans une case
   //une Piece_I à fond à gauche
   JeuTest4->setPieceEnCoursI();
   for (int i = 0; i < 5 ; i++) {
     JeuTest4->interaction(KEY_LEFT);
->>>>>>> f713260abc09c0db19dc82636caeafc4c2fecd91
   }
   JeuTest4->interaction(KEY_UP);
   j = JeuTest4->MaJPiece();
@@ -305,9 +302,10 @@ void TestJeu::testMaJPiece4(void) {
   //on ajoute la Piece manquante
   JeuTest4->setPieceEnCoursI();
   JeuTest4->interaction(KEY_UP);
+  j = JeuTest3->MaJPiece();
 
-  //et on vérifie que le nb de lignes supprimées est bon
-  CPPUNIT_ASSERT(JeuTest4->MaJPiece() == 4);
+  //on vérifie que le score a bien augmenté
+  CPPUNIT_ASSERT(JeuTest4->getpoints() == 100);
 
 
 }
