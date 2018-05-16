@@ -174,10 +174,6 @@ void IHM::afficher(JeuClassique Jeu1){
     mvaddch(Jeu1.b.getHauteur(),i,'x');
   }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f713260abc09c0db19dc82636caeafc4c2fecd91
   //On affiche la pièce
   switch (Jeu1.PieceEnCours->getcolor()){
     case 1:
@@ -381,7 +377,7 @@ void IHM::afficher(JeuMontagnard Jeu1){
         mvaddch(Jeu1.b.getHauteur()-Jeu1.PieceEnCours->getPosy(i)-1,Jeu1.PieceEnCours->getPosx(i)+1,'x');
       }
       attroff(COLOR_PAIR(1));
-      break; 
+      break;
     case 2:
       attron(COLOR_PAIR(2));
       for (int i = 0; i < 4; i++) {
