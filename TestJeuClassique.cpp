@@ -83,7 +83,7 @@ void TestJeuClassique::testMaJ1(void) {
   //on ajoute la Piece manquante
   JeuTest1->setPieceEnCoursI();
   JeuTest1->interaction(KEY_UP);
-  j = JeuTest1->MaJPiece();
+  JeuTest1->MaJ();
 
 //on vérifie que le score a bien augmenté
   CPPUNIT_ASSERT(JeuTest1->getpoints() == 10);
@@ -139,7 +139,7 @@ void TestJeuClassique::testMaJ2(void) {
   //on ajoute la Piece manquante
   JeuTest2->setPieceEnCoursI();
   JeuTest2->interaction(KEY_UP);
-    j = JeuTest2->MaJPiece();
+  JeuTest2->MaJ();
 
   //on vérifie que le score a bien augmenté
   CPPUNIT_ASSERT(JeuTest2->getpoints() == 30);
@@ -217,7 +217,7 @@ void TestJeuClassique::testMaJ3(void) {
   //on ajoute la Piece manquante
   JeuTest3->setPieceEnCoursI();
   JeuTest3->interaction(KEY_UP);
-  j = JeuTest3->MaJPiece();
+  JeuTest3->MaJ();
 
 //on vérifie que le score a bien augmenté
   CPPUNIT_ASSERT(JeuTest3->getpoints() == 60 );
@@ -302,7 +302,7 @@ void TestJeuClassique::testMaJ4(void) {
   //on ajoute la Piece manquante
   JeuTest4->setPieceEnCoursI();
   JeuTest4->interaction(KEY_UP);
-  j = JeuTest3->MaJPiece();
+  JeuTest4->MaJ();
 
   //on vérifie que le score a bien augmenté
   CPPUNIT_ASSERT(JeuTest4->getpoints() == 100);
