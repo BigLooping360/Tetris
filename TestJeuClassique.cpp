@@ -12,7 +12,7 @@
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
-#include "TestJeu.hpp"
+#include "TestJeuClassique.hpp"
 #include "Jeu.hpp"
 #include "JeuClassique.hpp"
 #include "Piece.hpp"
@@ -24,7 +24,7 @@ using namespace CppUnit;
 using namespace std;
 
 
-void TestJeu::setUp(void) {
+void TestJeuClassique::setUp(void) {
 
   JeuTest1 = new JeuClassique();
   JeuTest2 = new JeuClassique();
@@ -34,7 +34,7 @@ void TestJeu::setUp(void) {
 
 }
 
-void TestJeu::tearDown(void) {
+void TestJeuClassique::tearDown(void) {
 
   delete JeuTest1;
   delete JeuTest2;
@@ -44,7 +44,7 @@ void TestJeu::tearDown(void) {
 }
 
 
-void TestJeu::testMaJ1(void) {
+void TestJeuClassique::testMaJ1(void) {
 
   //on teste que le score augmente bien après la suppression de 1 lignes complete se fait bien
   int j;
@@ -91,7 +91,7 @@ void TestJeu::testMaJ1(void) {
 
 }
 
-void TestJeu::testMaJ2(void) {
+void TestJeuClassique::testMaJ2(void) {
 
   //on teste que le score augmente bien après la suppression de 2 lignes completes se fait bien
 
@@ -146,7 +146,7 @@ void TestJeu::testMaJ2(void) {
 
 }
 
-void TestJeu::testMaJ3(void) {
+void TestJeuClassique::testMaJ3(void) {
 
   //on teste que le score augmente bien après la suppression de 3 lignes completes se fait bien
 
@@ -224,7 +224,7 @@ void TestJeu::testMaJ3(void) {
 
 }
 
-void TestJeu::testMaJ4(void) {
+void TestJeuClassique::testMaJ4(void) {
 
   //on teste que le score augmente bien après la suppression de 4 lignes completes se fait bien
 
@@ -314,7 +314,7 @@ void TestJeu::testMaJ4(void) {
 
 //-----------------------------------------------------------------------------
 
-CPPUNIT_TEST_SUITE_REGISTRATION( TestJeu );
+CPPUNIT_TEST_SUITE_REGISTRATION( TestJeuClassique );
 
 int main(int argc, char* argv[])
 {
@@ -334,7 +334,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestJeu.xml");
+	ofstream xmlFileOut("cppTestJeuClassique.xml");
 	XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful

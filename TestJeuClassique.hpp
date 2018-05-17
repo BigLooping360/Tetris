@@ -12,6 +12,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include "Jeu.hpp"
+#include "JeuClassique.hpp"
 #include "Piece.hpp"
 #include "Piece_I.hpp"
 #include "Piece_O.hpp"
@@ -19,21 +20,21 @@
 using namespace CppUnit;
 using namespace std;
 
-/*! \class TestJeu
- * \brief Classe Test de Jeu
+/*! \class TestJeuClassique
+ * \brief Classe Test de JeuClassique
  * \author Léa Lefrançois
  * \version 1.0
  * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
- *Ce module sert de test unitaire à la classe Jeu
+ *Ce module sert de test unitaire à la classe JeuClassique
 */
 
 
-class TestJeu : public CppUnit::TestFixture {
+class TestJeuClassique : public CppUnit::TestFixture {
 
-    CPPUNIT_TEST_SUITE(TestJeu);
+    CPPUNIT_TEST_SUITE(TestJeuClassique);
     CPPUNIT_TEST(testMaJ1);
     CPPUNIT_TEST(testMaJ2);
     CPPUNIT_TEST(testMaJ3);
@@ -45,17 +46,32 @@ class TestJeu : public CppUnit::TestFixture {
     void tearDown(void);
 
   protected:
-    //on doit tester que nb_ligneCompletee ok et que jeu devient bien false si besoin
+    /*! \fn void testMaJ1()
+    * \brief Teste si le score a bien été augmenté après qu'une ligne soit complétée.
+    */
     void testMaJ1(void);
+    /*! \fn void testMaJ1()
+    * \brief Teste si le score a bien été augmenté après que 2 lignes soit complétées.
+    */
     void testMaJ2(void);
+    /*! \fn void testMaJ1()
+    * \brief Teste si le score a bien été augmenté après que 3 lignes soit complétées.
+    */
     void testMaJ3(void);
+    /*! \fn void testMaJ1()
+    * \brief Teste si le score a bien été augmenté après que 4 lignes soit complétées.
+    */
     void testMaJ4(void);
 
   private:
-    Jeu *JeuTest1;
-    Jeu *JeuTest2;
-    Jeu *JeuTest3;
-    Jeu *JeuTest4;
+    /*! *JeuTest1 est le pointeur sur un JeuClassique de test*/
+    JeuClassique *JeuTest1;
+    /*! *JeuTest2 est le pointeur sur un JeuClassique de test*/
+    JeuClassique *JeuTest2;
+    /*! *JeuTest3 est le pointeur sur un JeuClassique de test*/
+    JeuClassique *JeuTest3;
+    /*! *JeuTest4 est le pointeur sur un JeuClassique de test*/
+    JeuClassique *JeuTest4;
 
 
 };

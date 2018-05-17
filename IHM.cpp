@@ -72,7 +72,7 @@ void IHM::reglesduJeu() {
 void IHM::Pause(){
   clear();
   noecho();
-  char *msg10 = "Vous avez pausé le jeu";
+  char *msg10 = "Vous êtes en mode pause";
   char *msg11 = "Appuyer sur p pour reprendre votre partie";
   int taille10= strlen(msg10);
   int taille11= strlen(msg11);

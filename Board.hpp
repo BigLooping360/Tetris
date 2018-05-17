@@ -45,17 +45,13 @@ class Board {
   * \brief modifie la valeur de la grille dans la case en [x,y] : si la valeur en [x,y] vaut 1, elle deviendra 0, sinon elle deviendra 1
   */
   void setGrille(int x, int y);
-  //Le changer en constructeur
-  /*! \fn void init()
-  * \brief Change la valeur de la grille en (x,y)
+  /*! \fn Board()
+  * \brief Constructeur de Board : place des 0 dans toutes les cases de la grille
   */
-  void init();
-
   Board();
-  /*! \fn friend ostream  &operator <<(ostream &out,  Board &)
-  * \brief Cette classe ami permet d'afficher la grille sur un terminal, affiche un x lorsque la grille comprend un 1, et affiche 0 sinon.
-  */
-  friend ostream  &operator <<(ostream &out,  Board &);
+
+
+  friend ostream &operator <<(ostream &out,  Board &);
 
 };
 

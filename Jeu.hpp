@@ -38,7 +38,7 @@ protected:
   static const int NombreDePieces=8;
   /*! nombre_aleatoire permettra une arrivée aléatoire des Tetriminos */
   int nombre_aleatoire;
-  /*! b correspondra  à notre grille de jeu */
+  /*! b correspondra à notre grille de jeu */
   Board b;
   /*! PieceStockee est le pointeur sur la Piece stockée par l'utilisateur*/
   Piece *PieceStocke;
@@ -48,8 +48,17 @@ protected:
   Piece *PieceSuivante;
 
   public:
+  /*! \fn void setPieceEnCoursI()
+  * \brief change la PieceEnCours par une Piece_I, attention seulement utile pour les tests unitaires
+  */
   void setPieceEnCoursI();
+  /*! \fn void setPieceEnCoursO()
+  * \brief change la PieceEnCours par une Piece_O, attention seulement utile pour les tests unitaires
+  */
   void setPieceEnCoursO();
+  /*! \fn void stocker()
+  * \brief permet le stockage de la PieceEnCours
+  */
   void stocker();
   /*! \fn bool getjeu()const
   * \brief Accesseur du booléen jeu
@@ -84,10 +93,7 @@ protected:
   */
   Board getBoard();
 
-
   friend class IHM;
-
-
 
 
 };

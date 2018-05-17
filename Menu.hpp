@@ -31,7 +31,7 @@ private:
   /*! jeum est le JeuMontagnard du Tetris qui sera lancé à la demande de l'utilisateur*/
   JeuMontagnard jeum;
 
-  /*! scoreclassique est ce qui servira à gérer les Score pour le JeuClassique*/
+  /*! scoreC est ce qui servira à gérer les Score pour le JeuClassique*/
   Score scoreC;
   /*! scoreM est ce qui servira à gérer les Score pour le JeuMontagnard*/
   Score scoreM;

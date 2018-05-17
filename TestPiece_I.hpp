@@ -27,7 +27,7 @@ using namespace std;
  *
  *Ce module sert de test unitaire à la classe Piece_I
  *On testera si la Piece_I peut tourner dans plusieurs situations, et qu'elle
- *est bien bloqué lorsqu'elle ne peut pas tourner.
+ *est bien bloquée lorsqu'elle ne peut pas tourner.
  *et on testera la rotation en elle-même.
 */
 
