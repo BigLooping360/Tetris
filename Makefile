@@ -52,8 +52,8 @@ Test_JeuMontagnard : Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o
 	./Test_JeuMontagnard
 
 
-Test_Jeu_Classique : Jeu.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o TestJeu.o JeuClassique.o Jeu.o
-		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o $(OPT2) -o TestJeuClassique
+Test_Jeu_Classique : Jeu.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o TestJeuClassique.o JeuClassique.o 
+		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeuClassique.o $(OPT2) -o TestJeuClassique
 		./TestJeuClassique
 
 
