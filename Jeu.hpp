@@ -79,7 +79,10 @@ protected:
   * \brief Constructeur de Jeu, initialise un début de partie
   */
   Jeu();
-
+  /*! \fn Board getBoard()
+  * \brief Accesseur du Board b de jeu
+  */
+  Board getBoard();
 
 
   friend class IHM;

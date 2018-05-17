@@ -10,11 +10,13 @@
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
+#include <ncurses.h>
 #include "Piece.hpp"
 #include "Piece_I.hpp"
 #include "Board.hpp"
 #include "JeuMontagnard.hpp"
 #include "Jeu.hpp"
+#include "JeuClassique.hpp"
 #include "Personnage.hpp"
 
 using namespace CppUnit;
@@ -39,8 +41,9 @@ using namespace std;
 class Test_JeuMontagnard : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(Test_JeuMontagnard);
-    //CPPUNIT_TEST(test_MaJ);
     CPPUNIT_TEST(test_DeplacerPersonnage);
+
+    CPPUNIT_TEST(test_MaJPersonnage);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -55,10 +58,16 @@ protected:
     /*! \fn void  test_DeplacerPersonnage()
     * \brief Teste les déplacements du personnages
     */
+    void test_MaJPersonnage();
     void test_DeplacerPersonnage();
+
 
   private:
     /*! Initialise le jeu montagnard que l'on testera*/
-    JeuMontagnard jeum;
+    JeuMontagnard *jeum;
+    JeuMontagnard *jeum4;
+
+
+
 
 };

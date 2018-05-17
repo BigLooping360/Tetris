@@ -1,1 +1,5 @@
+laura 30
+r 0
+bobby 0
+OAcalborte 0
 bob 0

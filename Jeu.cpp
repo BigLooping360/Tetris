@@ -95,6 +95,9 @@ void Jeu::setPieceEnCoursO() {
 }
 
 
+Board Jeu::getBoard(){
+  return b;
+}
 int Jeu::MaJPiece(){
 
 

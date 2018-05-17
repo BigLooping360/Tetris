@@ -227,17 +227,12 @@ void TestJeu::testMaJPiece4(void) {
 
   int j;
 
-<<<<<<< HEAD
-  //on fait tomber 20 pièces pour être sûr que le jeu doit s'arrêter
-  for (int i = 0; i < 20; i++ ) {
-    JeuTest->interaction(KEY_UP);
-=======
+
   //on remplit une ligne complète sans une case
   //une Piece_I à fond à gauche
   JeuTest4->setPieceEnCoursI();
   for (int i = 0; i < 5 ; i++) {
     JeuTest4->interaction(KEY_LEFT);
->>>>>>> f713260abc09c0db19dc82636caeafc4c2fecd91
   }
   JeuTest4->interaction(KEY_UP);
   j = JeuTest4->MaJPiece();
