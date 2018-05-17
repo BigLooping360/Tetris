@@ -5,7 +5,7 @@
 /*! \class JeuClassique
  * \brief Gestion du déroulement d'un Jeu Classique
  * \author Léa Lefrançois
- * \author Laura Couret 
+ * \author Laura Couret
  * \version 1.0
  * \date mai 2018
  * \bug Rien à signaler
@@ -27,12 +27,12 @@ class JeuClassique : public Jeu {
     * \brief Constructeur d'un JeuClassique, c'est-à-dire d'un Tetris classique
     */
     JeuClassique();
-    /*! \fn getpoints()
+    /*! \fn int getpoints()
     * \brief Accesseur du nombre de points pour un JeuClassique
     * \return le score du joueur
     */
     int getpoints();
-    /*! \fn setpoints()
+    /*! \fn void setpoints()
     * \brief Modifie le nombre de points du jeu
     * \param l est l'entier que l'on veut ajouter au nombre de points actuels
     */

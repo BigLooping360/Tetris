@@ -27,7 +27,8 @@ using namespace std;
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
- *Ce module sert de test unitaire à la classe Jeu
+ *Ce module sert de test unitaire à la classe Jeu. Plus précisément, on vérifiera la fonction MaJPiece.
+ *Pour plus de lisibilité, on vérifiera dans 4 tests séparés les cas où 1, 2, 3 ou 4 lignes sont complétées en même temps.
 */
 
 
@@ -45,16 +46,31 @@ class TestJeu : public CppUnit::TestFixture {
     void tearDown(void);
 
   protected:
-    //on doit tester que nb_ligneCompletee ok et que jeu devient bien false si besoin
+    /*! \fn void testMaJPiece1(void)
+    * \brief Vérifie qu'on supprime bien une ligne une fois qu'elle est complétée
+    */
     void testMaJPiece1(void);
+    /*! \fn void testMaJPiece2(void)
+    * \brief Vérifie qu'on supprime bien 2 lignes une fois qu'elle sont complétées
+    */
     void testMaJPiece2(void);
+    /*! \fn void testMaJPiece3(void)
+    * \brief Vérifie qu'on supprime bien 3 lignes une fois qu'elle sont complétées
+    */
     void testMaJPiece3(void);
+    /*! \fn void testMaJPiece4(void)
+    * \brief Vérifie qu'on supprime bien 4 lignes une fois qu'elle sont complétées
+    */
     void testMaJPiece4(void);
 
   private:
+    /*! *JeuTest1 est le pointeur sur un Jeu de test*/
     Jeu *JeuTest1;
+    /*! *JeuTest2 est le pointeur sur un Jeu de test*/
     Jeu *JeuTest2;
+    /*! *JeuTest3 est le pointeur sur un Jeu de test*/
     Jeu *JeuTest3;
+    /*! *JeuTest4 est le pointeur sur un Jeu de test*/
     Jeu *JeuTest4;
 
 

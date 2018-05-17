@@ -37,6 +37,7 @@ class Piece {
   /*! stocke permet de savoir si une Piece peut être stockée. Attention, une Piece ne peut être stockée qu'une fois.
   Vaut vrai si la pièce a déjà était stocké. */
   bool stocke;
+
   public:
   /*! \fn int getPosx(int i)const
   * \brief Accesseur de la position en x d'un Bloc
@@ -70,19 +71,16 @@ class Piece {
   * \return Retourne l'entier correspondant à la couleur de la Piece
   */
   int getcolor();
-
   /*! \fn void setetat(int i)
   * \brief Mutateur d'état d'une pièce. Attention, cette fonction est utile seulement pour les tests unitaires et n'est pas à utiliser ailleurs.
   * \param i est l'entier qui correspond à l'état que l'on veut donner à la pièce
   */
   void setetat(int i);
-
   /*! \fn int getetat()
   * \brief Accesseur d'état d'une pièce
   * \return i est l'entier qui correspond à l'état de la pièce
   */
   int getetat();
-
   /*! \fn bool Down(Board b)
   * \brief Vérifie si on peut descendre la Piece dans le Board
   * \param b est le Board de notre Tetris

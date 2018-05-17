@@ -44,12 +44,13 @@ class Score {
   * \return "classique.txt" si JeuClassique, "montagnard.txt" si JeuMontagnard
   */
   string getNomfichier();
-  /*! \fn addscore(int s)
+  /*! \fn addscore(float s,string pseudo)
   * \brief Ajoute un nouveau Score au fichier des meilleurs Score
   * \param s est le Score réalisé à ajouter
+  * \param pseudo est le pseudo du joueur ayant réalisé le meilleur score
   */
   void addscore(float s,string pseudo);
-  /*! \fn bool meilleurescore(int s)
+  /*! \fn bool meilleurescore(float s)
   * \brief Vérifie si un joueur peut rentrer dans le palmares des 10 meilleurs Score
   * \param s est le Score réalisé à comparer avec ceux déjà réalisés
   * \return true s'il s'agit d'un nouveau meilleur Score, false sinon

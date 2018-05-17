@@ -29,7 +29,7 @@ using namespace std;
  * \warning Rien à signaler
  *
  *Ce module sert de test unitaire de la classe JeuMontagnard
- *On testera la méthode MaJ en regardant si le personnage et le board sont bien
+ *On testera la méthode MaJ en regardant si le personnage et le board sont biens
  *mis à jour
 */
 
@@ -58,7 +58,7 @@ protected:
     void test_DeplacerPersonnage();
 
   private:
-    /*! Initialise le jeu montagnard que l'on testera*/
+    /*! jeum représente le JeuMontagnard de test*/
     JeuMontagnard jeum;
 
 };

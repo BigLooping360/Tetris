@@ -20,14 +20,14 @@ using namespace CppUnit;
 using namespace std;
 
 /*! \class TestJeu
- * \brief Classe Test de Jeu
+ * \brief Classe Test de JeuClassique
  * \author Léa Lefrançois
  * \version 1.0
  * \date mai 2018
  * \bug Rien à signaler
  * \warning Rien à signaler
  *
- *Ce module sert de test unitaire à la classe Jeu
+ *Ce module sert de test unitaire à la classe JeuClassique
 */
 
 
@@ -45,7 +45,6 @@ class TestJeu : public CppUnit::TestFixture {
     void tearDown(void);
 
   protected:
-    //on doit tester que nb_ligneCompletee ok et que jeu devient bien false si besoin
     void testMaJ1(void);
     void testMaJ2(void);
     void testMaJ3(void);

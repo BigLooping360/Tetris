@@ -71,7 +71,7 @@ void Test_JeuMontagnard::setUp(void)
 }
 void Test_JeuMontagnard::tearDown(void)
 {
-
+  delete jeum;
 }
 //-----------------------------------------------------------------------------
 CPPUNIT_TEST_SUITE_REGISTRATION( Test_JeuMontagnard );
@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestPiece_I.xml");
+	ofstream xmlFileOut("cppTestJeuMontagnard.xml");
 	XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful
