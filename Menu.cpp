@@ -1,4 +1,12 @@
 #include "Menu.hpp"
+#include "Bloc.hpp"
+#include "Board.hpp"
+#include "Piece.hpp"
+#include "Score.hpp"
+#include "Jeu.hpp"
+#include <iostream>
+#include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -119,5 +127,11 @@ void Menu::ConsulterScoreMontagnard() {
 
 void Menu::ConsulterRegles() {
   IHM::reglesduJeu();
+}
+
+int main() {
+
+  Menu m;
+  m.lancement();
 
 }

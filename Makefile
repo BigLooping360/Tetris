@@ -7,8 +7,8 @@ OPT2 = -lcppunit
 # executables
 # main
 
-main : IHM.o Score.o Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Personnage.o JeuClassique.o JeuMontagnard.o Jeu.o Menu.o main.o
-	$(FC) Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Piece.o Personnage.o JeuClassique.o JeuMontagnard.o Jeu.o Score.o IHM.o main.o Menu.o  $(OPT1) -o Tetris
+Tetris : IHM.o Score.o Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Personnage.o JeuClassique.o JeuMontagnard.o Jeu.o Menu.o
+	$(FC) Bloc.o Board.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Piece.o Personnage.o JeuClassique.o JeuMontagnard.o Jeu.o Score.o IHM.o Menu.o  $(OPT1) -o Tetris
 	./Tetris
 
 Test_Piece_T : Board.o Piece.o Bloc.o Piece_T.o  TestPiece_T.o
@@ -47,12 +47,13 @@ Test_Score : Score.o TestScore.o
 Test_Jeu :  Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o
 		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeu.o $(OPT2) -o TestJeu
 		./TestJeu
-Test_JeuMontagnard : Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o JeuMontagnard.o Test_JeuMontagnard.o
-	$(FC)  Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o JeuMontagnard.o Test_JeuMontagnard.o $(OPT2) -o Test_JeuMontagnard
-	./Test_JeuMontagnard
+
+Test_JeuMontagnard : Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o JeuMontagnard.o TestJeuMontagnard.o
+	$(FC)  Personnage.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o JeuMontagnard.o TestJeuMontagnard.o $(OPT2) -o TestJeuMontagnard
+	./TestJeuMontagnard
 
 
-Test_Jeu_Classique : Jeu.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o TestJeuClassique.o JeuClassique.o 
+Test_JeuClassique : Jeu.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o TestJeuClassique.o JeuClassique.o 
 		$(FC) Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_J.o Piece_S.o Piece_Z.o Board.o Piece.o Jeu.o  JeuClassique.o TestJeuClassique.o $(OPT2) -o TestJeuClassique
 		./TestJeuClassique
 
@@ -60,8 +61,10 @@ Test_Jeu_Classique : Jeu.o Bloc.o Piece_T.o Piece_I.o Piece_O.o Piece_L.o Piece_
 
 
 #Classes
-Test_JeuMontagnard.o : Test_JeuMontagnard.cpp
-	$(FC) -c 	Test_JeuMontagnard.cpp
+
+TestJeuMontagnard.o : TestJeuMontagnard.cpp
+	$(FC) -c 	TestJeuMontagnard.cpp
+
 TestJeu.o : TestJeu.cpp
 	$(FC) -c 	TestJeu.cpp
 
@@ -100,9 +103,6 @@ JeuClassique.o: JeuClassique.cpp
 
 Personnage.o: Personnage.cpp
 	$(FC) -c Personnage.cpp
-
-main.o: main.cpp
-	$(FC) -c main.cpp
 
 IHM.o: IHM.cpp
 	$(FC) -c IHM.cpp

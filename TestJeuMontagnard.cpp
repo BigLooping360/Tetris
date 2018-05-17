@@ -1,4 +1,4 @@
-#include "Test_JeuMontagnard.hpp"
+#include "TestJeuMontagnard.hpp"
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
 #include <cppunit/ui/text/TextTestRunner.h>
