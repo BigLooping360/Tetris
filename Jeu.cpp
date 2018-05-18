@@ -217,10 +217,10 @@ void Jeu::interaction(int c){
     PieceEnCours->MoveRight(b);
   if (((char)c=='s') or (c==KEY_DOWN))
     PieceEnCours->MoveDown(b);
-  if (((char)c==' ') or (c==KEY_UP))
+  if (((char)c==' ') or (c==KEY_BACKSPACE))
     while(!PieceEnCours->getbloque())
       PieceEnCours->MoveDown(b);
-  if (((char)c=='r') or (c==KEY_BACKSPACE))
+  if (((char)c=='r') or (c==KEY_UP)) 
     PieceEnCours->Rotate(b);
   if ((char)c=='o')
     stocker();

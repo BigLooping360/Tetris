@@ -54,7 +54,7 @@ void TestJeuClassique::testMaJ1(void) {
   for (int i = 0; i < 5 ; i++) {
     JeuTest1->interaction(KEY_LEFT);
   }
-  JeuTest1->interaction(KEY_UP);
+  JeuTest1->interaction(KEY_BACKSPACE);
   j = JeuTest1->MaJPiece();
 
   //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0)
@@ -62,27 +62,27 @@ void TestJeuClassique::testMaJ1(void) {
   for (int i = 0; i < 3 ; i++) {
     JeuTest1->interaction(KEY_LEFT);
   }
-  JeuTest1->interaction(KEY_UP);
+  JeuTest1->interaction(KEY_BACKSPACE);
   j = JeuTest1->MaJPiece();
 
   //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0)
   JeuTest1->setPieceEnCoursO();
   JeuTest1->interaction(KEY_LEFT);
-  JeuTest1->interaction(KEY_UP);
+  JeuTest1->interaction(KEY_BACKSPACE);
   j = JeuTest1->MaJPiece();
 
   //on rajoute un I couché décalée au max à droite
   JeuTest1->setPieceEnCoursI();
-  JeuTest1->interaction(KEY_BACKSPACE);
+  JeuTest1->interaction(KEY_UP);
   for (int i = 0 ; i < 3 ; i++ ) {
     JeuTest1->interaction(KEY_RIGHT);
   }
-  JeuTest1->interaction(KEY_UP);
+  JeuTest1->interaction(KEY_BACKSPACE);
   j = JeuTest1->MaJPiece();
 
   //on ajoute la Piece manquante
   JeuTest1->setPieceEnCoursI();
-  JeuTest1->interaction(KEY_UP);
+  JeuTest1->interaction(KEY_BACKSPACE);
   JeuTest1->MaJ();
 
 //on vérifie que le score a bien augmenté
@@ -103,7 +103,7 @@ void TestJeuClassique::testMaJ2(void) {
   for (int i = 0; i < 5 ; i++) {
     JeuTest2->interaction(KEY_LEFT);
   }
-  JeuTest2->interaction(KEY_UP);
+  JeuTest2->interaction(KEY_BACKSPACE);
   j = JeuTest2->MaJPiece();
 
   //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0)
@@ -111,13 +111,13 @@ void TestJeuClassique::testMaJ2(void) {
   for (int i = 0; i < 3 ; i++) {
     JeuTest2->interaction(KEY_LEFT);
   }
-  JeuTest2->interaction(KEY_UP);
+  JeuTest2->interaction(KEY_BACKSPACE);
   j = JeuTest2->MaJPiece();
 
   //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0)
   JeuTest2->setPieceEnCoursO();
   JeuTest2->interaction(KEY_LEFT);
-  JeuTest2->interaction(KEY_UP);
+  JeuTest2->interaction(KEY_BACKSPACE);
   j = JeuTest2->MaJPiece();
 
   //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0)
@@ -125,7 +125,7 @@ void TestJeuClassique::testMaJ2(void) {
   for (int i = 0; i < 4 ; i++) {
     JeuTest2->interaction(KEY_RIGHT);
   }
-  JeuTest2->interaction(KEY_UP);
+  JeuTest2->interaction(KEY_BACKSPACE);
   j = JeuTest2->MaJPiece();
 
   //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0)
@@ -133,12 +133,12 @@ void TestJeuClassique::testMaJ2(void) {
   for (int i = 0; i < 2 ; i++) {
     JeuTest2->interaction(KEY_RIGHT);
   }
-  JeuTest2->interaction(KEY_UP);
+  JeuTest2->interaction(KEY_BACKSPACE);
   j = JeuTest2->MaJPiece();
 
   //on ajoute la Piece manquante
   JeuTest2->setPieceEnCoursI();
-  JeuTest2->interaction(KEY_UP);
+  JeuTest2->interaction(KEY_BACKSPACE);
   JeuTest2->MaJ();
 
   //on vérifie que le score a bien augmenté
@@ -157,7 +157,7 @@ void TestJeuClassique::testMaJ3(void) {
   for (int i = 0; i < 5 ; i++) {
     JeuTest3->interaction(KEY_LEFT);
   }
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 0 et 1
@@ -165,7 +165,7 @@ void TestJeuClassique::testMaJ3(void) {
   for (int i = 0; i < 3 ; i++) {
     JeuTest3->interaction(KEY_LEFT);
   }
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 2 et 3
@@ -173,19 +173,19 @@ void TestJeuClassique::testMaJ3(void) {
   for (int i = 0; i < 3 ; i++) {
     JeuTest3->interaction(KEY_LEFT);
   }
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 0 et 1
   JeuTest3->setPieceEnCoursO();
   JeuTest3->interaction(KEY_LEFT);
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 2 et 3
   JeuTest3->setPieceEnCoursO();
   JeuTest3->interaction(KEY_LEFT);
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0)
@@ -193,7 +193,7 @@ void TestJeuClassique::testMaJ3(void) {
   for (int i = 0; i < 4 ; i++) {
     JeuTest3->interaction(KEY_RIGHT);
   }
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0)
@@ -201,22 +201,22 @@ void TestJeuClassique::testMaJ3(void) {
   for (int i = 0; i < 2 ; i++) {
     JeuTest3->interaction(KEY_RIGHT);
   }
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
   //on rajoute un I couché décalée au max à droite
   JeuTest3->setPieceEnCoursI();
-  JeuTest3->interaction(KEY_BACKSPACE);
+  JeuTest3->interaction(KEY_UP);
   for (int i = 0 ; i < 3 ; i++ ) {
     JeuTest3->interaction(KEY_RIGHT);
   }
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   j = JeuTest3->MaJPiece();
 
 
   //on ajoute la Piece manquante
   JeuTest3->setPieceEnCoursI();
-  JeuTest3->interaction(KEY_UP);
+  JeuTest3->interaction(KEY_BACKSPACE);
   JeuTest3->MaJ();
 
 //on vérifie que le score a bien augmenté
@@ -236,7 +236,7 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 5 ; i++) {
     JeuTest4->interaction(KEY_LEFT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 0 et 1
@@ -244,7 +244,7 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 3 ; i++) {
     JeuTest4->interaction(KEY_LEFT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 1 et 2 (attention : colonne démarre à 0) ligne 2 et 3
@@ -252,19 +252,19 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 3 ; i++) {
     JeuTest4->interaction(KEY_LEFT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 0 et 1
   JeuTest4->setPieceEnCoursO();
   JeuTest4->interaction(KEY_LEFT);
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 3 et 4 (attention : colonne démarre à 0) ligne 2 et 3
   JeuTest4->setPieceEnCoursO();
   JeuTest4->interaction(KEY_LEFT);
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0) ligne 0 et 1
@@ -272,7 +272,7 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 4 ; i++) {
     JeuTest4->interaction(KEY_RIGHT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 8 et 9 (attention : colonne démarre à 0) ligne 2 et 3
@@ -280,7 +280,7 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 4 ; i++) {
     JeuTest4->interaction(KEY_RIGHT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0) ligne 0 et 1
@@ -288,7 +288,7 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 2 ; i++) {
     JeuTest4->interaction(KEY_RIGHT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //une Piece_O colonne 6 et 7 (attention : colonne démarre à 0) ligne 2 et 3
@@ -296,12 +296,12 @@ void TestJeuClassique::testMaJ4(void) {
   for (int i = 0; i < 2 ; i++) {
     JeuTest4->interaction(KEY_RIGHT);
   }
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   j = JeuTest4->MaJPiece();
 
   //on ajoute la Piece manquante
   JeuTest4->setPieceEnCoursI();
-  JeuTest4->interaction(KEY_UP);
+  JeuTest4->interaction(KEY_BACKSPACE);
   JeuTest4->MaJ();
 
   //on vérifie que le score a bien augmenté
