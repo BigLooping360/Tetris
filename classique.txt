@@ -1,5 +1,10 @@
+matheo 1120
 manon 1100
+lucie 1070
 leane 780
 léa 660
-laura 0
-julie 0
+sarah 600
+laura 550
+victor 520
+matthieu 300
+quentin 230
