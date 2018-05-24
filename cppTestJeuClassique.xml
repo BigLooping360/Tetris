@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="1">
+      <Name>TestJeuClassique::testMaJ1</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestJeuClassique.cpp</File>
+        <Line>89</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: JeuTest1-&gt;getpoints() == 10
+</Message>
+    </FailedTest>
+    <FailedTest id="2">
+      <Name>TestJeuClassique::testMaJ2</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestJeuClassique.cpp</File>
+        <Line>145</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: JeuTest2-&gt;getpoints() == 30
+</Message>
+    </FailedTest>
+    <FailedTest id="3">
+      <Name>TestJeuClassique::testMaJ3</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestJeuClassique.cpp</File>
+        <Line>223</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: JeuTest3-&gt;getpoints() == 60
+</Message>
+    </FailedTest>
+    <FailedTest id="4">
+      <Name>TestJeuClassique::testMaJ4</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestJeuClassique.cpp</File>
+        <Line>308</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: JeuTest4-&gt;getpoints() == 100
+</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests></SuccessfulTests>
+  <Statistics>
+    <Tests>4</Tests>
+    <FailuresTotal>4</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>4</Failures>
+  </Statistics>
+</TestRun>

@@ -70,7 +70,7 @@ void Test_JeuMontagnard::test_MaJPersonnage(void){
 
 // Bloquons le en ajoutant un bloc sur cette case
 jeum4->setPieceEnCoursO();
-jeum4->interaction(KEY_UP);
+jeum4->interaction(KEY_BACKSPACE);
 jeum4->MaJ();
 CPPUNIT_ASSERT(jeum4->getPersonnage().getbloque());
 CPPUNIT_ASSERT(jeum->getPersonnage().getPosx()==4);
@@ -80,38 +80,38 @@ CPPUNIT_ASSERT(jeum->getPersonnage().getPosy()==0);
 //vérifions qu'il se débloque bien
 //une Piece_I colonne 0, 1, 2 et 3
 jeum4->setPieceEnCoursI();
-jeum4->interaction(KEY_BACKSPACE);
+jeum4->interaction(KEY_UP);
 for (int i = 0; i < 3 ; i++) {
   jeum4->interaction(KEY_RIGHT);
 }
-jeum4->interaction(KEY_UP);
+jeum4->interaction(KEY_BACKSPACE);
 jeum4->MaJ();
 
 //une Piece_O colonne 6,7,8 et 9 (attention : colonne démarre à 0)
 jeum4->setPieceEnCoursI();
-jeum4->interaction(KEY_BACKSPACE);
+jeum4->interaction(KEY_UP);
 for (int i = 0; i < 3 ; i++) {
   jeum4->interaction(KEY_LEFT);
 }
-jeum4->interaction(KEY_UP);
+jeum4->interaction(KEY_BACKSPACE);
 jeum4->MaJ();
 
 //une Piece_I colonne 0, 1, 2 et 3
 jeum4->setPieceEnCoursI();
-jeum4->interaction(KEY_BACKSPACE);
+jeum4->interaction(KEY_UP);
 for (int i = 0; i < 3 ; i++) {
   jeum4->interaction(KEY_RIGHT);
 }
-jeum4->interaction(KEY_UP);
+jeum4->interaction(KEY_BACKSPACE);
 jeum4->MaJ();
 
 //une Piece_O colonne 6,7,8 et 9 (attention : colonne démarre à 0)
 jeum4->setPieceEnCoursI();
-jeum4->interaction(KEY_BACKSPACE);
+jeum4->interaction(KEY_UP);
 for (int i = 0; i < 3 ; i++) {
   jeum4->interaction(KEY_LEFT);
 }
-jeum4->interaction(KEY_UP);
+jeum4->interaction(KEY_BACKSPACE);
 jeum4->MaJ();
 
 
