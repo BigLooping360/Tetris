@@ -239,7 +239,7 @@ void IHM::afficher(JeuClassique Jeu1){
   char *msg5 = "Piece suivante : J";
   char *msg6 = "Piece suivante : S";
   char *msg7 = "Piece suivante : Z";
-  char *msg8 = "Appuyer sur r ou sur la fleche haut pour faire tourner la Piece";
+  char *msg8 = "Appuyer sur r pour faire tourner la Piece";
   char *msg9 = "Appuyer sur o pour stocker la Piece";
   char *msg10 = "Appuyer sur p pour faire une pause";
   string msg0 = "Points : ";
